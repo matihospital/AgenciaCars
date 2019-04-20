@@ -11,3 +11,16 @@ C:\Users\PC01\Desktop\AgenciaCars\clase01\obj\Debug\AgenciaCars.Properties.Resou
 C:\Users\PC01\Desktop\AgenciaCars\clase01\obj\Debug\AgenciaCars.pruebal.resources
 C:\Users\PC01\Desktop\AgenciaCars\clase01\obj\Debug\AgenciaCars.exe
 C:\Users\PC01\Desktop\AgenciaCars\clase01\obj\Debug\AgenciaCars.pdb
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\bin\Debug\AgenciaCars.exe.config
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.exe
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.pdb
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\bin\Debug\AgenciaCars.exe
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\bin\Debug\AgenciaCars.pdb
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.csprojResolveAssemblyReference.cache
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.ABM_Clientes.resources
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.Escritorio.resources
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.frm_ABM_Usuarios.resources
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.login.resources
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.Properties.Resources.resources
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.pruebal.resources
+C:\Users\PC01\Desktop\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.csproj.GenerateResource.Cache

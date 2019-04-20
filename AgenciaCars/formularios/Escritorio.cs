@@ -100,5 +100,11 @@ namespace AgenciaCars
             frm.ShowDialog();
         }
 
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Clientes frm = new formularios.ABM_Clientes();
+            frm.ShowDialog();
+        }
+
     }
 }

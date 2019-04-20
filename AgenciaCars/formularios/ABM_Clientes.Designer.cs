@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABM_Clientes));
             this.label1 = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_nroDoc = new System.Windows.Forms.TextBox();
@@ -49,9 +50,9 @@
             this.cmb_provincia = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmb_pais = new System.Windows.Forms.ComboBox();
-            this.btn_nuevo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -206,7 +207,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(107, 305);
+            this.label8.Location = new System.Drawing.Point(107, 304);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 24);
             this.label8.TabIndex = 14;
@@ -228,7 +229,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(62, 337);
+            this.label9.Location = new System.Drawing.Point(61, 405);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 24);
             this.label9.TabIndex = 10;
@@ -241,7 +242,7 @@
             this.cmb_localidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_localidad.FormattingEnabled = true;
-            this.cmb_localidad.Location = new System.Drawing.Point(162, 337);
+            this.cmb_localidad.Location = new System.Drawing.Point(161, 405);
             this.cmb_localidad.Name = "cmb_localidad";
             this.cmb_localidad.Size = new System.Drawing.Size(214, 28);
             this.cmb_localidad.TabIndex = 19;
@@ -274,7 +275,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(107, 405);
+            this.label11.Location = new System.Drawing.Point(108, 337);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 24);
             this.label11.TabIndex = 10;
@@ -287,37 +288,38 @@
             this.cmb_pais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_pais.FormattingEnabled = true;
-            this.cmb_pais.Location = new System.Drawing.Point(161, 405);
+            this.cmb_pais.Location = new System.Drawing.Point(161, 337);
             this.cmb_pais.Name = "cmb_pais";
             this.cmb_pais.Size = new System.Drawing.Size(214, 28);
             this.cmb_pais.TabIndex = 19;
             // 
-            // btn_nuevo
+            // btn_aceptar
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(23, 521);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(140, 44);
-            this.btn_nuevo.TabIndex = 20;
-            this.btn_nuevo.Text = "Aceptar";
-            this.btn_nuevo.UseVisualStyleBackColor = true;
+            this.btn_aceptar.Location = new System.Drawing.Point(23, 521);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(140, 44);
+            this.btn_aceptar.TabIndex = 20;
+            this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_cancelar
             // 
-            this.button1.Location = new System.Drawing.Point(173, 521);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 44);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Location = new System.Drawing.Point(173, 521);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
+            this.btn_cancelar.TabIndex = 21;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // button2
+            // btn_buscar
             // 
-            this.button2.Location = new System.Drawing.Point(319, 521);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 44);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_buscar.Location = new System.Drawing.Point(319, 521);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(140, 44);
+            this.btn_buscar.TabIndex = 21;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
             // 
             // ABM_Clientes
             // 
@@ -326,9 +328,9 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(472, 577);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_nuevo);
+            this.Controls.Add(this.btn_buscar);
+            this.Controls.Add(this.btn_cancelar);
+            this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.cmb_pais);
             this.Controls.Add(this.cmb_provincia);
             this.Controls.Add(this.cmb_localidad);
@@ -350,6 +352,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ABM_Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM_Clientes";
@@ -381,8 +384,8 @@
         private System.Windows.Forms.ComboBox cmb_provincia;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmb_pais;
-        private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_aceptar;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_buscar;
     }
 }
