@@ -70,9 +70,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clases\acceso_BD.cs" />
+    <Compile Include="clases\clientes.cs" />
     <Compile Include="clases\estados.cs" />
     <Compile Include="clases\perfiles.cs" />
+    <Compile Include="clases\proveedores.cs" />
+    <Compile Include="clases\TextBox01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clases\TextBox01.Designer.cs">
+      <DependentUpon>TextBox01.cs</DependentUpon>
+    </Compile>
     <Compile Include="clases\users.cs" />
+    <Compile Include="clases\validaciones.cs" />
+    <Compile Include="formularios\BUSQ_Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Proveedores.Designer.cs">
+      <DependentUpon>BUSQ_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Clientes.Designer.cs">
+      <DependentUpon>BUSQ_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\ABM_Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\ABM_Proveedores.Designer.cs">
+      <DependentUpon>ABM_Proveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\ABM_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +132,15 @@
     <Compile Include="pruebal.Designer.cs">
       <DependentUpon>pruebal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="formularios\BUSQ_Proveedores.resx">
+      <DependentUpon>BUSQ_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Clientes.resx">
+      <DependentUpon>BUSQ_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\ABM_Proveedores.resx">
+      <DependentUpon>ABM_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\ABM_Clientes.resx">
       <DependentUpon>ABM_Clientes.cs</DependentUpon>
     </EmbeddedResource>

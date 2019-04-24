@@ -96,13 +96,19 @@ namespace AgenciaCars
 
         private void aBMDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_ABM_Usuarios frm = new formularios.frm_ABM_Usuarios();
-            frm.ShowDialog();
+            //frm_ABM_Usuarios frm = new formularios.frm_ABM_Usuarios();
+            //frm.ShowDialog();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ABM_Clientes frm = new formularios.ABM_Clientes();
+            frm.ShowDialog();
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Proveedores frm = new formularios.ABM_Proveedores();
             frm.ShowDialog();
         }
 

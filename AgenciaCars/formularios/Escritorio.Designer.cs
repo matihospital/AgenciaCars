@@ -48,6 +48,7 @@
             this.modelosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,11 +139,12 @@
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.comprasToolStripMenuItem.Text = "Ventas";
             // 
             // comprasToolStripMenuItem1
@@ -194,12 +196,25 @@
             this.stockToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.stockToolStripMenuItem1.Text = "Stock";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label1.Location = new System.Drawing.Point(950, 600);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(347, 51);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "AGENCIA CARS";
+            // 
             // Escritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(771, 386);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -207,7 +222,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Escritorio";
-            this.Text = "Escritorio";
+            this.Text = "Agencia Cars - Sistema de Gestion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Escritorio_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -238,6 +253,7 @@
         private System.Windows.Forms.ToolStripMenuItem modelosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace AgenciaCars.formularios
 {
-    partial class ABM_Clientes
+    partial class ABM_Proveedores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABM_Clientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABM_Proveedores));
             this.label1 = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_nroDoc = new System.Windows.Forms.TextBox();
-            this.txt_idCliente = new System.Windows.Forms.TextBox();
+            this.txt_idProveedor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,11 +60,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(136, 9);
+            this.label1.Location = new System.Drawing.Point(88, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 42);
+            this.label1.Size = new System.Drawing.Size(318, 42);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CLIENTES";
+            this.label1.Text = "PROVEEDORES";
             // 
             // txt_apellido
             // 
@@ -88,17 +88,17 @@
             this.txt_nroDoc.Size = new System.Drawing.Size(279, 26);
             this.txt_nroDoc.TabIndex = 2;
             // 
-            // txt_idCliente
+            // txt_idProveedor
             // 
-            this.txt_idCliente.BackColor = System.Drawing.SystemColors.Menu;
-            this.txt_idCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_idCliente.Enabled = false;
-            this.txt_idCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idCliente.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_idCliente.Location = new System.Drawing.Point(162, 111);
-            this.txt_idCliente.Name = "txt_idCliente";
-            this.txt_idCliente.Size = new System.Drawing.Size(47, 26);
-            this.txt_idCliente.TabIndex = 0;
+            this.txt_idProveedor.BackColor = System.Drawing.SystemColors.Menu;
+            this.txt_idProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_idProveedor.Enabled = false;
+            this.txt_idProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idProveedor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txt_idProveedor.Location = new System.Drawing.Point(162, 111);
+            this.txt_idProveedor.Name = "txt_idProveedor";
+            this.txt_idProveedor.Size = new System.Drawing.Size(47, 26);
+            this.txt_idProveedor.TabIndex = 0;
             // 
             // label5
             // 
@@ -298,10 +298,10 @@
             this.btn_aceptar.FlatAppearance.BorderSize = 2;
             this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_aceptar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_aceptar.Location = new System.Drawing.Point(19, 521);
+            this.btn_aceptar.Location = new System.Drawing.Point(18, 521);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(140, 44);
-            this.btn_aceptar.TabIndex = 10;
+            this.btn_aceptar.TabIndex = 20;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = false;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
@@ -313,10 +313,10 @@
             this.btn_cancelar.FlatAppearance.BorderSize = 2;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_cancelar.Location = new System.Drawing.Point(165, 521);
+            this.btn_cancelar.Location = new System.Drawing.Point(164, 521);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
-            this.btn_cancelar.TabIndex = 11;
+            this.btn_cancelar.TabIndex = 21;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
@@ -328,15 +328,15 @@
             this.btn_buscar.FlatAppearance.BorderSize = 2;
             this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_buscar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_buscar.Location = new System.Drawing.Point(311, 521);
+            this.btn_buscar.Location = new System.Drawing.Point(310, 521);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(140, 44);
-            this.btn_buscar.TabIndex = 12;
+            this.btn_buscar.TabIndex = 21;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = false;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // ABM_Clientes
+            // ABM_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -357,7 +357,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_nroDoc);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txt_idCliente);
+            this.Controls.Add(this.txt_idProveedor);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
@@ -368,10 +368,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ABM_Clientes";
+            this.Name = "ABM_Proveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Clientes";
-            this.Load += new System.EventHandler(this.ABM_Clientes_Load);
+            this.Text = "Proveedores";
+            this.Load += new System.EventHandler(this.ABM_Proveedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,7 +382,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.TextBox txt_nroDoc;
-        private System.Windows.Forms.TextBox txt_idCliente;
+        private System.Windows.Forms.TextBox txt_idProveedor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
