@@ -112,5 +112,10 @@ namespace AgenciaCars
             frm.ShowDialog();
         }
 
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Producto producto = new ABM_Producto();
+            producto.ShowDialog();
+        }
     }
 }

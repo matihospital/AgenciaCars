@@ -144,7 +144,7 @@
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.comprasToolStripMenuItem.Text = "Ventas";
             // 
             // comprasToolStripMenuItem1
@@ -169,7 +169,7 @@
             this.marcasToolStripMenuItem,
             this.modelosToolStripMenuItem});
             this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.parametrosToolStripMenuItem.Text = "Parametros";
             // 
             // marcasToolStripMenuItem
@@ -187,13 +187,14 @@
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem1
             // 
             this.stockToolStripMenuItem1.Name = "stockToolStripMenuItem1";
-            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.stockToolStripMenuItem1.Text = "Stock";
             // 
             // label1

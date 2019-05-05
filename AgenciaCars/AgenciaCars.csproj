@@ -90,6 +90,18 @@
     </Compile>
     <Compile Include="clases\users.cs" />
     <Compile Include="clases\validaciones.cs" />
+    <Compile Include="formularios\ABM_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\ABM_Producto.Designer.cs">
+      <DependentUpon>ABM_Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Producto.Designer.cs">
+      <DependentUpon>BUSQ_Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\BUSQ_Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,12 @@
     <Compile Include="pruebal.Designer.cs">
       <DependentUpon>pruebal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="formularios\ABM_Producto.resx">
+      <DependentUpon>ABM_Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Producto.resx">
+      <DependentUpon>BUSQ_Producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\BUSQ_Proveedores.resx">
       <DependentUpon>BUSQ_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
