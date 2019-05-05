@@ -13,7 +13,7 @@ namespace AgenciaCars.formularios
 {
     public partial class frm_ABM_Usuarios : Form
     {
-        estados obj_estados = new estados();
+        tiposDoc obj_estados = new tiposDoc();
         perfiles obj_perfiles = new perfiles();
         users obj_usuarios = new users();
 
@@ -29,14 +29,14 @@ namespace AgenciaCars.formularios
 
         private void frm_ABM_Usuarios_Load(object sender, EventArgs e)
         {
-            this.cmb_estado.DataSource = this.obj_estados.Recuperar_estados();
+            /*this.cmb_estado.DataSource = this.obj_estados.Consultar_tiposDoc();
             this.cmb_estado.DisplayMember = "n_estado";
             this.cmb_estado.ValueMember = "id_estado";
 
-            this.cmb_perfil.DataSource = this.obj_perfiles.Recuperar_perfiles();
+            this.cmb_perfil.DataSource = this.obj_perfiles.Consultar_tiposDoc();
             this.cmb_perfil.DisplayMember = "n_perfil";
             this.cmb_perfil.ValueMember = "id_perfil";
-            this.cmb_estado.SelectedIndex = -1;
+            this.cmb_estado.SelectedIndex = -1;*/
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)

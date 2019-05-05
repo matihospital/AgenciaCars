@@ -8,12 +8,12 @@ using System.Data;
 
 namespace AgenciaCars.clases
 {
-    class estados
+    class tiposDoc
     {
         acceso_BD _BD = new acceso_BD();
 
-        public DataTable Recuperar_estados(){
-            return _BD.consulta("SELECT * FROM ESTADOS");
+        public DataTable Consultar_tiposDoc(){
+            return _BD.consulta("SELECT * FROM TIPOS_DOCUMENTOS");
         }
     }
 }

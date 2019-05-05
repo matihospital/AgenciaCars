@@ -69,16 +69,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgenciaCarsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgenciaCarsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="clases\acceso_BD.cs" />
     <Compile Include="clases\clientes.cs" />
-    <Compile Include="clases\estados.cs" />
+    <Compile Include="clases\ComboBox01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clases\localidades.cs" />
+    <Compile Include="clases\provincias.cs" />
+    <Compile Include="clases\paises.cs" />
+    <Compile Include="clases\tiposDoc.cs" />
     <Compile Include="clases\perfiles.cs" />
     <Compile Include="clases\proveedores.cs" />
     <Compile Include="clases\TextBox01.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="clases\TextBox01.Designer.cs">
-      <DependentUpon>TextBox01.cs</DependentUpon>
     </Compile>
     <Compile Include="clases\users.cs" />
     <Compile Include="clases\validaciones.cs" />
@@ -166,6 +174,17 @@
     <EmbeddedResource Include="pruebal.resx">
       <DependentUpon>pruebal.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AgenciaCarsDataSet.xsc">
+      <DependentUpon>AgenciaCarsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AgenciaCarsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AgenciaCarsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AgenciaCarsDataSet.xss">
+      <DependentUpon>AgenciaCarsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

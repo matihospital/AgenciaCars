@@ -7,28 +7,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgenciaCars.clases;
+using System.Data;
 
 namespace AgenciaCars.clases
 {
-    public class TextBox01 : TextBox
+    public partial class ComboBox01 : ComboBox
     {
         //Definición de variables locales y propiedades para la interacción con las variables
         //para establecer nombre de la tabla sobre la que actua este dato, nombre del campo
         //de la tabla (campo), el mensaje de error, si el dato es alidable, y el tipo de dato
         //que recibe el objeto.
 
-        public enum tipo_dato { texto, numero }
         string nombre_tabla;
         string campo;
         string mensaje_error;
         bool validable;
-        tipo_dato tipo;
 
-        public tipo_dato _tipo
-        {
-            get { return tipo; }
-            set { tipo = value; }
-        }
 
         public string _nombre_tabla
         {
@@ -50,6 +44,28 @@ namespace AgenciaCars.clases
             get { return validable; }
             set { validable = value; }
         }
+        //Se definen dos métodos sobrecargados (mismo nombre)
+        //de carga del ComboBox01, uno requiere de una instancia de
+        //la clase acceso_BD con la que accede a leer la tabla con la que se carga el combo.
+        //El otro método recibe directamente la tabla con la que se carga el combo.
+        //Para ambos casos se debe declarar que columna es la pk y cual el descriptor, para
+        //poder configuar el ValueMember (miembro valor) y el DisplayMember (miembro display)
+        public void cargar(string nombre_tabla, string pk, string descriptor)
+        {
+            acceso_BD _BD = new acceso_BD();
+            this.DataSource = _BD.consulta("SELECT * FROM " + nombre_tabla);
+            this.DisplayMember = descriptor;
+            this.ValueMember = pk;
+        }
+        public void cargar(DataTable tabla, string pk, string descriptor)
+        {
+            this.DataSource = tabla;
+            this.DisplayMember = descriptor;
+            this.ValueMember = pk;
+        }
+
+
+
 
     }
 }
