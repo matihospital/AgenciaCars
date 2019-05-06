@@ -38,7 +38,6 @@
             this.txt_año = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.lbl_modelo = new System.Windows.Forms.Label();
-            this.txt_modelo = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.lbl_color = new System.Windows.Forms.Label();
             this.txt_color = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
+            this.cmb_modelo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_titulo
@@ -70,7 +70,7 @@
             this.lbl_id.Location = new System.Drawing.Point(62, 103);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(27, 24);
-            this.lbl_id.TabIndex = 1;
+            this.lbl_id.TabIndex = 10;
             this.lbl_id.Text = "ID";
             // 
             // txt_id
@@ -80,7 +80,8 @@
             this.txt_id.Name = "txt_id";
             this.txt_id.ReadOnly = true;
             this.txt_id.Size = new System.Drawing.Size(47, 26);
-            this.txt_id.TabIndex = 2;
+            this.txt_id.TabIndex = 1;
+            this.txt_id.TabStop = false;
             // 
             // textBox1
             // 
@@ -95,7 +96,7 @@
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(219, 26);
-            this.txt_descripcion.TabIndex = 4;
+            this.txt_descripcion.TabIndex = 2;
             // 
             // lbl_descripcion
             // 
@@ -105,7 +106,7 @@
             this.lbl_descripcion.Location = new System.Drawing.Point(62, 145);
             this.lbl_descripcion.Name = "lbl_descripcion";
             this.lbl_descripcion.Size = new System.Drawing.Size(110, 24);
-            this.lbl_descripcion.TabIndex = 5;
+            this.lbl_descripcion.TabIndex = 11;
             this.lbl_descripcion.Text = "Descripcion";
             // 
             // lbl_año
@@ -116,7 +117,7 @@
             this.lbl_año.Location = new System.Drawing.Point(62, 187);
             this.lbl_año.Name = "lbl_año";
             this.lbl_año.Size = new System.Drawing.Size(45, 24);
-            this.lbl_año.TabIndex = 8;
+            this.lbl_año.TabIndex = 12;
             this.lbl_año.Text = "Año";
             // 
             // txt_año
@@ -125,7 +126,7 @@
             this.txt_año.Multiline = true;
             this.txt_año.Name = "txt_año";
             this.txt_año.Size = new System.Drawing.Size(219, 26);
-            this.txt_año.TabIndex = 7;
+            this.txt_año.TabIndex = 3;
             // 
             // textBox4
             // 
@@ -142,16 +143,8 @@
             this.lbl_modelo.Location = new System.Drawing.Point(62, 224);
             this.lbl_modelo.Name = "lbl_modelo";
             this.lbl_modelo.Size = new System.Drawing.Size(74, 24);
-            this.lbl_modelo.TabIndex = 11;
+            this.lbl_modelo.TabIndex = 13;
             this.lbl_modelo.Text = "Modelo";
-            // 
-            // txt_modelo
-            // 
-            this.txt_modelo.Location = new System.Drawing.Point(193, 223);
-            this.txt_modelo.Multiline = true;
-            this.txt_modelo.Name = "txt_modelo";
-            this.txt_modelo.Size = new System.Drawing.Size(219, 26);
-            this.txt_modelo.TabIndex = 10;
             // 
             // textBox6
             // 
@@ -177,7 +170,7 @@
             this.txt_color.Multiline = true;
             this.txt_color.Name = "txt_color";
             this.txt_color.Size = new System.Drawing.Size(219, 26);
-            this.txt_color.TabIndex = 13;
+            this.txt_color.TabIndex = 5;
             // 
             // textBox8
             // 
@@ -194,7 +187,7 @@
             this.lbl_estado.Location = new System.Drawing.Point(62, 304);
             this.lbl_estado.Name = "lbl_estado";
             this.lbl_estado.Size = new System.Drawing.Size(68, 24);
-            this.lbl_estado.TabIndex = 17;
+            this.lbl_estado.TabIndex = 15;
             this.lbl_estado.Text = "Estado";
             // 
             // txt_estado
@@ -203,7 +196,7 @@
             this.txt_estado.Multiline = true;
             this.txt_estado.Name = "txt_estado";
             this.txt_estado.Size = new System.Drawing.Size(219, 26);
-            this.txt_estado.TabIndex = 16;
+            this.txt_estado.TabIndex = 6;
             // 
             // textBox3
             // 
@@ -218,7 +211,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(21, 371);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(132, 48);
-            this.btn_guardar.TabIndex = 18;
+            this.btn_guardar.TabIndex = 7;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -229,7 +222,7 @@
             this.btn_cancelar.Location = new System.Drawing.Point(173, 371);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(132, 48);
-            this.btn_cancelar.TabIndex = 19;
+            this.btn_cancelar.TabIndex = 8;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
@@ -240,10 +233,18 @@
             this.btn_buscar.Location = new System.Drawing.Point(329, 371);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(132, 48);
-            this.btn_buscar.TabIndex = 20;
+            this.btn_buscar.TabIndex = 9;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = false;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // cmb_modelo
+            // 
+            this.cmb_modelo.FormattingEnabled = true;
+            this.cmb_modelo.Location = new System.Drawing.Point(193, 226);
+            this.cmb_modelo.Name = "cmb_modelo";
+            this.cmb_modelo.Size = new System.Drawing.Size(219, 21);
+            this.cmb_modelo.TabIndex = 4;
             // 
             // ABM_Producto
             // 
@@ -251,6 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(479, 433);
+            this.Controls.Add(this.cmb_modelo);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
@@ -261,7 +263,6 @@
             this.Controls.Add(this.txt_color);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.lbl_modelo);
-            this.Controls.Add(this.txt_modelo);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.lbl_año);
             this.Controls.Add(this.txt_año);
@@ -274,6 +275,7 @@
             this.Controls.Add(this.lbl_titulo);
             this.Name = "ABM_Producto";
             this.Text = "Autos";
+            this.Load += new System.EventHandler(this.ABM_Producto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,7 +285,6 @@
 
         private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.Label lbl_id;
-        private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label lbl_descripcion;
@@ -291,7 +292,6 @@
         private System.Windows.Forms.TextBox txt_año;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label lbl_modelo;
-        private System.Windows.Forms.TextBox txt_modelo;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label lbl_color;
         private System.Windows.Forms.TextBox txt_color;
@@ -302,5 +302,7 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_buscar;
+        protected System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.ComboBox cmb_modelo;
     }
 }

@@ -80,6 +80,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="clases\localidades.cs" />
+    <Compile Include="clases\productos.cs" />
     <Compile Include="clases\provincias.cs" />
     <Compile Include="clases\paises.cs" />
     <Compile Include="clases\tiposDoc.cs" />
