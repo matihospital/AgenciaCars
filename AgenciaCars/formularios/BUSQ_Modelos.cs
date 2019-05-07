@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace AgenciaCars.formularios
 {
-    public partial class BUSQ_Producto : Form
+    public partial class BUSQ_Modelos : Form
     {
-        public BUSQ_Producto()
+        public BUSQ_Modelos()
         {
             InitializeComponent();
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

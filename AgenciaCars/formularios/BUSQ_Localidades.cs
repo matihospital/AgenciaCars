@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace AgenciaCars.formularios
 {
-    public partial class BUSQ_Proveedores: Form
+    public partial class BUSQ_Localidades : Form
     {
-        public BUSQ_Proveedores()
+        public BUSQ_Localidades()
         {
             InitializeComponent();
-        }
-
-        private void btn_nuevo_Click(object sender, EventArgs e)
-        {
-            //Abrir pantalla de busqueda
-            ABM_Proveedores frm = new formularios.ABM_Proveedores();
-            frm.ShowDialog();
         }
 
         private void btn_salir_Click(object sender, EventArgs e)

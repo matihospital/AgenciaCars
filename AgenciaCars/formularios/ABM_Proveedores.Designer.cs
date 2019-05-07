@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABM_Proveedores));
             this.label1 = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
-            this.txt_nroDoc = new System.Windows.Forms.TextBox();
             this.txt_idProveedor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_calle = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_nro = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmb_localidad = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,7 +50,11 @@
             this.cmb_pais = new System.Windows.Forms.ComboBox();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_buscar = new System.Windows.Forms.Button();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_nro = new System.Windows.Forms.MaskedTextBox();
+            this.txt_nroDoc = new System.Windows.Forms.MaskedTextBox();
+            this.btn_salir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,9 +64,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(88, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 42);
+            this.label1.Size = new System.Drawing.Size(325, 42);
             this.label1.TabIndex = 1;
-            this.label1.Text = "PROVEEDORES";
+            this.label1.Text = "Nuevo Proveedor";
             // 
             // txt_apellido
             // 
@@ -76,17 +78,6 @@
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(279, 26);
             this.txt_apellido.TabIndex = 3;
-            // 
-            // txt_nroDoc
-            // 
-            this.txt_nroDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_nroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nroDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_nroDoc.Location = new System.Drawing.Point(161, 177);
-            this.txt_nroDoc.MaxLength = 10;
-            this.txt_nroDoc.Name = "txt_nroDoc";
-            this.txt_nroDoc.Size = new System.Drawing.Size(279, 26);
-            this.txt_nroDoc.TabIndex = 2;
             // 
             // txt_idProveedor
             // 
@@ -183,7 +174,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(101, 272);
+            this.label7.Location = new System.Drawing.Point(101, 303);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 24);
             this.label7.TabIndex = 14;
@@ -194,7 +185,7 @@
             this.txt_calle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_calle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_calle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_calle.Location = new System.Drawing.Point(161, 273);
+            this.txt_calle.Location = new System.Drawing.Point(161, 304);
             this.txt_calle.MaxLength = 50;
             this.txt_calle.Name = "txt_calle";
             this.txt_calle.Size = new System.Drawing.Size(279, 26);
@@ -205,29 +196,18 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(107, 304);
+            this.label8.Location = new System.Drawing.Point(107, 335);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 24);
             this.label8.TabIndex = 14;
             this.label8.Text = "Nro.";
-            // 
-            // txt_nro
-            // 
-            this.txt_nro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_nro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_nro.Location = new System.Drawing.Point(161, 305);
-            this.txt_nro.MaxLength = 50;
-            this.txt_nro.Name = "txt_nro";
-            this.txt_nro.Size = new System.Drawing.Size(279, 26);
-            this.txt_nro.TabIndex = 6;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(61, 405);
+            this.label9.Location = new System.Drawing.Point(66, 436);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 24);
             this.label9.TabIndex = 10;
@@ -240,7 +220,7 @@
             this.cmb_localidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_localidad.FormattingEnabled = true;
-            this.cmb_localidad.Location = new System.Drawing.Point(161, 405);
+            this.cmb_localidad.Location = new System.Drawing.Point(162, 432);
             this.cmb_localidad.Name = "cmb_localidad";
             this.cmb_localidad.Size = new System.Drawing.Size(214, 28);
             this.cmb_localidad.TabIndex = 9;
@@ -250,7 +230,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(66, 371);
+            this.label10.Location = new System.Drawing.Point(66, 402);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 24);
             this.label10.TabIndex = 10;
@@ -263,7 +243,7 @@
             this.cmb_provincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_provincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_provincia.FormattingEnabled = true;
-            this.cmb_provincia.Location = new System.Drawing.Point(161, 371);
+            this.cmb_provincia.Location = new System.Drawing.Point(162, 398);
             this.cmb_provincia.Name = "cmb_provincia";
             this.cmb_provincia.Size = new System.Drawing.Size(214, 28);
             this.cmb_provincia.TabIndex = 8;
@@ -273,7 +253,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(108, 337);
+            this.label11.Location = new System.Drawing.Point(108, 368);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 24);
             this.label11.TabIndex = 10;
@@ -286,7 +266,7 @@
             this.cmb_pais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_pais.FormattingEnabled = true;
-            this.cmb_pais.Location = new System.Drawing.Point(161, 337);
+            this.cmb_pais.Location = new System.Drawing.Point(161, 364);
             this.cmb_pais.Name = "cmb_pais";
             this.cmb_pais.Size = new System.Drawing.Size(214, 28);
             this.cmb_pais.TabIndex = 7;
@@ -313,7 +293,7 @@
             this.btn_cancelar.FlatAppearance.BorderSize = 2;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_cancelar.Location = new System.Drawing.Point(164, 521);
+            this.btn_cancelar.Location = new System.Drawing.Point(171, 521);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
             this.btn_cancelar.TabIndex = 21;
@@ -321,20 +301,60 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // btn_buscar
+            // txt_email
             // 
-            this.btn_buscar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn_buscar.FlatAppearance.BorderSize = 2;
-            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_buscar.Location = new System.Drawing.Point(310, 521);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(140, 44);
-            this.btn_buscar.TabIndex = 21;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = false;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txt_email.Location = new System.Drawing.Point(162, 273);
+            this.txt_email.MaxLength = 50;
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(279, 26);
+            this.txt_email.TabIndex = 22;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Window;
+            this.label12.Location = new System.Drawing.Point(96, 275);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 24);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Email";
+            // 
+            // txt_nro
+            // 
+            this.txt_nro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_nro.Location = new System.Drawing.Point(160, 334);
+            this.txt_nro.Mask = "00000";
+            this.txt_nro.Name = "txt_nro";
+            this.txt_nro.Size = new System.Drawing.Size(279, 26);
+            this.txt_nro.TabIndex = 25;
+            // 
+            // txt_nroDoc
+            // 
+            this.txt_nroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_nroDoc.Location = new System.Drawing.Point(162, 177);
+            this.txt_nroDoc.Mask = "000000000";
+            this.txt_nroDoc.Name = "txt_nroDoc";
+            this.txt_nroDoc.Size = new System.Drawing.Size(279, 26);
+            this.txt_nroDoc.TabIndex = 24;
+            // 
+            // btn_salir
+            // 
+            this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_salir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_salir.FlatAppearance.BorderSize = 2;
+            this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_salir.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_salir.Location = new System.Drawing.Point(320, 521);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(140, 44);
+            this.btn_salir.TabIndex = 26;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // ABM_Proveedores
             // 
@@ -343,19 +363,21 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(472, 577);
-            this.Controls.Add(this.btn_buscar);
+            this.Controls.Add(this.btn_salir);
+            this.Controls.Add(this.txt_nro);
+            this.Controls.Add(this.txt_nroDoc);
+            this.Controls.Add(this.txt_email);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.cmb_pais);
             this.Controls.Add(this.cmb_provincia);
             this.Controls.Add(this.cmb_localidad);
             this.Controls.Add(this.cmb_tipoDoc);
-            this.Controls.Add(this.txt_nro);
             this.Controls.Add(this.txt_calle);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.txt_apellido);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txt_nroDoc);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_idProveedor);
             this.Controls.Add(this.label11);
@@ -370,7 +392,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ABM_Proveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Proveedores";
+            this.Text = "Nuevo Proveedor";
             this.Load += new System.EventHandler(this.ABM_Proveedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -381,7 +403,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_apellido;
-        private System.Windows.Forms.TextBox txt_nroDoc;
         private System.Windows.Forms.TextBox txt_idProveedor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -393,7 +414,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_calle;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txt_nro;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmb_localidad;
         private System.Windows.Forms.Label label10;
@@ -402,6 +422,10 @@
         private System.Windows.Forms.ComboBox cmb_pais;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.MaskedTextBox txt_nro;
+        private System.Windows.Forms.MaskedTextBox txt_nroDoc;
+        private System.Windows.Forms.Button btn_salir;
     }
 }

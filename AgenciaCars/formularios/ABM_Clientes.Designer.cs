@@ -48,13 +48,13 @@
             this.cmb_provincia = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmb_pais = new System.Windows.Forms.ComboBox();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_nroDoc = new System.Windows.Forms.MaskedTextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_nro = new System.Windows.Forms.MaskedTextBox();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,11 +62,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(136, 9);
+            this.label1.Location = new System.Drawing.Point(123, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 42);
+            this.label1.Size = new System.Drawing.Size(266, 42);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CLIENTES";
+            this.label1.Text = "Nuevo Cliente";
             // 
             // txt_apellido
             // 
@@ -271,51 +271,6 @@
             this.cmb_pais.Size = new System.Drawing.Size(214, 28);
             this.cmb_pais.TabIndex = 8;
             // 
-            // btn_aceptar
-            // 
-            this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_aceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn_aceptar.FlatAppearance.BorderSize = 2;
-            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aceptar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_aceptar.Location = new System.Drawing.Point(19, 521);
-            this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(140, 44);
-            this.btn_aceptar.TabIndex = 11;
-            this.btn_aceptar.Text = "Aceptar";
-            this.btn_aceptar.UseVisualStyleBackColor = false;
-            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn_cancelar.FlatAppearance.BorderSize = 2;
-            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_cancelar.Location = new System.Drawing.Point(165, 521);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
-            this.btn_cancelar.TabIndex = 12;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn_buscar.FlatAppearance.BorderSize = 2;
-            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_buscar.Location = new System.Drawing.Point(311, 521);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(140, 44);
-            this.btn_buscar.TabIndex = 13;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = false;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
-            // 
             // txt_nroDoc
             // 
             this.txt_nroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -356,6 +311,51 @@
             this.txt_nro.Size = new System.Drawing.Size(279, 26);
             this.txt_nro.TabIndex = 7;
             // 
+            // btn_aceptar
+            // 
+            this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_aceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_aceptar.FlatAppearance.BorderSize = 2;
+            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptar.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_aceptar.Location = new System.Drawing.Point(19, 521);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(140, 44);
+            this.btn_aceptar.TabIndex = 11;
+            this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_cancelar.FlatAppearance.BorderSize = 2;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_cancelar.Location = new System.Drawing.Point(165, 521);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
+            this.btn_cancelar.TabIndex = 12;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // btn_salir
+            // 
+            this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_salir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_salir.FlatAppearance.BorderSize = 2;
+            this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_salir.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_salir.Location = new System.Drawing.Point(311, 521);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(140, 44);
+            this.btn_salir.TabIndex = 16;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
             // ABM_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,9 +363,9 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(472, 577);
+            this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.txt_nro);
             this.Controls.Add(this.txt_nroDoc);
-            this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.cmb_pais);
@@ -390,9 +390,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ABM_Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Clientes";
+            this.Text = "Nuevo Cliente";
             this.Load += new System.EventHandler(this.ABM_Clientes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -420,12 +422,12 @@
         private System.Windows.Forms.ComboBox cmb_provincia;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmb_pais;
-        private System.Windows.Forms.Button btn_aceptar;
-        private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.MaskedTextBox txt_nroDoc;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.MaskedTextBox txt_nro;
+        private System.Windows.Forms.Button btn_aceptar;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_salir;
     }
 }

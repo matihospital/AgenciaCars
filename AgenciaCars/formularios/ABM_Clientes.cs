@@ -60,40 +60,21 @@ namespace AgenciaCars.formularios
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             blanquear_objetos();
+            
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            //Validar que no haya campos vacios (VER DE HACER UN FOR POR CADA CAMPO)
-
-            if ( this.txt_nroDoc.Text == "")
+            //Validar que no haya campos vacios
+            ABM_Clientes clientes = new ABM_Clientes();
+            foreach (Control c in clientes.Controls)
             {
-                MessageBox.Show("El campo NRO. DOCUMENTO no puede estar vacío");
-                this.txt_nroDoc.Focus();
-            }
-
-            else if (this.txt_apellido.Text == "")
-            {
-                MessageBox.Show("El campo APELLIDO no puede estar vacío");
-                this.txt_apellido.Focus();
-            }
-
-            else if (this.txt_nombre.Text == "")
-            {
-                MessageBox.Show("El campo NOMBRE no puede estar vacío");
-                this.txt_nombre.Focus();
-            }
-
-            else if (this.txt_calle.Text == "")
-            {
-                MessageBox.Show("El campo CALLE no puede estar vacío");
-                this.txt_calle.Focus();
-            }
-
-            else if (this.txt_nro.Text == "")
-            {
-                MessageBox.Show("El campo NRO no puede estar vacío");
-                this.txt_nro.Focus();
+                if (c is TextBox && c.Text == string.Empty)
+                {
+                    MessageBox.Show("El campo "+ c.Name +" no puede estar vacío");
+                    c.Focus();
+                    return;
+                }
             }
 
              //validar que no exista el cliente por tipo y nro de doc
@@ -107,7 +88,7 @@ namespace AgenciaCars.formularios
             obj_clientes.nombre = this.txt_nombre.Text;
             obj_clientes.calle = this.txt_calle.Text;
             obj_clientes.nro = int.Parse(this.txt_nro.Text);
-            obj_clientes.email = this.label12.Text;
+            obj_clientes.email = this.txt_email.Text;
             obj_clientes.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
             this.obj_clientes.grabarCliente();
@@ -133,11 +114,9 @@ namespace AgenciaCars.formularios
             this.txt_nroDoc.Focus();
         }
 
-        private void btn_buscar_Click(object sender, EventArgs e)
+        private void btn_salir_Click(object sender, EventArgs e)
         {
-            //Abrir pantalla de busqueda
-            BUSQ_Clientes frm = new formularios.BUSQ_Clientes();
-            frm.ShowDialog();
+            this.Close();
         }
 
     }

@@ -49,7 +49,6 @@ C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.for
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.ABM_Proveedores.resources
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.ABM_Clientes.resources
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.Escritorio.resources
-C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.frm_ABM_Usuarios.resources
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.login.resources
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.Properties.Resources.resources
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.pruebal.resources
@@ -75,3 +74,12 @@ C:\Users\Eze B\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.cs
 C:\Users\Eze B\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.csproj.CoreCompileInputs.cache
 C:\Users\Eze B\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.exe
 C:\Users\Eze B\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.pdb
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.ABM_Usuarios.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.ABM_Productos.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Productos.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Usuarios.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Paises.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Localidades.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Provincias.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Modelos.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Marcas.resources

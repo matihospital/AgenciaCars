@@ -96,26 +96,56 @@ namespace AgenciaCars
 
         private void aBMDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frm_ABM_Usuarios frm = new formularios.frm_ABM_Usuarios();
-            //frm.ShowDialog();
+            BUSQ_Usuarios frm = new formularios.BUSQ_Usuarios();
+            frm.ShowDialog();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ABM_Clientes frm = new formularios.ABM_Clientes();
+            BUSQ_Clientes frm = new formularios.BUSQ_Clientes();
             frm.ShowDialog();
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ABM_Proveedores frm = new formularios.ABM_Proveedores();
+            BUSQ_Proveedores frm = new formularios.BUSQ_Proveedores();
             frm.ShowDialog();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ABM_Producto producto = new ABM_Producto();
-            producto.ShowDialog();
+            BUSQ_Productos frm = new BUSQ_Productos();
+            frm.ShowDialog();
+        }
+
+        private void paisesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BUSQ_Paises frm = new BUSQ_Paises();
+            frm.ShowDialog();
+        }
+
+        private void provinciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BUSQ_Provincias frm = new BUSQ_Provincias();
+            frm.ShowDialog();
+        }
+
+        private void localidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BUSQ_Localidades frm = new BUSQ_Localidades();
+            frm.ShowDialog();
+        }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BUSQ_Marcas frm = new BUSQ_Marcas();
+            frm.ShowDialog();
+        }
+
+        private void modelosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BUSQ_Modelos frm = new BUSQ_Modelos();
+            frm.ShowDialog();
         }
     }
 }

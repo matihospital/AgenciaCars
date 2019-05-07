@@ -79,6 +79,7 @@
     <Compile Include="clases\ComboBox01.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="clases\estados.cs" />
     <Compile Include="clases\localidades.cs" />
     <Compile Include="clases\productos.cs" />
     <Compile Include="clases\provincias.cs" />
@@ -91,17 +92,53 @@
     </Compile>
     <Compile Include="clases\users.cs" />
     <Compile Include="clases\validaciones.cs" />
-    <Compile Include="formularios\ABM_Producto.cs">
+    <Compile Include="formularios\ABM_Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\ABM_Producto.Designer.cs">
-      <DependentUpon>ABM_Producto.cs</DependentUpon>
+    <Compile Include="formularios\ABM_Productos.Designer.cs">
+      <DependentUpon>ABM_Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\BUSQ_Producto.cs">
+    <Compile Include="formularios\BUSQ_Localidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\BUSQ_Producto.Designer.cs">
-      <DependentUpon>BUSQ_Producto.cs</DependentUpon>
+    <Compile Include="formularios\BUSQ_Localidades.Designer.cs">
+      <DependentUpon>BUSQ_Localidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Modelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Modelos.Designer.cs">
+      <DependentUpon>BUSQ_Modelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Marcas.Designer.cs">
+      <DependentUpon>BUSQ_Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Provincias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Provincias.Designer.cs">
+      <DependentUpon>BUSQ_Provincias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Paises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Paises.Designer.cs">
+      <DependentUpon>BUSQ_Paises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Usuarios.Designer.cs">
+      <DependentUpon>BUSQ_Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Productos.Designer.cs">
+      <DependentUpon>BUSQ_Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\BUSQ_Proveedores.cs">
       <SubType>Form</SubType>
@@ -133,11 +170,11 @@
     <Compile Include="formularios\Escritorio.Designer.cs">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\frm_ABM_Usuarios.cs">
+    <Compile Include="formularios\ABM_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\frm_ABM_Usuarios.Designer.cs">
-      <DependentUpon>frm_ABM_Usuarios.cs</DependentUpon>
+    <Compile Include="formularios\ABM_Usuarios.Designer.cs">
+      <DependentUpon>ABM_Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\login.cs">
       <SubType>Form</SubType>
@@ -153,11 +190,29 @@
     <Compile Include="pruebal.Designer.cs">
       <DependentUpon>pruebal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="formularios\ABM_Producto.resx">
-      <DependentUpon>ABM_Producto.cs</DependentUpon>
+    <EmbeddedResource Include="formularios\ABM_Productos.resx">
+      <DependentUpon>ABM_Productos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\BUSQ_Producto.resx">
-      <DependentUpon>BUSQ_Producto.cs</DependentUpon>
+    <EmbeddedResource Include="formularios\BUSQ_Localidades.resx">
+      <DependentUpon>BUSQ_Localidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Modelos.resx">
+      <DependentUpon>BUSQ_Modelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Marcas.resx">
+      <DependentUpon>BUSQ_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Provincias.resx">
+      <DependentUpon>BUSQ_Provincias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Paises.resx">
+      <DependentUpon>BUSQ_Paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Usuarios.resx">
+      <DependentUpon>BUSQ_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Productos.resx">
+      <DependentUpon>BUSQ_Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\BUSQ_Proveedores.resx">
       <DependentUpon>BUSQ_Proveedores.cs</DependentUpon>
@@ -174,8 +229,8 @@
     <EmbeddedResource Include="formularios\Escritorio.resx">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frm_ABM_Usuarios.resx">
-      <DependentUpon>frm_ABM_Usuarios.cs</DependentUpon>
+    <EmbeddedResource Include="formularios\ABM_Usuarios.resx">
+      <DependentUpon>ABM_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\login.resx">
       <DependentUpon>login.cs</DependentUpon>

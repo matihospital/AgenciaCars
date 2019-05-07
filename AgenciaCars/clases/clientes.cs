@@ -114,7 +114,7 @@ namespace AgenciaCars.clases
         //método par amodificar un registro ya existente en la base de datos.
         //La metodología es similar al método anterior, sabiendo que este ejecuta un 
         //comando UPDATE de SQL en la base de datos. 
-        public void modificar_usuario (string _id)
+        public void modificarCliente (string _id)
         {
             string sqlupdate = "";
             sqlupdate = @"UPDATE clientes 

@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace AgenciaCars.formularios
 {
-    public partial class BUSQ_Clientes : Form
+    public partial class BUSQ_Productos : Form
     {
-        public BUSQ_Clientes()
+        public BUSQ_Productos()
         {
             InitializeComponent();
-        }
-
-        private void btn_nuevo_Click(object sender, EventArgs e)
-        {
-            //Abrir ABM
-            ABM_Clientes frm = new formularios.ABM_Clientes();
-            frm.ShowDialog();
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            //Abrir ABM
+            ABM_Productos frm = new formularios.ABM_Productos();
+            frm.ShowDialog();
         }
     }
 }

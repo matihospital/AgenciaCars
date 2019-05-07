@@ -11,13 +11,13 @@ using AgenciaCars.clases;
 
 namespace AgenciaCars.formularios
 {
-    public partial class frm_ABM_Usuarios : Form
+    public partial class ABM_Usuarios : Form
     {
         tiposDoc obj_estados = new tiposDoc();
         perfiles obj_perfiles = new perfiles();
         users obj_usuarios = new users();
 
-        public frm_ABM_Usuarios()
+        public ABM_Usuarios()
         {
             InitializeComponent();
         }
@@ -30,26 +30,13 @@ namespace AgenciaCars.formularios
         private void frm_ABM_Usuarios_Load(object sender, EventArgs e)
         {
             /*this.cmb_estado.DataSource = this.obj_estados.Consultar_tiposDoc();
-            this.cmb_estado.DisplayMember = "n_estado";
-            this.cmb_estado.ValueMember = "id_estado";
+            this.cmb_estado.DisplayMember = "descripcion";
+            this.cmb_estado.ValueMember = "idEstado";*/
 
-            this.cmb_perfil.DataSource = this.obj_perfiles.Consultar_tiposDoc();
-            this.cmb_perfil.DisplayMember = "n_perfil";
-            this.cmb_perfil.ValueMember = "id_perfil";
+            /*this.cmb_perfil.DataSource = this.obj_perfiles.Consultar_perfiles();
+            this.cmb_perfil.DisplayMember = "descripcion";
+            this.cmb_perfil.ValueMember = "idPerfil";
             this.cmb_estado.SelectedIndex = -1;*/
-        }
-
-        private void btn_nuevo_Click(object sender, EventArgs e)
-        {
-            this.txt_email.Text = "";
-            this.txt_id.Text = "";
-            this.txt_nombre.Text = "";
-            this.txt_password.Text = "";
-            this.cmb_perfil.SelectedIndex = -1;
-            this.cmb_estado.SelectedIndex = -1;
-            this.txt_nombre.Focus();
-            this.btn_guardar.Enabled = true;
-            this.btn_actualizar.Enabled = false;
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -63,6 +50,11 @@ namespace AgenciaCars.formularios
             if (this.obj_usuarios.validar_datos() == false) {
                 MessageBox.Show("Error. Revise los datos ingresados.");
             }
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 
