@@ -54,7 +54,7 @@ namespace AgenciaCars.formularios
         {
             //Validar que no haya campos vacios
             ABM_Proveedores proveedores = new ABM_Proveedores();
-            foreach (Control c in proveedores.Controls)
+            /*foreach (Control c in proveedores.Controls)
             {
                 if (c is TextBox && c.Text == string.Empty)
                 {
@@ -62,6 +62,48 @@ namespace AgenciaCars.formularios
                     c.Focus();
                     return;
                 }
+            }*/
+
+            if (this.txt_nroDoc.Text == "")
+            {
+                MessageBox.Show("El campo NRO. DOCUMENTO no puede estar vacío");
+                this.txt_nroDoc.Focus();
+            }
+
+            else if (this.txt_apellido.Text == "")
+            {
+                MessageBox.Show("El campo APELLIDO no puede estar vacío");
+                this.txt_apellido.Focus();
+            }
+
+            else if (this.txt_nombre.Text == "")
+            {
+                MessageBox.Show("El campo NOMBRE no puede estar vacío");
+                this.txt_nombre.Focus();
+            }
+
+            else if (this.txt_telefono.Text == "")
+            {
+                MessageBox.Show("El campo TELEFONO no puede estar vacío");
+                this.txt_telefono.Focus();
+            }
+
+            else if (this.txt_email.Text == "")
+            {
+                MessageBox.Show("El campo EMAIL no puede estar vacío");
+                this.txt_email.Focus();
+            }
+
+            else if (this.txt_calle.Text == "")
+            {
+                MessageBox.Show("El campo CALLE no puede estar vacío");
+                this.txt_calle.Focus();
+            }
+
+            else if (this.txt_nro.Text == "")
+            {
+                MessageBox.Show("El campo NRO no puede estar vacío");
+                this.txt_nro.Focus();
             }
 
 

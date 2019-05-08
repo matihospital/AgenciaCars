@@ -90,6 +90,30 @@ namespace AgenciaCars.formularios
                 }
             }*/
 
+            if (this.txt_descripcion.Text == "")
+            {
+                MessageBox.Show("El campo DESCRIPCION no puede estar vacío");
+                this.txt_descripcion.Focus();
+            }
+
+            else if (this.txt_anio.Text == "")
+            {
+                MessageBox.Show("El campo APELLIDO no puede estar vacío");
+                this.txt_anio.Focus();
+            }
+
+            else if (this.txt_color.Text == "")
+            {
+                MessageBox.Show("El campo COLOR no puede estar vacío");
+                this.txt_color.Focus();
+            }
+
+            else if (this.txt_precio.Text == "")
+            {
+                MessageBox.Show("El campo PRECIO no puede estar vacío");
+                this.txt_precio.Focus();
+            }
+
             obj_productos.descripcion = this.txt_descripcion.Text;
             obj_productos.anio = int.Parse(this.txt_anio.Text);
             obj_productos.idModelo = int.Parse(this.cmb_modelo.SelectedValue.ToString());

@@ -224,6 +224,7 @@
             this.btn_aceptar.TabIndex = 13;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // ABM_Usuarios
             // 

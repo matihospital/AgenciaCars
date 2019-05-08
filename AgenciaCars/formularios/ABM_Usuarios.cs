@@ -57,6 +57,11 @@ namespace AgenciaCars.formularios
             this.Close();
         }
 
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
