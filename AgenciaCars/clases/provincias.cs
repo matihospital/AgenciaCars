@@ -15,5 +15,10 @@ namespace AgenciaCars.clases
         public DataTable Consultar_provincias(){
             return _BD.consulta("SELECT * FROM PROVINCIAS");
         }
+
+        public DataTable ConsultarProvinciasPais(String idPais)
+        {
+            return _BD.consulta("SELECT * FROM PROVINCIAS WHERE idPais=" + idPais );
+        }
     }
 }

@@ -106,7 +106,7 @@ namespace AgenciaCars.clases
                          telefono,
                          email,
                          idLocalidad) 
-                        VALUES ((select ISNULL(max(idCliente)+1,1) from clientes), " +
+                        VALUES ((select ISNULL(max(idCliente),0)+1 from clientes), " +
                          this._idTipoDoc + ", " +
                          this._nroDoc + ", '" +
                          this._apellido.ToString() + "', '" +
@@ -116,7 +116,7 @@ namespace AgenciaCars.clases
                          this._telefono.ToString() + "', '" +
                          this._email.ToString() + "', " +
                          this._idLocalidad+ ")";
-            MessageBox.Show(SqlInsert);
+            //MessageBox.Show(SqlInsert);
             //se ejcuta en el backEnd el método "grabar_modificar" que ejecuta comandos del 
             //tipo INSERT o UPDATE de SQL 
             this._BD.grabar_modificar(SqlInsert);           

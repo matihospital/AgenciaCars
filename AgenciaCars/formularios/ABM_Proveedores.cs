@@ -82,10 +82,10 @@ namespace AgenciaCars.formularios
                 this.txt_nombre.Focus();
             }
 
-            else if (this.txt_telefono.Text == "")
+            else if (this.label_15.Text == "")
             {
                 MessageBox.Show("El campo TELEFONO no puede estar vacío");
-                this.txt_telefono.Focus();
+                this.label_15.Focus();
             }
 
             else if (this.txt_email.Text == "")
@@ -118,12 +118,12 @@ namespace AgenciaCars.formularios
             obj_provedores.nombre = this.txt_nombre.Text;
             obj_provedores.calle = this.txt_calle.Text;
             obj_provedores.nro = int.Parse(this.txt_nro.Text);
-            obj_provedores.telefono = int.Parse(this.txt_telefono.Text);
+            obj_provedores.telefono = this.txt_telefono.Text;
             obj_provedores.email = this.txt_email.Text;
             obj_provedores.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
             this.obj_provedores.grabarProveedor();
-            MessageBox.Show("El proveedor ha sido guardado.");
+            MessageBox.Show("Proveedor guardado correctamente.");
 
             blanquear_objetos();
         }
@@ -135,19 +135,44 @@ namespace AgenciaCars.formularios
             this.txt_nroDoc.Text = "";
             this.txt_apellido.Text = "";
             this.txt_nombre.Text = "";
+            this.txt_telefono.Text = "";
             this.txt_email.Text = "";
             this.txt_calle.Text = "";
             this.txt_nro.Text = "";
-            this.txt_telefono.Text = "";
-            this.cmb_localidad.SelectedIndex = -1;
-            this.cmb_provincia.SelectedIndex = -1;
-            this.cmb_pais.SelectedIndex = -1;
+            this.cmb_localidad.SelectedIndex = 0;
+            this.cmb_provincia.SelectedIndex = 0;
+            this.cmb_pais.SelectedIndex = 0;
             this.txt_nroDoc.Focus();
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmb_provincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Localidades
+            if (this.cmb_provincia.SelectedIndex != 0)
+            {
+                cmb_localidad.DataSource = null;
+                this.cmb_localidad.DataSource = this.obj_localidades.ConsultarLocalidadesProvincia(this.cmb_provincia.SelectedValue.ToString());
+                this.cmb_localidad.DisplayMember = "descripcion";
+                this.cmb_localidad.ValueMember = "idLocalidad";
+            }
+        }
+
+        private void cmb_pais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Provincias
+            if (this.cmb_pais.SelectedIndex != 0)
+            {
+                cmb_provincia.DataSource = null;
+                this.cmb_provincia.DataSource = this.obj_provincias.ConsultarProvinciasPais(this.cmb_pais.SelectedValue.ToString());
+                this.cmb_provincia.DisplayMember = "descripcion";
+                this.cmb_provincia.ValueMember = "idProvincia";
+
+            }
         }
 
     }

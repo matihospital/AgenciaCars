@@ -691,7 +691,16 @@ SELECT idProveedor, idTipoDoc, nroDoc, apellido, nombre, calle, nro, telefono, e
               <Mapping SourceColumn="email" DataSetColumn="email" />
               <Mapping SourceColumn="idLocalidad" DataSetColumn="idLocalidad" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="AgenciaCarsConnectionString (Settings)" DbObjectName="AgenciaCars.dbo.PROVEEDORES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Proveedores" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Proveedores" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Proveedores">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idProveedor, idTipoDoc, nroDoc, apellido, nombre, calle, nro, telefono, email, idLocalidad FROM dbo.PROVEEDORES</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PROVINCIASTableAdapter" GeneratorDataComponentClassName="PROVINCIASTableAdapter" Name="PROVINCIAS" UserDataComponentName="PROVINCIASTableAdapter">
             <MainSource>
@@ -1160,7 +1169,7 @@ SELECT idVendedor, idTipoDoc, nroDoc, apellido, nombre, calle, nro, telefono, em
                 </xs:simpleType>
               </xs:element>
               <xs:element name="nro" msprop:Generator_ColumnVarNameInTable="columnnro" msprop:Generator_ColumnPropNameInRow="nro" msprop:Generator_ColumnPropNameInTable="nroColumn" msprop:Generator_UserColumnName="nro" type="xs:int" minOccurs="0" />
-              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:int" minOccurs="0" />
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:string" minOccurs="0" />
               <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

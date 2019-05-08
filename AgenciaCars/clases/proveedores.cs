@@ -20,7 +20,7 @@ namespace AgenciaCars.clases
         string _nombre;
         string _calle;
         int _nro;
-        int _telefono;
+        string _telefono;
         string _email;
         int _idLocalidad = -1;
 
@@ -59,7 +59,7 @@ namespace AgenciaCars.clases
             get { return this._nro; }
             set { this._nro = value; }
         }
-        public int telefono
+        public string telefono
         {
             get { return this._telefono; }
             set { this._telefono = value; }
@@ -96,20 +96,20 @@ namespace AgenciaCars.clases
                          nombre,
                          calle,
                          nro,
-                         email,
                          telefono,
+                         email,
                          idLocalidad) 
-                        VALUES ((select ISNULL(max(idProveedor),1) from proveedores), " +
+                        VALUES ((select ISNULL(max(idProveedor),0)+1 from proveedores), " +
                          this._idTipoDoc + ", " +
                          this._nroDoc + ", '" +
                          this._apellido.ToString() + "', '" +
                          this._nombre.ToString() + "', '" +
                          this._calle.ToString() + "', " +
-                         this._nro + ", " +
-                         this._telefono + ", '" +
+                         this._nro + ", '" +
+                         this._telefono.ToString() + "', '" +
                          this._email.ToString() + "', " +
                          this._idLocalidad + ")";
-            MessageBox.Show(SqlInsert);
+            //MessageBox.Show(SqlInsert);
             this._BD.grabar_modificar(SqlInsert);
         }
         public void modificarProveedor(string _id)
@@ -121,7 +121,7 @@ namespace AgenciaCars.clases
                          + ", nombre = '" + this._nombre.ToString() + "'"
                          + ", calle = '" + this._calle.ToString()
                          + ", nro = " + this._nro
-                         + ", telefono = " + this._nro
+                         + ", telefono = '" + this._telefono.ToString() + "'"
                          + ", email = '" + this._email.ToString() 
                          + ", idLocalidad = " + this._idLocalidad
                          + " WHERE idProveedor = " + _idProveedor;

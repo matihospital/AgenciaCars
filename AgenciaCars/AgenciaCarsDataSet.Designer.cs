@@ -3638,7 +3638,7 @@ namespace AgenciaCars {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PROVEEDORESRow AddPROVEEDORESRow(int idProveedor, int idTipoDoc, int nroDoc, string apellido, string nombre, string calle, int nro, int telefono, string email, LOCALIDADESRow parentLOCALIDADESRowBylocalidad_proveedores_fk) {
+            public PROVEEDORESRow AddPROVEEDORESRow(int idProveedor, int idTipoDoc, int nroDoc, string apellido, string nombre, string calle, int nro, string telefono, string email, LOCALIDADESRow parentLOCALIDADESRowBylocalidad_proveedores_fk) {
                 PROVEEDORESRow rowPROVEEDORESRow = ((PROVEEDORESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idProveedor,
@@ -3712,7 +3712,7 @@ namespace AgenciaCars {
                 base.Columns.Add(this.columncalle);
                 this.columnnro = new global::System.Data.DataColumn("nro", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnro);
-                this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntelefono);
                 this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemail);
@@ -6563,10 +6563,10 @@ namespace AgenciaCars {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int telefono {
+            public string telefono {
                 get {
                     try {
-                        return ((int)(this[this.tablePROVEEDORES.telefonoColumn]));
+                        return ((string)(this[this.tablePROVEEDORES.telefonoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'telefono\' in table \'PROVEEDORES\' is DBNull.", e);
@@ -11337,12 +11337,17 @@ SELECT idProveedor, idTipoDoc, nroDoc, apellido, nombre, calle, nro, telefono, e
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idProveedor, idTipoDoc, nroDoc, apellido, nombre, calle, nro, telefono, em" +
                 "ail, idLocalidad FROM dbo.PROVEEDORES";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT idProveedor, idTipoDoc, nroDoc, apellido, nombre, calle, nro, telefono, em" +
+                "ail, idLocalidad FROM dbo.PROVEEDORES";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11367,6 +11372,19 @@ SELECT idProveedor, idTipoDoc, nroDoc, apellido, nombre, calle, nro, telefono, e
             AgenciaCarsDataSet.PROVEEDORESDataTable dataTable = new AgenciaCarsDataSet.PROVEEDORESDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Proveedores(AgenciaCarsDataSet.PROVEEDORESDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

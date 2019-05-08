@@ -193,7 +193,7 @@
             this.txt_calle.MaxLength = 50;
             this.txt_calle.Name = "txt_calle";
             this.txt_calle.Size = new System.Drawing.Size(279, 26);
-            this.txt_calle.TabIndex = 6;
+            this.txt_calle.TabIndex = 7;
             // 
             // label8
             // 
@@ -227,7 +227,7 @@
             this.cmb_localidad.Location = new System.Drawing.Point(161, 440);
             this.cmb_localidad.Name = "cmb_localidad";
             this.cmb_localidad.Size = new System.Drawing.Size(214, 28);
-            this.cmb_localidad.TabIndex = 10;
+            this.cmb_localidad.TabIndex = 11;
             // 
             // label10
             // 
@@ -250,7 +250,8 @@
             this.cmb_provincia.Location = new System.Drawing.Point(161, 406);
             this.cmb_provincia.Name = "cmb_provincia";
             this.cmb_provincia.Size = new System.Drawing.Size(214, 28);
-            this.cmb_provincia.TabIndex = 9;
+            this.cmb_provincia.TabIndex = 10;
+            this.cmb_provincia.SelectedIndexChanged += new System.EventHandler(this.cmb_provincia_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -273,13 +274,14 @@
             this.cmb_pais.Location = new System.Drawing.Point(161, 372);
             this.cmb_pais.Name = "cmb_pais";
             this.cmb_pais.Size = new System.Drawing.Size(214, 28);
-            this.cmb_pais.TabIndex = 8;
+            this.cmb_pais.TabIndex = 9;
+            this.cmb_pais.SelectedIndexChanged += new System.EventHandler(this.cmb_pais_SelectedIndexChanged);
             // 
             // txt_nroDoc
             // 
             this.txt_nroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_nroDoc.Location = new System.Drawing.Point(161, 152);
-            this.txt_nroDoc.Mask = "000000000";
+            this.txt_nroDoc.Mask = "00000000000";
             this.txt_nroDoc.Name = "txt_nroDoc";
             this.txt_nroDoc.Size = new System.Drawing.Size(279, 26);
             this.txt_nroDoc.TabIndex = 2;
@@ -313,7 +315,7 @@
             this.txt_nro.Mask = "00000";
             this.txt_nro.Name = "txt_nro";
             this.txt_nro.Size = new System.Drawing.Size(279, 26);
-            this.txt_nro.TabIndex = 7;
+            this.txt_nro.TabIndex = 8;
             // 
             // btn_aceptar
             // 
@@ -325,7 +327,7 @@
             this.btn_aceptar.Location = new System.Drawing.Point(19, 521);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(140, 44);
-            this.btn_aceptar.TabIndex = 11;
+            this.btn_aceptar.TabIndex = 12;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = false;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
@@ -340,7 +342,7 @@
             this.btn_cancelar.Location = new System.Drawing.Point(165, 521);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
-            this.btn_cancelar.TabIndex = 12;
+            this.btn_cancelar.TabIndex = 13;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
@@ -355,7 +357,7 @@
             this.btn_salir.Location = new System.Drawing.Point(311, 521);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(140, 44);
-            this.btn_salir.TabIndex = 16;
+            this.btn_salir.TabIndex = 14;
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
@@ -369,7 +371,7 @@
             this.txt_email.MaxLength = 50;
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(279, 26);
-            this.txt_email.TabIndex = 17;
+            this.txt_email.TabIndex = 6;
             // 
             // label13
             // 

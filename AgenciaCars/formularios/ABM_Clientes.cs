@@ -48,11 +48,11 @@ namespace AgenciaCars.formularios
             this.cmb_pais.DisplayMember = "descripcion";
             this.cmb_pais.ValueMember = "idPais";
             //Provincias
-            this.cmb_provincia.DataSource = this.obj_provincias.Consultar_provincias();
+            this.cmb_provincia.DataSource = this.obj_provincias.ConsultarProvinciasPais(this.cmb_pais.SelectedValue.ToString());
             this.cmb_provincia.DisplayMember = "descripcion";
             this.cmb_provincia.ValueMember = "idProvincia";
             //Localidades
-            this.cmb_localidad.DataSource = this.obj_localidades.Consultar_localidades();
+            this.cmb_localidad.DataSource = this.obj_localidades.ConsultarLocalidadesProvincia(this.cmb_provincia.SelectedValue.ToString());
             this.cmb_localidad.DisplayMember = "descripcion";
             this.cmb_localidad.ValueMember = "idLocalidad";
         }
@@ -99,13 +99,13 @@ namespace AgenciaCars.formularios
                 this.txt_nombre.Focus();
             }
 
-            else if (this.label12.Text == "")
+            else if (this.txt_telefono.Text == "")
             {
                 MessageBox.Show("El campo TELEFONO no puede estar vacío");
                 this.label12.Focus();
             }
 
-            else if (this.txt_telefono.Text == "")
+            else if (this.txt_email.Text == "")
             {
                 MessageBox.Show("El campo EMAIL no puede estar vacío");
                 this.txt_telefono.Focus();
@@ -139,7 +139,7 @@ namespace AgenciaCars.formularios
             obj_clientes.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
             this.obj_clientes.grabarCliente();
-            MessageBox.Show("El cliente ha sido guardado.");
+            MessageBox.Show("Cliente guardado correctamente.");
 
             blanquear_objetos();
             
@@ -157,15 +157,39 @@ namespace AgenciaCars.formularios
             this.txt_nro.Text = "";
             this.txt_telefono.Text = "";
             this.txt_email.Text = "";
-            this.cmb_localidad.SelectedIndex = -1;
-            this.cmb_provincia.SelectedIndex = -1;
-            this.cmb_pais.SelectedIndex = -1;
+            this.cmb_localidad.SelectedIndex = 0;
+            this.cmb_provincia.SelectedIndex = 0;
+            this.cmb_pais.SelectedIndex = 0;
             this.txt_nroDoc.Focus();
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmb_provincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Localidades
+            if (this.cmb_provincia.SelectedIndex != 0)  {
+                cmb_localidad.DataSource = null;
+                this.cmb_localidad.DataSource = this.obj_localidades.ConsultarLocalidadesProvincia(this.cmb_provincia.SelectedValue.ToString());
+                this.cmb_localidad.DisplayMember = "descripcion";
+                this.cmb_localidad.ValueMember = "idLocalidad";
+            }
+        }
+
+        private void cmb_pais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Provincias
+            if (this.cmb_pais.SelectedIndex != 0)
+            {
+                cmb_provincia.DataSource = null;
+                this.cmb_provincia.DataSource = this.obj_provincias.ConsultarProvinciasPais(this.cmb_pais.SelectedValue.ToString());
+                this.cmb_provincia.DisplayMember = "descripcion";
+                this.cmb_provincia.ValueMember = "idProvincia";
+
+            }
         }
 
     }

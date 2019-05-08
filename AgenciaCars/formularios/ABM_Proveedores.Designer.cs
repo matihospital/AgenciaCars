@@ -55,8 +55,8 @@
             this.txt_nro = new System.Windows.Forms.MaskedTextBox();
             this.txt_nroDoc = new System.Windows.Forms.MaskedTextBox();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txt_telefono = new System.Windows.Forms.Label();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
+            this.label_15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -249,6 +249,7 @@
             this.cmb_provincia.Name = "cmb_provincia";
             this.cmb_provincia.Size = new System.Drawing.Size(214, 28);
             this.cmb_provincia.TabIndex = 9;
+            this.cmb_provincia.SelectedIndexChanged += new System.EventHandler(this.cmb_provincia_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -272,6 +273,7 @@
             this.cmb_pais.Name = "cmb_pais";
             this.cmb_pais.Size = new System.Drawing.Size(214, 28);
             this.cmb_pais.TabIndex = 8;
+            this.cmb_pais.SelectedIndexChanged += new System.EventHandler(this.cmb_pais_SelectedIndexChanged);
             // 
             // btn_aceptar
             // 
@@ -358,27 +360,27 @@
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox1.Location = new System.Drawing.Point(162, 305);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 26);
-            this.textBox1.TabIndex = 24;
-            // 
             // txt_telefono
             // 
-            this.txt_telefono.AutoSize = true;
-            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefono.ForeColor = System.Drawing.SystemColors.Window;
-            this.txt_telefono.Location = new System.Drawing.Point(71, 307);
+            this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txt_telefono.Location = new System.Drawing.Point(162, 305);
+            this.txt_telefono.MaxLength = 50;
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(85, 24);
-            this.txt_telefono.TabIndex = 25;
-            this.txt_telefono.Text = "Telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(279, 26);
+            this.txt_telefono.TabIndex = 24;
+            // 
+            // label_15
+            // 
+            this.label_15.AutoSize = true;
+            this.label_15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_15.ForeColor = System.Drawing.SystemColors.Window;
+            this.label_15.Location = new System.Drawing.Point(71, 307);
+            this.label_15.Name = "label_15";
+            this.label_15.Size = new System.Drawing.Size(85, 24);
+            this.label_15.TabIndex = 25;
+            this.label_15.Text = "Telefono";
             // 
             // ABM_Proveedores
             // 
@@ -387,8 +389,8 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(472, 577);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txt_telefono);
+            this.Controls.Add(this.label_15);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.txt_nro);
             this.Controls.Add(this.txt_nroDoc);
@@ -453,7 +455,7 @@
         private System.Windows.Forms.MaskedTextBox txt_nro;
         private System.Windows.Forms.MaskedTextBox txt_nroDoc;
         private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label txt_telefono;
+        private System.Windows.Forms.TextBox txt_telefono;
+        private System.Windows.Forms.Label label_15;
     }
 }
