@@ -31,10 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BUSQ_Proveedores));
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_idCliente = new System.Windows.Forms.TextBox();
+            this.txt_busqueda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,16 +45,16 @@
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_salir = new System.Windows.Forms.Button();
-            this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pROVEEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
+            this.ck_id = new System.Windows.Forms.RadioButton();
+            this.ck_nrodoc = new System.Windows.Forms.RadioButton();
+            this.ck_apellido = new System.Windows.Forms.RadioButton();
+            this.ck_nombre = new System.Windows.Forms.RadioButton();
+            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
             this.pROVEEDORESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.PROVEEDORESTableAdapter();
+            this.btn_actualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROVEEDORESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
@@ -70,16 +71,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Proveedores";
             // 
-            // txt_idCliente
+            // txt_busqueda
             // 
-            this.txt_idCliente.BackColor = System.Drawing.SystemColors.Menu;
-            this.txt_idCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_idCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idCliente.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_idCliente.Location = new System.Drawing.Point(260, 72);
-            this.txt_idCliente.Name = "txt_idCliente";
-            this.txt_idCliente.Size = new System.Drawing.Size(444, 26);
-            this.txt_idCliente.TabIndex = 0;
+            this.txt_busqueda.BackColor = System.Drawing.SystemColors.Menu;
+            this.txt_busqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_busqueda.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txt_busqueda.Location = new System.Drawing.Point(260, 72);
+            this.txt_busqueda.Name = "txt_busqueda";
+            this.txt_busqueda.Size = new System.Drawing.Size(444, 26);
+            this.txt_busqueda.TabIndex = 0;
             // 
             // label2
             // 
@@ -105,6 +106,7 @@
             this.btn_buscar.TabIndex = 13;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = false;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // dataGridView1
             // 
@@ -129,6 +131,15 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(696, 229);
             this.dataGridView1.TabIndex = 14;
+            // 
+            // idProveedorDataGridViewTextBoxColumn
+            // 
+            this.idProveedorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idProveedorDataGridViewTextBoxColumn.DataPropertyName = "idProveedor";
+            this.idProveedorDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idProveedorDataGridViewTextBoxColumn.Name = "idProveedorDataGridViewTextBoxColumn";
+            this.idProveedorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProveedorDataGridViewTextBoxColumn.Width = 43;
             // 
             // idTipoDoc
             // 
@@ -211,57 +222,67 @@
             this.idLocalidad.ReadOnly = true;
             this.idLocalidad.Width = 86;
             // 
-            // radioButton1
+            // pROVEEDORESBindingSource
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButton1.Location = new System.Drawing.Point(263, 105);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 20);
-            this.radioButton1.TabIndex = 15;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "ID";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.pROVEEDORESBindingSource.DataMember = "PROVEEDORES";
+            this.pROVEEDORESBindingSource.DataSource = this.agenciaCarsDataSet;
             // 
-            // radioButton2
+            // agenciaCarsDataSet
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButton2.Location = new System.Drawing.Point(312, 105);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(123, 20);
-            this.radioButton2.TabIndex = 16;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nro. Documento";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.agenciaCarsDataSet.DataSetName = "AgenciaCarsDataSet";
+            this.agenciaCarsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // radioButton3
+            // ck_id
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButton3.Location = new System.Drawing.Point(441, 106);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(76, 20);
-            this.radioButton3.TabIndex = 17;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Apellido";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.ck_id.AutoSize = true;
+            this.ck_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ck_id.ForeColor = System.Drawing.SystemColors.Control;
+            this.ck_id.Location = new System.Drawing.Point(263, 105);
+            this.ck_id.Name = "ck_id";
+            this.ck_id.Size = new System.Drawing.Size(39, 20);
+            this.ck_id.TabIndex = 15;
+            this.ck_id.TabStop = true;
+            this.ck_id.Text = "ID";
+            this.ck_id.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // ck_nrodoc
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButton4.Location = new System.Drawing.Point(523, 106);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(75, 20);
-            this.radioButton4.TabIndex = 18;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Nombre";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.ck_nrodoc.AutoSize = true;
+            this.ck_nrodoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ck_nrodoc.ForeColor = System.Drawing.SystemColors.Control;
+            this.ck_nrodoc.Location = new System.Drawing.Point(312, 105);
+            this.ck_nrodoc.Name = "ck_nrodoc";
+            this.ck_nrodoc.Size = new System.Drawing.Size(123, 20);
+            this.ck_nrodoc.TabIndex = 16;
+            this.ck_nrodoc.TabStop = true;
+            this.ck_nrodoc.Text = "Nro. Documento";
+            this.ck_nrodoc.UseVisualStyleBackColor = true;
+            // 
+            // ck_apellido
+            // 
+            this.ck_apellido.AutoSize = true;
+            this.ck_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ck_apellido.ForeColor = System.Drawing.SystemColors.Control;
+            this.ck_apellido.Location = new System.Drawing.Point(441, 106);
+            this.ck_apellido.Name = "ck_apellido";
+            this.ck_apellido.Size = new System.Drawing.Size(76, 20);
+            this.ck_apellido.TabIndex = 17;
+            this.ck_apellido.TabStop = true;
+            this.ck_apellido.Text = "Apellido";
+            this.ck_apellido.UseVisualStyleBackColor = true;
+            // 
+            // ck_nombre
+            // 
+            this.ck_nombre.AutoSize = true;
+            this.ck_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ck_nombre.ForeColor = System.Drawing.SystemColors.Control;
+            this.ck_nombre.Location = new System.Drawing.Point(523, 106);
+            this.ck_nombre.Name = "ck_nombre";
+            this.ck_nombre.Size = new System.Drawing.Size(75, 20);
+            this.ck_nombre.TabIndex = 18;
+            this.ck_nombre.TabStop = true;
+            this.ck_nombre.Text = "Nombre";
+            this.ck_nombre.UseVisualStyleBackColor = true;
             // 
             // btn_nuevo
             // 
@@ -285,7 +306,7 @@
             this.btn_salir.FlatAppearance.BorderSize = 2;
             this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salir.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_salir.Location = new System.Drawing.Point(608, 383);
+            this.btn_salir.Location = new System.Drawing.Point(118, 383);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(100, 29);
             this.btn_salir.TabIndex = 21;
@@ -293,28 +314,24 @@
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // idProveedorDataGridViewTextBoxColumn
-            // 
-            this.idProveedorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idProveedorDataGridViewTextBoxColumn.DataPropertyName = "idProveedor";
-            this.idProveedorDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idProveedorDataGridViewTextBoxColumn.Name = "idProveedorDataGridViewTextBoxColumn";
-            this.idProveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idProveedorDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // pROVEEDORESBindingSource
-            // 
-            this.pROVEEDORESBindingSource.DataMember = "PROVEEDORES";
-            this.pROVEEDORESBindingSource.DataSource = this.agenciaCarsDataSet;
-            // 
-            // agenciaCarsDataSet
-            // 
-            this.agenciaCarsDataSet.DataSetName = "AgenciaCarsDataSet";
-            this.agenciaCarsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pROVEEDORESTableAdapter
             // 
             this.pROVEEDORESTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_actualizar
+            // 
+            this.btn_actualizar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_actualizar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_actualizar.FlatAppearance.BorderSize = 2;
+            this.btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_actualizar.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_actualizar.Location = new System.Drawing.Point(625, 373);
+            this.btn_actualizar.Name = "btn_actualizar";
+            this.btn_actualizar.Size = new System.Drawing.Size(83, 29);
+            this.btn_actualizar.TabIndex = 22;
+            this.btn_actualizar.Text = "Actualizar";
+            this.btn_actualizar.UseVisualStyleBackColor = false;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // BUSQ_Proveedores
             // 
@@ -323,15 +340,16 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(728, 432);
+            this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_nuevo);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.ck_nombre);
+            this.Controls.Add(this.ck_apellido);
+            this.Controls.Add(this.ck_nrodoc);
+            this.Controls.Add(this.ck_id);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_buscar);
-            this.Controls.Add(this.txt_idCliente);
+            this.Controls.Add(this.txt_busqueda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -350,14 +368,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_idCliente;
+        private System.Windows.Forms.TextBox txt_busqueda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton ck_id;
+        private System.Windows.Forms.RadioButton ck_nrodoc;
+        private System.Windows.Forms.RadioButton ck_apellido;
+        private System.Windows.Forms.RadioButton ck_nombre;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_salir;
         private AgenciaCarsDataSet agenciaCarsDataSet;
@@ -373,5 +391,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn calle;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLocalidad;
+        private System.Windows.Forms.Button btn_actualizar;
     }
 }

@@ -54,7 +54,7 @@ namespace AgenciaCars.formularios
             this.cmb_pais.ValueMember = "idPais";
 
             //Proveedores
-            this.cmb_proveedor.DataSource = this.obj_proveedores.Consultar_proveedores();
+            this.cmb_proveedor.DataSource = this.obj_proveedores.buscarProveedores();
             this.cmb_proveedor.DisplayMember = "apellido";
             this.cmb_proveedor.ValueMember = "idProveedor";
 

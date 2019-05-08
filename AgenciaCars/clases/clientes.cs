@@ -89,6 +89,21 @@ namespace AgenciaCars.clases
            return this._BD.consulta("SELECT * FROM clientes WHERE idCliente=" + id);
         }
 
+        public DataTable buscarClientes()
+        {
+            return this._BD.consulta("SELECT * FROM clientes");
+        }
+
+        public DataTable buscarPorParametro(string campo, string valor)
+        {
+            return this._BD.consulta("SELECT * FROM clientes WHERE " + campo + " =" + valor);
+        }
+
+        public DataTable buscarSiContiene(string campo, string valor)
+        {
+            return this._BD.consulta("SELECT * FROM clientes WHERE " + campo + " LIKE '%" + valor + "%'");
+        }
+
         //métod para garbar un nuevo registro en la base de datos en la tabla users
         public void grabarCliente()
         {

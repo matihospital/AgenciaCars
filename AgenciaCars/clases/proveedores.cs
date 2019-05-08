@@ -80,9 +80,19 @@ namespace AgenciaCars.clases
             return this._BD.consulta("SELECT * FROM proveedores WHERE idProveedor=" + id);
         }
 
-        public DataTable Consultar_proveedores()
+        public DataTable buscarProveedores()
         {
             return _BD.consulta("SELECT * FROM PROVEEDORES");
+        }
+
+        public DataTable buscarPorParametro(string campo, string valor)
+        {
+            return this._BD.consulta("SELECT * FROM proveedores WHERE " + campo +" =" + valor);
+        }
+
+        public DataTable buscarSiContiene(string campo, string valor)
+        {
+            return this._BD.consulta("SELECT * FROM proveedores WHERE " + campo + " LIKE '%" + valor + "%'");
         }
 
         public void grabarProveedor()
