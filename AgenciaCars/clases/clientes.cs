@@ -23,7 +23,7 @@ namespace AgenciaCars.clases
         string _nombre;
         string _calle;
         int _nro;
-        int _telefono;
+        string _telefono;
         string _email;
         int _idLocalidad=-1;
 
@@ -65,7 +65,7 @@ namespace AgenciaCars.clases
             set { this._nro = value; }
         }
 
-        public int telefono
+        public string telefono
         {
             get { return this._telefono; }
             set { this._telefono = value; }
@@ -103,6 +103,7 @@ namespace AgenciaCars.clases
                          nombre,
                          calle,
                          nro,
+                         telefono,
                          email,
                          idLocalidad) 
                         VALUES ((select ISNULL(max(idCliente)+1,1) from clientes), " +
@@ -112,8 +113,8 @@ namespace AgenciaCars.clases
                          this._nombre.ToString() + "', '" +
                          this._calle.ToString() + "', " +
                          this._nro + ", '" +
+                         this._telefono.ToString() + "', '" +
                          this._email.ToString() + "', " +
-                         this._telefono + ", " +
                          this._idLocalidad+ ")";
             MessageBox.Show(SqlInsert);
             //se ejcuta en el backEnd el método "grabar_modificar" que ejecuta comandos del 
@@ -133,7 +134,7 @@ namespace AgenciaCars.clases
                          + ", nombre = '" + this._nombre.ToString() + "'"
                          + ", calle = '" + this._calle.ToString() + "'"
                          + ", nro = " + this._nro
-                         + ", telefono =" + this._telefono
+                         + ", telefono = '" + this._telefono.ToString() + "'"
                          + ", email = '" + this._email.ToString() + "'"
                          + ", idLocalidad = " + this._idLocalidad.ToString()
                          + " WHERE idCliente = " + _idCliente;

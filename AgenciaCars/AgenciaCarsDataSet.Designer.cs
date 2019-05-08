@@ -981,7 +981,7 @@ namespace AgenciaCars {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CLIENTESRow AddCLIENTESRow(int idCliente, TIPOS_DOCUMENTOSRow parentTIPOS_DOCUMENTOSRowBytipoDoc_clientes_fk, int nroDoc, string apellido, string nombre, string calle, int nro, int telefono, string email, LOCALIDADESRow parentLOCALIDADESRowBylocalidad_clientes_fk) {
+            public CLIENTESRow AddCLIENTESRow(int idCliente, TIPOS_DOCUMENTOSRow parentTIPOS_DOCUMENTOSRowBytipoDoc_clientes_fk, int nroDoc, string apellido, string nombre, string calle, int nro, string telefono, string email, LOCALIDADESRow parentLOCALIDADESRowBylocalidad_clientes_fk) {
                 CLIENTESRow rowCLIENTESRow = ((CLIENTESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idCliente,
@@ -1058,7 +1058,7 @@ namespace AgenciaCars {
                 base.Columns.Add(this.columncalle);
                 this.columnnro = new global::System.Data.DataColumn("nro", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnro);
-                this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntelefono);
                 this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemail);
@@ -5231,10 +5231,10 @@ namespace AgenciaCars {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int telefono {
+            public string telefono {
                 get {
                     try {
-                        return ((int)(this[this.tableCLIENTES.telefonoColumn]));
+                        return ((string)(this[this.tableCLIENTES.telefonoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'telefono\' in table \'CLIENTES\' is DBNull.", e);

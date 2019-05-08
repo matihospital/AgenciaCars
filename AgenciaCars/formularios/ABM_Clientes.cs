@@ -99,16 +99,16 @@ namespace AgenciaCars.formularios
                 this.txt_nombre.Focus();
             }
 
-            else if (this.txt_telefono.Text == "")
+            else if (this.label12.Text == "")
             {
                 MessageBox.Show("El campo TELEFONO no puede estar vacío");
-                this.txt_telefono.Focus();
+                this.label12.Focus();
             }
 
-            else if (this.txt_email.Text == "")
+            else if (this.txt_telefono.Text == "")
             {
                 MessageBox.Show("El campo EMAIL no puede estar vacío");
-                this.txt_email.Focus();
+                this.txt_telefono.Focus();
             }
 
             else if (this.txt_calle.Text == "")
@@ -135,7 +135,7 @@ namespace AgenciaCars.formularios
             obj_clientes.calle = this.txt_calle.Text;
             obj_clientes.nro = int.Parse(this.txt_nro.Text);
             obj_clientes.email = this.txt_email.Text;
-            obj_clientes.telefono = int.Parse(this.txt_telefono.Text);
+            obj_clientes.telefono = this.txt_telefono.Text;
             obj_clientes.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
             this.obj_clientes.grabarCliente();
@@ -152,9 +152,11 @@ namespace AgenciaCars.formularios
             this.txt_nroDoc.Text = "";
             this.txt_apellido.Text = "";
             this.txt_nombre.Text = "";
-            this.txt_telefono.Text = "";
+            this.label12.Text = "";
             this.txt_calle.Text = "";
             this.txt_nro.Text = "";
+            this.txt_telefono.Text = "";
+            this.txt_email.Text = "";
             this.cmb_localidad.SelectedIndex = -1;
             this.cmb_provincia.SelectedIndex = -1;
             this.cmb_pais.SelectedIndex = -1;

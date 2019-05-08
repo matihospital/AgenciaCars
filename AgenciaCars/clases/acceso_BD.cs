@@ -21,7 +21,7 @@ namespace AgenciaCars.clases
         //conexion para lograr una conexion exitosa con la base de datos.
         //Recuerde que para probar el sistema UD. debe crear la cadena de conexión que sirva
         //a la conexión con la base de datos donde este por utilizar este recurso. 
-        string cadena_conexion = "Provider=SQLNCLI11;Data Source=MATI\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
+        string cadena_conexion = "Provider=SQLNCLI11;Data Source=NBDELLPABLO;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
         // cadena_conexion = "Provider=SQLNCLI11;Data Source=maquis;Persist Security Info=True;User ID=avisuales1;Initial Catalog=_TRATAMIENTO_ERRORES;password=avisuales1";
 
         //método conecar, se realiza cada vez que se requiere una nueva acción contra

@@ -49,14 +49,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cmb_pais = new System.Windows.Forms.ComboBox();
             this.txt_nroDoc = new System.Windows.Forms.MaskedTextBox();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.txt_telefono = new System.Windows.Forms.Label();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txt_nro = new System.Windows.Forms.MaskedTextBox();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.agenciaCarsDataSet1 = new AgenciaCars.AgenciaCarsDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -282,27 +284,27 @@
             this.txt_nroDoc.Size = new System.Drawing.Size(279, 26);
             this.txt_nroDoc.TabIndex = 2;
             // 
-            // txt_email
-            // 
-            this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_email.Location = new System.Drawing.Point(161, 245);
-            this.txt_email.MaxLength = 50;
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(279, 26);
-            this.txt_email.TabIndex = 5;
-            // 
             // txt_telefono
             // 
-            this.txt_telefono.AutoSize = true;
-            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefono.ForeColor = System.Drawing.SystemColors.Window;
-            this.txt_telefono.Location = new System.Drawing.Point(74, 245);
+            this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txt_telefono.Location = new System.Drawing.Point(161, 245);
+            this.txt_telefono.MaxLength = 50;
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(85, 24);
-            this.txt_telefono.TabIndex = 14;
-            this.txt_telefono.Text = "Telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(279, 26);
+            this.txt_telefono.TabIndex = 5;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Window;
+            this.label12.Location = new System.Drawing.Point(74, 245);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 24);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Telefono";
             // 
             // txt_nro
             // 
@@ -358,16 +360,16 @@
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // textBox1
+            // txt_email
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox1.Location = new System.Drawing.Point(161, 276);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 26);
-            this.textBox1.TabIndex = 17;
+            this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txt_email.Location = new System.Drawing.Point(161, 276);
+            this.txt_email.MaxLength = 50;
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(279, 26);
+            this.txt_email.TabIndex = 17;
             // 
             // label13
             // 
@@ -380,6 +382,11 @@
             this.label13.TabIndex = 18;
             this.label13.Text = "Email";
             // 
+            // agenciaCarsDataSet1
+            // 
+            this.agenciaCarsDataSet1.DataSetName = "AgenciaCarsDataSet";
+            this.agenciaCarsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ABM_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,7 +394,7 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(472, 577);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_email);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.txt_nro);
@@ -399,14 +406,14 @@
             this.Controls.Add(this.cmb_localidad);
             this.Controls.Add(this.cmb_tipoDoc);
             this.Controls.Add(this.txt_calle);
-            this.Controls.Add(this.txt_email);
+            this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.txt_apellido);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_idCliente);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txt_telefono);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
@@ -422,6 +429,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Cliente";
             this.Load += new System.EventHandler(this.ABM_Clientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,13 +457,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmb_pais;
         private System.Windows.Forms.MaskedTextBox txt_nroDoc;
-        private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.Label txt_telefono;
+        private System.Windows.Forms.TextBox txt_telefono;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.MaskedTextBox txt_nro;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label13;
+        private AgenciaCarsDataSet agenciaCarsDataSet1;
     }
 }

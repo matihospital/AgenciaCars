@@ -35,6 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cLIENTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
+            this.cLIENTESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.CLIENTESTableAdapter();
             this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,15 +54,6 @@
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLIENTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_salir = new System.Windows.Forms.Button();
-            this.cLIENTESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.CLIENTESTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
@@ -130,96 +130,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(696, 229);
             this.dataGridView1.TabIndex = 14;
-            // 
-            // idClienteDataGridViewTextBoxColumn
-            // 
-            this.idClienteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente";
-            this.idClienteDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
-            this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idClienteDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // idTipoDocDataGridViewTextBoxColumn
-            // 
-            this.idTipoDocDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idTipoDocDataGridViewTextBoxColumn.DataPropertyName = "idTipoDoc";
-            this.idTipoDocDataGridViewTextBoxColumn.HeaderText = "Tipo Doc.";
-            this.idTipoDocDataGridViewTextBoxColumn.Name = "idTipoDocDataGridViewTextBoxColumn";
-            this.idTipoDocDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idTipoDocDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // nroDocDataGridViewTextBoxColumn
-            // 
-            this.nroDocDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nroDocDataGridViewTextBoxColumn.DataPropertyName = "nroDoc";
-            this.nroDocDataGridViewTextBoxColumn.HeaderText = "Nro. Doc";
-            this.nroDocDataGridViewTextBoxColumn.Name = "nroDocDataGridViewTextBoxColumn";
-            this.nroDocDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroDocDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.apellidoDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // calleDataGridViewTextBoxColumn
-            // 
-            this.calleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.calleDataGridViewTextBoxColumn.DataPropertyName = "calle";
-            this.calleDataGridViewTextBoxColumn.HeaderText = "Calle";
-            this.calleDataGridViewTextBoxColumn.Name = "calleDataGridViewTextBoxColumn";
-            this.calleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.calleDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // nroDataGridViewTextBoxColumn
-            // 
-            this.nroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nroDataGridViewTextBoxColumn.DataPropertyName = "nro";
-            this.nroDataGridViewTextBoxColumn.HeaderText = "Nro.";
-            this.nroDataGridViewTextBoxColumn.Name = "nroDataGridViewTextBoxColumn";
-            this.nroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroDataGridViewTextBoxColumn.Width = 52;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefonoDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // idLocalidadDataGridViewTextBoxColumn
-            // 
-            this.idLocalidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idLocalidadDataGridViewTextBoxColumn.DataPropertyName = "idLocalidad";
-            this.idLocalidadDataGridViewTextBoxColumn.HeaderText = "idLocalidad";
-            this.idLocalidadDataGridViewTextBoxColumn.Name = "idLocalidadDataGridViewTextBoxColumn";
-            this.idLocalidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLocalidadDataGridViewTextBoxColumn.Width = 86;
             // 
             // cLIENTESBindingSource
             // 
@@ -316,6 +226,96 @@
             // cLIENTESTableAdapter
             // 
             this.cLIENTESTableAdapter.ClearBeforeFill = true;
+            // 
+            // idClienteDataGridViewTextBoxColumn
+            // 
+            this.idClienteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente";
+            this.idClienteDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idClienteDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // idTipoDocDataGridViewTextBoxColumn
+            // 
+            this.idTipoDocDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idTipoDocDataGridViewTextBoxColumn.DataPropertyName = "idTipoDoc";
+            this.idTipoDocDataGridViewTextBoxColumn.HeaderText = "Tipo Doc.";
+            this.idTipoDocDataGridViewTextBoxColumn.Name = "idTipoDocDataGridViewTextBoxColumn";
+            this.idTipoDocDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idTipoDocDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // nroDocDataGridViewTextBoxColumn
+            // 
+            this.nroDocDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.nroDocDataGridViewTextBoxColumn.DataPropertyName = "nroDoc";
+            this.nroDocDataGridViewTextBoxColumn.HeaderText = "Nro. Doc";
+            this.nroDocDataGridViewTextBoxColumn.Name = "nroDocDataGridViewTextBoxColumn";
+            this.nroDocDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroDocDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apellidoDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // calleDataGridViewTextBoxColumn
+            // 
+            this.calleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.calleDataGridViewTextBoxColumn.DataPropertyName = "calle";
+            this.calleDataGridViewTextBoxColumn.HeaderText = "Calle";
+            this.calleDataGridViewTextBoxColumn.Name = "calleDataGridViewTextBoxColumn";
+            this.calleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.calleDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // nroDataGridViewTextBoxColumn
+            // 
+            this.nroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.nroDataGridViewTextBoxColumn.DataPropertyName = "nro";
+            this.nroDataGridViewTextBoxColumn.HeaderText = "Nro.";
+            this.nroDataGridViewTextBoxColumn.Name = "nroDataGridViewTextBoxColumn";
+            this.nroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroDataGridViewTextBoxColumn.Width = 52;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefonoDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // idLocalidadDataGridViewTextBoxColumn
+            // 
+            this.idLocalidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idLocalidadDataGridViewTextBoxColumn.DataPropertyName = "idLocalidad";
+            this.idLocalidadDataGridViewTextBoxColumn.HeaderText = "idLocalidad";
+            this.idLocalidadDataGridViewTextBoxColumn.Name = "idLocalidadDataGridViewTextBoxColumn";
+            this.idLocalidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idLocalidadDataGridViewTextBoxColumn.Width = 86;
             // 
             // BUSQ_Clientes
             // 
