@@ -122,7 +122,7 @@ namespace AgenciaCars.clases
                          + ", idProveedor = '" + this._idProveedor.ToString() + "'"
                          + ", idPais = " + this._idPais.ToString() + "'"
                          + ", estado = " + this._estado.ToString()
-                         + " WHERE idProducto = " + _idProducto;
+                         + " WHERE idCliente = " + _idProducto;
             this._BD.grabar_modificar(sqlupdate);
         }
 

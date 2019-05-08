@@ -83,6 +83,3 @@ C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.for
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Provincias.resources
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Modelos.resources
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Marcas.resources
-C:\Users\tomyc_000\Documents\GitHub\AgenciaCars\AgenciaCars\bin\Debug\AgenciaCars.exe.config
-C:\Users\tomyc_000\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.exe
-C:\Users\tomyc_000\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.pdb
