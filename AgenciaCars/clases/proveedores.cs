@@ -20,6 +20,7 @@ namespace AgenciaCars.clases
         string _nombre;
         string _calle;
         int _nro;
+        int _telefono;
         string _email;
         int _idLocalidad = -1;
 
@@ -58,6 +59,11 @@ namespace AgenciaCars.clases
             get { return this._nro; }
             set { this._nro = value; }
         }
+        public int telefono
+        {
+            get { return this._telefono; }
+            set { this._telefono = value; }
+        }
         public string email
         {
             get { return this._email; }
@@ -74,6 +80,11 @@ namespace AgenciaCars.clases
             return this._BD.consulta("SELECT * FROM proveedores WHERE idProveedor=" + id);
         }
 
+        public DataTable Consultar_proveedores()
+        {
+            return _BD.consulta("SELECT * FROM PROVEEDORES");
+        }
+
         public void grabarProveedor()
         {
             string SqlInsert = "";
@@ -86,6 +97,7 @@ namespace AgenciaCars.clases
                          calle,
                          nro,
                          email,
+                         telefono,
                          idLocalidad) 
                         VALUES ((select ISNULL(max(idProveedor),1) from proveedores), " +
                          this._idTipoDoc + ", " +
@@ -93,7 +105,8 @@ namespace AgenciaCars.clases
                          this._apellido.ToString() + "', '" +
                          this._nombre.ToString() + "', '" +
                          this._calle.ToString() + "', " +
-                         this._nro + ", '" +
+                         this._nro + ", " +
+                         this._telefono + ", '" +
                          this._email.ToString() + "', " +
                          this._idLocalidad + ")";
             MessageBox.Show(SqlInsert);
@@ -103,14 +116,14 @@ namespace AgenciaCars.clases
         {
             string sqlupdate = "";
             sqlupdate = @"UPDATE proveedores 
-                         SET idTipoDoc ='" + this._idTipoDoc + "'"
-                         + ", nroDoc = '" + this._nroDoc + "'"
+                         SET nroDoc = '" + this._nroDoc + "'"
                          + ", apellido = '" + this._apellido.ToString() + "'"
                          + ", nombre = '" + this._nombre.ToString() + "'"
-                         + ", calle = '" + this._calle.ToString() + "'"
-                         + ", nro = " + this._nro.ToString()
-                         + ", email = '" + this._email.ToString() + "'"
-                         + ", idLocalidad = " + this._idLocalidad.ToString()
+                         + ", calle = '" + this._calle.ToString()
+                         + ", nro = " + this._nro
+                         + ", telefono = " + this._nro
+                         + ", email = '" + this._email.ToString() 
+                         + ", idLocalidad = " + this._idLocalidad
                          + " WHERE idProveedor = " + _idProveedor;
             this._BD.grabar_modificar(sqlupdate);
         }

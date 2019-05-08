@@ -21,5 +21,12 @@ namespace AgenciaCars.formularios
         {
             this.Close();
         }
+
+        private void BUSQ_Provincias_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'agenciaCarsDataSet.PROVINCIAS' table. You can move, or remove it, as needed.
+            this.pROVINCIASTableAdapter.Fill(this.agenciaCarsDataSet.PROVINCIAS);
+
+        }
     }
 }

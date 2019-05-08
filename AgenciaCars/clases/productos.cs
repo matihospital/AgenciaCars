@@ -82,6 +82,11 @@ namespace AgenciaCars.clases
             return this._BD.consulta("SELECT * FROM productos WHERE idProducto =" + id);
         }
 
+        public DataTable buscarProductos()
+        {
+            return this._BD.consulta("SELECT * FROM productos");
+        }
+
         public void grabarProducto()
         {
             string SqlInsert = "";
@@ -95,11 +100,10 @@ namespace AgenciaCars.clases
                          idProveedor,
                          idPais,
                          estado) 
-                        VALUES ((select ISNULL(max(idProducto),1) from productos), " +
-                         this._idProducto + ", '" +
+                        VALUES ((select ISNULL(max(idProducto),1) from productos), '" +
                          this._descripcion.ToString() + "'," +
-                         this._anio + ", '" +
-                         this._idModelo + "'," +
+                         this._anio + "," +
+                         this._idModelo + ",'" +
                          this._color.ToString() + "'," +
                          this._precio + ", " +
                          this._idProveedor + ", " +

@@ -28,5 +28,14 @@ namespace AgenciaCars.formularios
         {
             this.Close();
         }
+
+        private void BUSQ_Proveedores_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'agenciaCarsDataSet.PROVEEDORES' table. You can move, or remove it, as needed.
+            this.pROVEEDORESTableAdapter.Fill(this.agenciaCarsDataSet.PROVEEDORES);
+            // TODO: This line of code loads data into the 'agenciaCarsDataSet.PRODUCTOS' table. You can move, or remove it, as needed.
+            this.pRODUCTOSTableAdapter.Fill(this.agenciaCarsDataSet.PRODUCTOS);
+
+        }
     }
 }

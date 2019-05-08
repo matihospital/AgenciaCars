@@ -50,11 +50,13 @@
             this.cmb_pais = new System.Windows.Forms.ComboBox();
             this.txt_nroDoc = new System.Windows.Forms.MaskedTextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.txt_telefono = new System.Windows.Forms.Label();
             this.txt_nro = new System.Windows.Forms.MaskedTextBox();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -174,7 +176,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(101, 276);
+            this.label7.Location = new System.Drawing.Point(101, 307);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 24);
             this.label7.TabIndex = 14;
@@ -185,7 +187,7 @@
             this.txt_calle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_calle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_calle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_calle.Location = new System.Drawing.Point(161, 277);
+            this.txt_calle.Location = new System.Drawing.Point(161, 308);
             this.txt_calle.MaxLength = 50;
             this.txt_calle.Name = "txt_calle";
             this.txt_calle.Size = new System.Drawing.Size(279, 26);
@@ -196,7 +198,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(107, 308);
+            this.label8.Location = new System.Drawing.Point(107, 339);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 24);
             this.label8.TabIndex = 14;
@@ -207,7 +209,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(61, 409);
+            this.label9.Location = new System.Drawing.Point(61, 440);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 24);
             this.label9.TabIndex = 10;
@@ -220,7 +222,7 @@
             this.cmb_localidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_localidad.FormattingEnabled = true;
-            this.cmb_localidad.Location = new System.Drawing.Point(161, 409);
+            this.cmb_localidad.Location = new System.Drawing.Point(161, 440);
             this.cmb_localidad.Name = "cmb_localidad";
             this.cmb_localidad.Size = new System.Drawing.Size(214, 28);
             this.cmb_localidad.TabIndex = 10;
@@ -230,7 +232,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(66, 375);
+            this.label10.Location = new System.Drawing.Point(66, 406);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 24);
             this.label10.TabIndex = 10;
@@ -243,7 +245,7 @@
             this.cmb_provincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_provincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_provincia.FormattingEnabled = true;
-            this.cmb_provincia.Location = new System.Drawing.Point(161, 375);
+            this.cmb_provincia.Location = new System.Drawing.Point(161, 406);
             this.cmb_provincia.Name = "cmb_provincia";
             this.cmb_provincia.Size = new System.Drawing.Size(214, 28);
             this.cmb_provincia.TabIndex = 9;
@@ -253,7 +255,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(108, 341);
+            this.label11.Location = new System.Drawing.Point(108, 372);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 24);
             this.label11.TabIndex = 10;
@@ -266,7 +268,7 @@
             this.cmb_pais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_pais.FormattingEnabled = true;
-            this.cmb_pais.Location = new System.Drawing.Point(161, 341);
+            this.cmb_pais.Location = new System.Drawing.Point(161, 372);
             this.cmb_pais.Name = "cmb_pais";
             this.cmb_pais.Size = new System.Drawing.Size(214, 28);
             this.cmb_pais.TabIndex = 8;
@@ -285,27 +287,27 @@
             this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_email.Location = new System.Drawing.Point(161, 246);
+            this.txt_email.Location = new System.Drawing.Point(161, 245);
             this.txt_email.MaxLength = 50;
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(279, 26);
             this.txt_email.TabIndex = 5;
             // 
-            // label12
+            // txt_telefono
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(95, 245);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 24);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Email";
+            this.txt_telefono.AutoSize = true;
+            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.ForeColor = System.Drawing.SystemColors.Window;
+            this.txt_telefono.Location = new System.Drawing.Point(74, 245);
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(85, 24);
+            this.txt_telefono.TabIndex = 14;
+            this.txt_telefono.Text = "Telefono";
             // 
             // txt_nro
             // 
             this.txt_nro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_nro.Location = new System.Drawing.Point(159, 309);
+            this.txt_nro.Location = new System.Drawing.Point(161, 339);
             this.txt_nro.Mask = "00000";
             this.txt_nro.Name = "txt_nro";
             this.txt_nro.Size = new System.Drawing.Size(279, 26);
@@ -356,6 +358,28 @@
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox1.Location = new System.Drawing.Point(161, 276);
+            this.textBox1.MaxLength = 50;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(279, 26);
+            this.textBox1.TabIndex = 17;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Window;
+            this.label13.Location = new System.Drawing.Point(95, 275);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 24);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Email";
+            // 
             // ABM_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +387,8 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(472, 577);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.txt_nro);
             this.Controls.Add(this.txt_nroDoc);
@@ -380,7 +406,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_idCliente);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
@@ -424,10 +450,12 @@
         private System.Windows.Forms.ComboBox cmb_pais;
         private System.Windows.Forms.MaskedTextBox txt_nroDoc;
         private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label txt_telefono;
         private System.Windows.Forms.MaskedTextBox txt_nro;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
     }
 }

@@ -76,6 +76,7 @@ namespace AgenciaCars.formularios
             obj_provedores.nombre = this.txt_nombre.Text;
             obj_provedores.calle = this.txt_calle.Text;
             obj_provedores.nro = int.Parse(this.txt_nro.Text);
+            obj_provedores.telefono = int.Parse(this.txt_telefono.Text);
             obj_provedores.email = this.txt_email.Text;
             obj_provedores.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
@@ -95,6 +96,7 @@ namespace AgenciaCars.formularios
             this.txt_email.Text = "";
             this.txt_calle.Text = "";
             this.txt_nro.Text = "";
+            this.txt_telefono.Text = "";
             this.cmb_localidad.SelectedIndex = -1;
             this.cmb_provincia.SelectedIndex = -1;
             this.cmb_pais.SelectedIndex = -1;

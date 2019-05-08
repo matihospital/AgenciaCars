@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BUSQ_Paises));
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridPaises = new System.Windows.Forms.DataGridView();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
+            this.pAISESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pAISESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.PAISESTableAdapter();
+            this.idPaisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPaises)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pAISESBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,13 +55,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Paises";
             // 
-            // dataGridView1
+            // gridPaises
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(488, 281);
-            this.dataGridView1.TabIndex = 14;
+            this.gridPaises.AllowUserToAddRows = false;
+            this.gridPaises.AllowUserToDeleteRows = false;
+            this.gridPaises.AutoGenerateColumns = false;
+            this.gridPaises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPaises.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPaisDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn});
+            this.gridPaises.DataSource = this.pAISESBindingSource;
+            this.gridPaises.Location = new System.Drawing.Point(12, 86);
+            this.gridPaises.Name = "gridPaises";
+            this.gridPaises.ReadOnly = true;
+            this.gridPaises.Size = new System.Drawing.Size(488, 281);
+            this.gridPaises.TabIndex = 14;
             // 
             // btn_nuevo
             // 
@@ -84,6 +100,37 @@
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
+            // agenciaCarsDataSet
+            // 
+            this.agenciaCarsDataSet.DataSetName = "AgenciaCarsDataSet";
+            this.agenciaCarsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pAISESBindingSource
+            // 
+            this.pAISESBindingSource.DataMember = "PAISES";
+            this.pAISESBindingSource.DataSource = this.agenciaCarsDataSet;
+            // 
+            // pAISESTableAdapter
+            // 
+            this.pAISESTableAdapter.ClearBeforeFill = true;
+            // 
+            // idPaisDataGridViewTextBoxColumn
+            // 
+            this.idPaisDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idPaisDataGridViewTextBoxColumn.DataPropertyName = "idPais";
+            this.idPaisDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idPaisDataGridViewTextBoxColumn.Name = "idPaisDataGridViewTextBoxColumn";
+            this.idPaisDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPaisDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Pais";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // BUSQ_Paises
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,7 +140,7 @@
             this.ClientSize = new System.Drawing.Size(513, 424);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_nuevo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridPaises);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -101,7 +148,10 @@
             this.Name = "BUSQ_Paises";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paises";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.BUSQ_Paises_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridPaises)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pAISESBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,8 +160,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridPaises;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_salir;
+        private AgenciaCarsDataSet agenciaCarsDataSet;
+        private System.Windows.Forms.BindingSource pAISESBindingSource;
+        private AgenciaCarsDataSetTableAdapters.PAISESTableAdapter pAISESTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPaisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
     }
 }

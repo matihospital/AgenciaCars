@@ -21,5 +21,12 @@ namespace AgenciaCars.formularios
         {
             this.Close();
         }
+
+        private void BUSQ_Localidades_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'agenciaCarsDataSet.LOCALIDADES' table. You can move, or remove it, as needed.
+            this.lOCALIDADESTableAdapter.Fill(this.agenciaCarsDataSet.LOCALIDADES);
+
+        }
     }
 }

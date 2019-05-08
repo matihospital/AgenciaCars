@@ -15,7 +15,10 @@ namespace AgenciaCars.formularios
     public partial class ABM_Productos : Form
     {
         estados obj_estados = new estados();
+        modelos obj_modelos = new modelos();
         productos obj_productos = new productos();
+        paises obj_paises = new paises();
+        proveedores obj_proveedores = new proveedores();
 
         public ABM_Productos()
         {
@@ -40,6 +43,21 @@ namespace AgenciaCars.formularios
             this.cmb_estado.DisplayMember = "descripcion";
             this.cmb_estado.ValueMember = "idEstado";
 
+            //Modelos
+            this.cmb_modelo.DataSource = this.obj_modelos.Consultar_modelos();
+            this.cmb_modelo.DisplayMember = "descripcion";
+            this.cmb_modelo.ValueMember = "idModelo";
+
+            //Paises
+            this.cmb_pais.DataSource = this.obj_paises.Consultar_paises();
+            this.cmb_pais.DisplayMember = "descripcion";
+            this.cmb_pais.ValueMember = "idPais";
+
+            //Proveedores
+            this.cmb_proveedor.DataSource = this.obj_proveedores.Consultar_proveedores();
+            this.cmb_proveedor.DisplayMember = "apellido";
+            this.cmb_proveedor.ValueMember = "idProveedor";
+
             this.ActiveControl = this.txt_descripcion;
         }
 
@@ -62,7 +80,7 @@ namespace AgenciaCars.formularios
         {
             //Validar que no haya campos vacios
             ABM_Productos prod = new ABM_Productos();
-            foreach (Control c in prod.Controls)
+            /*foreach (Control c in prod.Controls)
             {
                 if (c is TextBox && c.Text == string.Empty)
                 {
@@ -70,9 +88,8 @@ namespace AgenciaCars.formularios
                     c.Focus();
                     return;
                 }
-            }
+            }*/
 
-            obj_productos.idProducto = int.Parse(this.txt_id.Text);
             obj_productos.descripcion = this.txt_descripcion.Text;
             obj_productos.anio = int.Parse(this.txt_anio.Text);
             obj_productos.idModelo = int.Parse(this.cmb_modelo.SelectedValue.ToString());

@@ -67,7 +67,7 @@ namespace AgenciaCars.formularios
         {
             //Validar que no haya campos vacios
             ABM_Clientes clientes = new ABM_Clientes();
-            foreach (Control c in clientes.Controls)
+            /*foreach (Control c in clientes.Controls)
             {
                 if (c is TextBox && c.Text == string.Empty)
                 {
@@ -75,7 +75,7 @@ namespace AgenciaCars.formularios
                     c.Focus();
                     return;
                 }
-            }
+            }*/
 
              //validar que no exista el cliente por tipo y nro de doc
 
@@ -89,6 +89,7 @@ namespace AgenciaCars.formularios
             obj_clientes.calle = this.txt_calle.Text;
             obj_clientes.nro = int.Parse(this.txt_nro.Text);
             obj_clientes.email = this.txt_email.Text;
+            obj_clientes.telefono = int.Parse(this.txt_telefono.Text);
             obj_clientes.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
             this.obj_clientes.grabarCliente();
@@ -105,7 +106,7 @@ namespace AgenciaCars.formularios
             this.txt_nroDoc.Text = "";
             this.txt_apellido.Text = "";
             this.txt_nombre.Text = "";
-            this.label12.Text = "";
+            this.txt_telefono.Text = "";
             this.txt_calle.Text = "";
             this.txt_nro.Text = "";
             this.cmb_localidad.SelectedIndex = -1;

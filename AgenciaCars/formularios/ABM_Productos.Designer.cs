@@ -82,12 +82,13 @@
             // 
             // txt_id
             // 
+            this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_id.Location = new System.Drawing.Point(164, 97);
             this.txt_id.Multiline = true;
             this.txt_id.Name = "txt_id";
             this.txt_id.ReadOnly = true;
             this.txt_id.Size = new System.Drawing.Size(47, 26);
-            this.txt_id.TabIndex = 1;
+            this.txt_id.TabIndex = 0;
             this.txt_id.TabStop = false;
             // 
             // textBox1
@@ -99,11 +100,12 @@
             // 
             // txt_descripcion
             // 
+            this.txt_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_descripcion.Location = new System.Drawing.Point(164, 129);
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(279, 26);
-            this.txt_descripcion.TabIndex = 2;
+            this.txt_descripcion.TabIndex = 1;
             // 
             // lbl_descripcion
             // 
@@ -165,11 +167,12 @@
             // 
             // txt_color
             // 
+            this.txt_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_color.Location = new System.Drawing.Point(164, 225);
             this.txt_color.Multiline = true;
             this.txt_color.Name = "txt_color";
             this.txt_color.Size = new System.Drawing.Size(268, 26);
-            this.txt_color.TabIndex = 5;
+            this.txt_color.TabIndex = 4;
             // 
             // textBox8
             // 
@@ -201,24 +204,24 @@
             this.cmb_modelo.BackColor = System.Drawing.SystemColors.Window;
             this.cmb_modelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_modelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_modelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_modelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmb_modelo.FormattingEnabled = true;
             this.cmb_modelo.Location = new System.Drawing.Point(164, 191);
             this.cmb_modelo.Name = "cmb_modelo";
             this.cmb_modelo.Size = new System.Drawing.Size(268, 28);
-            this.cmb_modelo.TabIndex = 16;
+            this.cmb_modelo.TabIndex = 3;
             // 
             // cmb_estado
             // 
             this.cmb_estado.BackColor = System.Drawing.SystemColors.Window;
             this.cmb_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_estado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmb_estado.FormattingEnabled = true;
             this.cmb_estado.Location = new System.Drawing.Point(164, 357);
             this.cmb_estado.Name = "cmb_estado";
             this.cmb_estado.Size = new System.Drawing.Size(154, 28);
-            this.cmb_estado.TabIndex = 17;
+            this.cmb_estado.TabIndex = 8;
             // 
             // btn_salir
             // 
@@ -230,7 +233,7 @@
             this.btn_salir.Location = new System.Drawing.Point(317, 415);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(140, 44);
-            this.btn_salir.TabIndex = 20;
+            this.btn_salir.TabIndex = 11;
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
@@ -245,7 +248,7 @@
             this.btn_cancelar.Location = new System.Drawing.Point(171, 415);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
-            this.btn_cancelar.TabIndex = 19;
+            this.btn_cancelar.TabIndex = 10;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click_1);
@@ -260,7 +263,7 @@
             this.btn_aceptar.Location = new System.Drawing.Point(25, 415);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(140, 44);
-            this.btn_aceptar.TabIndex = 18;
+            this.btn_aceptar.TabIndex = 9;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = false;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
@@ -272,19 +275,19 @@
             this.txt_anio.Mask = "0000";
             this.txt_anio.Name = "txt_anio";
             this.txt_anio.Size = new System.Drawing.Size(47, 26);
-            this.txt_anio.TabIndex = 21;
+            this.txt_anio.TabIndex = 2;
             // 
             // cmb_pais
             // 
             this.cmb_pais.BackColor = System.Drawing.SystemColors.Window;
             this.cmb_pais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_pais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmb_pais.FormattingEnabled = true;
             this.cmb_pais.Location = new System.Drawing.Point(164, 323);
             this.cmb_pais.Name = "cmb_pais";
             this.cmb_pais.Size = new System.Drawing.Size(189, 28);
-            this.cmb_pais.TabIndex = 23;
+            this.cmb_pais.TabIndex = 7;
             // 
             // label1
             // 
@@ -302,12 +305,12 @@
             this.cmb_proveedor.BackColor = System.Drawing.SystemColors.Window;
             this.cmb_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_proveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_proveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmb_proveedor.FormattingEnabled = true;
             this.cmb_proveedor.Location = new System.Drawing.Point(164, 289);
             this.cmb_proveedor.Name = "cmb_proveedor";
             this.cmb_proveedor.Size = new System.Drawing.Size(189, 28);
-            this.cmb_proveedor.TabIndex = 25;
+            this.cmb_proveedor.TabIndex = 6;
             // 
             // label2
             // 
@@ -338,7 +341,7 @@
             this.txt_precio.Mask = "99999999";
             this.txt_precio.Name = "txt_precio";
             this.txt_precio.Size = new System.Drawing.Size(189, 26);
-            this.txt_precio.TabIndex = 26;
+            this.txt_precio.TabIndex = 5;
             // 
             // ABM_Productos
             // 

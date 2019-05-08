@@ -81,6 +81,8 @@
     </Compile>
     <Compile Include="clases\estados.cs" />
     <Compile Include="clases\localidades.cs" />
+    <Compile Include="clases\modelos.cs" />
+    <Compile Include="clases\marcas.cs" />
     <Compile Include="clases\productos.cs" />
     <Compile Include="clases\provincias.cs" />
     <Compile Include="clases\paises.cs" />
@@ -92,6 +94,7 @@
     </Compile>
     <Compile Include="clases\users.cs" />
     <Compile Include="clases\validaciones.cs" />
+    <Compile Include="clases\validar.cs" />
     <Compile Include="formularios\ABM_Productos.cs">
       <SubType>Form</SubType>
     </Compile>

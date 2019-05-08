@@ -23,6 +23,7 @@ namespace AgenciaCars.clases
         string _nombre;
         string _calle;
         int _nro;
+        int _telefono;
         string _email;
         int _idLocalidad=-1;
 
@@ -63,6 +64,13 @@ namespace AgenciaCars.clases
             get { return this._nro; }
             set { this._nro = value; }
         }
+
+        public int telefono
+        {
+            get { return this._telefono; }
+            set { this._telefono = value; }
+        }
+
         public string email
         {
             get { return this._email; }
@@ -97,7 +105,7 @@ namespace AgenciaCars.clases
                          nro,
                          email,
                          idLocalidad) 
-                        VALUES ((select ISNULL(max(idCliente),1) from clientes), " +
+                        VALUES ((select ISNULL(max(idCliente)+1,1) from clientes), " +
                          this._idTipoDoc + ", " +
                          this._nroDoc + ", '" +
                          this._apellido.ToString() + "', '" +
@@ -105,6 +113,7 @@ namespace AgenciaCars.clases
                          this._calle.ToString() + "', " +
                          this._nro + ", '" +
                          this._email.ToString() + "', " +
+                         this._telefono + ", " +
                          this._idLocalidad+ ")";
             MessageBox.Show(SqlInsert);
             //se ejcuta en el backEnd el método "grabar_modificar" que ejecuta comandos del 
@@ -123,7 +132,8 @@ namespace AgenciaCars.clases
                          + ", apellido = '" + this._apellido.ToString() + "'"
                          + ", nombre = '" + this._nombre.ToString() + "'"
                          + ", calle = '" + this._calle.ToString() + "'"
-                         + ", nro = " + this._nro.ToString()
+                         + ", nro = " + this._nro
+                         + ", telefono =" + this._telefono
                          + ", email = '" + this._email.ToString() + "'"
                          + ", idLocalidad = " + this._idLocalidad.ToString()
                          + " WHERE idCliente = " + _idCliente;
