@@ -21,5 +21,12 @@ namespace AgenciaCars.formularios
         {
             this.Close();
         }
+
+        private void BUSQ_Marcas_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'agenciaCarsDataSet.MARCAS' table. You can move, or remove it, as needed.
+            this.mARCASTableAdapter.Fill(this.agenciaCarsDataSet.MARCAS);
+
+        }
     }
 }

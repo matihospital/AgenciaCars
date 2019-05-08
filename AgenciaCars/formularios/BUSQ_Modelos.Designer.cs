@@ -28,12 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BUSQ_Modelos));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
+            this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
+            this.mODELOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mODELOSTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.MODELOSTableAdapter();
+            this.idModeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mODELOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,9 +60,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idModeloDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.idMarcaDataGridViewTextBoxColumn,
+            this.Marca,
+            this.estadoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.mODELOSBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 86);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(488, 281);
             this.dataGridView1.TabIndex = 14;
             // 
@@ -84,6 +106,61 @@
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
+            // agenciaCarsDataSet
+            // 
+            this.agenciaCarsDataSet.DataSetName = "AgenciaCarsDataSet";
+            this.agenciaCarsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mODELOSBindingSource
+            // 
+            this.mODELOSBindingSource.DataMember = "MODELOS";
+            this.mODELOSBindingSource.DataSource = this.agenciaCarsDataSet;
+            // 
+            // mODELOSTableAdapter
+            // 
+            this.mODELOSTableAdapter.ClearBeforeFill = true;
+            // 
+            // idModeloDataGridViewTextBoxColumn
+            // 
+            this.idModeloDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idModeloDataGridViewTextBoxColumn.DataPropertyName = "idModelo";
+            this.idModeloDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idModeloDataGridViewTextBoxColumn.Name = "idModeloDataGridViewTextBoxColumn";
+            this.idModeloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idModeloDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idMarcaDataGridViewTextBoxColumn
+            // 
+            this.idMarcaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idMarcaDataGridViewTextBoxColumn.DataPropertyName = "idMarca";
+            this.idMarcaDataGridViewTextBoxColumn.HeaderText = "idMarca";
+            this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
+            this.idMarcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idMarcaDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Width = 65;
+            // 
             // BUSQ_Modelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,7 +178,10 @@
             this.Name = "BUSQ_Modelos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modelos";
+            this.Load += new System.EventHandler(this.BUSQ_Modelos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mODELOSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +193,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_salir;
+        private AgenciaCarsDataSet agenciaCarsDataSet;
+        private System.Windows.Forms.BindingSource mODELOSBindingSource;
+        private AgenciaCarsDataSetTableAdapters.MODELOSTableAdapter mODELOSTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idModeloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMarcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
     }
 }
