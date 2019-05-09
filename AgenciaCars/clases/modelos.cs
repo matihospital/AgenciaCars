@@ -12,8 +12,13 @@ namespace AgenciaCars.clases
     {
         acceso_BD _BD = new acceso_BD();
 
-        public DataTable Consultar_modelos(){
+        public DataTable buscarModelos(){
             return _BD.consulta("SELECT * FROM MODELOS");
+        }
+
+        public DataTable ConsultarModelosMarca(String idMarca)
+        {
+            return _BD.consulta("SELECT * FROM MODELOS WHERE idMarca=" + idMarca);
         }
     }
 }

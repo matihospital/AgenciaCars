@@ -35,7 +35,7 @@ namespace AgenciaCars.formularios
         private void BUSQ_Clientes_Load(object sender, EventArgs e)
         {
            actualizarGrilla();
-
+           this.txt_busqueda.Text = "";
         }
 
         private void actualizarGrilla()

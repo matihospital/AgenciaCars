@@ -21,7 +21,7 @@ namespace AgenciaCars.clases
         float _precio;
         int _idProveedor;
         int _idPais;
-        int _estado;
+        int _idEstado;
 
         public int idProducto
         {
@@ -71,10 +71,10 @@ namespace AgenciaCars.clases
             set { this._idPais = value; }
         }
 
-        public int estado
+        public int idEstado
         {
-            get { return this._estado; }
-            set { this._estado = value; }
+            get { return this._idEstado; }
+            set { this._idEstado = value; }
         }
 
         public DataTable buscar_por_id(string id)
@@ -85,6 +85,16 @@ namespace AgenciaCars.clases
         public DataTable buscarProductos()
         {
             return this._BD.consulta("SELECT * FROM productos");
+        }
+
+        public DataTable buscarPorParametro(string campo, string valor)
+        {
+            return this._BD.consulta("SELECT * FROM productos WHERE " + campo + " =" + valor);
+        }
+
+        public DataTable buscarSiContiene(string campo, string valor)
+        {
+            return this._BD.consulta("SELECT * FROM productos WHERE " + campo + " LIKE '%" + valor + "%'");
         }
 
         public void grabarProducto()
@@ -99,8 +109,8 @@ namespace AgenciaCars.clases
                          precio,
                          idProveedor,
                          idPais,
-                         estado) 
-                        VALUES ((select ISNULL(max(idProducto),1) from productos), '" +
+                         idEstado) 
+                        VALUES ((select ISNULL(max(idProducto),0)+1 from productos), '" +
                          this._descripcion.ToString() + "'," +
                          this._anio + "," +
                          this._idModelo + ",'" +
@@ -108,8 +118,8 @@ namespace AgenciaCars.clases
                          this._precio + ", " +
                          this._idProveedor + ", " +
                          this._idPais + ", " +
-                         this._estado + ")";
-            MessageBox.Show(SqlInsert);
+                         this._idEstado + ")";
+            //MessageBox.Show(SqlInsert);
 
             this._BD.grabar_modificar(SqlInsert);
         }
@@ -125,7 +135,7 @@ namespace AgenciaCars.clases
                          + ", precio = " + this._precio.ToString()
                          + ", idProveedor = '" + this._idProveedor.ToString() + "'"
                          + ", idPais = " + this._idPais.ToString() + "'"
-                         + ", estado = " + this._estado.ToString()
+                         + ", idEstado = " + this._idEstado.ToString()
                          + " WHERE idProducto = " + _idProducto;
             this._BD.grabar_modificar(sqlupdate);
         }

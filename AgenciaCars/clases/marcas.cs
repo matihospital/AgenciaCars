@@ -12,8 +12,8 @@ namespace AgenciaCars.clases
     {
         acceso_BD _BD = new acceso_BD();
 
-        public DataTable Consultar_marcas(){
-            return _BD.consulta("SELECT * FROM MARCAS");
+        public DataTable buscarMarcas(){
+            return _BD.consulta("SELECT * FROM MARCAS WHERE idEstado <> 9");
         }
     }
 }

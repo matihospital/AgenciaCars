@@ -51,6 +51,7 @@ namespace AgenciaCars.formularios
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
             actualizarGrilla();
+            this.txt_busqueda.Text = "";
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)

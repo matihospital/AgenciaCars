@@ -16,6 +16,7 @@ namespace AgenciaCars.formularios
     {
         estados obj_estados = new estados();
         modelos obj_modelos = new modelos();
+        marcas obj_marcas = new marcas();
         productos obj_productos = new productos();
         paises obj_paises = new paises();
         proveedores obj_proveedores = new proveedores();
@@ -23,11 +24,6 @@ namespace AgenciaCars.formularios
         public ABM_Productos()
         {
             InitializeComponent();
-        }
-
-        private void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            blanquear_objetos();
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)
@@ -43,8 +39,13 @@ namespace AgenciaCars.formularios
             this.cmb_estado.DisplayMember = "descripcion";
             this.cmb_estado.ValueMember = "idEstado";
 
+            //Marcas
+            this.cmb_marca.DataSource = this.obj_marcas.buscarMarcas();
+            this.cmb_marca.DisplayMember = "descripcion";
+            this.cmb_marca.ValueMember = "idMarca";
+            
             //Modelos
-            this.cmb_modelo.DataSource = this.obj_modelos.Consultar_modelos();
+            this.cmb_modelo.DataSource = this.obj_modelos.ConsultarModelosMarca(this.cmb_marca.SelectedValue.ToString());
             this.cmb_modelo.DisplayMember = "descripcion";
             this.cmb_modelo.ValueMember = "idModelo";
 
@@ -59,14 +60,19 @@ namespace AgenciaCars.formularios
             this.cmb_proveedor.ValueMember = "idProveedor";
 
             this.ActiveControl = this.txt_descripcion;
+            this.cmb_proveedor.SelectedIndex = -1;
         }
 
         private void blanquear_objetos()
         {
             this.txt_id.Text = "";
             this.txt_descripcion.Text = "";
-            this.cmb_modelo.SelectedIndex = -1;
+            this.cmb_marca.SelectedIndex = 0;
+            this.cmb_modelo.SelectedIndex = 0;
             this.txt_anio.Text = "";
+            this.txt_color.Text = "";
+            this.txt_precio.Text = "";
+            this.cmb_proveedor.SelectedIndex = -1;
             this.cmb_estado.SelectedIndex = 0;
             this.txt_descripcion.Focus();
         }
@@ -98,7 +104,7 @@ namespace AgenciaCars.formularios
 
             else if (this.txt_anio.Text == "")
             {
-                MessageBox.Show("El campo APELLIDO no puede estar vacío");
+                MessageBox.Show("El campo AÑO no puede estar vacío");
                 this.txt_anio.Focus();
             }
 
@@ -120,7 +126,8 @@ namespace AgenciaCars.formularios
             obj_productos.color = this.txt_color.Text;
             obj_productos.precio = float.Parse(this.txt_precio.Text);
             obj_productos.idProveedor = int.Parse(this.cmb_proveedor.SelectedValue.ToString());
-            obj_productos.estado = int.Parse(this.cmb_estado.SelectedValue.ToString());
+            obj_productos.idPais = int.Parse(this.cmb_pais.SelectedValue.ToString());
+            obj_productos.idEstado = int.Parse(this.cmb_estado.SelectedValue.ToString());
 
             this.obj_productos.grabarProducto();
             MessageBox.Show("El producto ha sido guardado.");
@@ -128,7 +135,19 @@ namespace AgenciaCars.formularios
             blanquear_objetos();
         }
 
-        private void btn_cancelar_Click_1(object sender, EventArgs e)
+        private void cmb_marca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Modelos
+            if (this.cmb_marca.SelectedIndex != 0)
+            {
+                cmb_modelo.DataSource = null;
+                this.cmb_modelo.DataSource = this.obj_modelos.ConsultarModelosMarca(this.cmb_marca.SelectedValue.ToString());
+                this.cmb_modelo.DisplayMember = "descripcion";
+                this.cmb_modelo.ValueMember = "idModelo";
+            }
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
             blanquear_objetos();
         }

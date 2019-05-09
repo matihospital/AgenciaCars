@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgenciaCars.clases;
 
 namespace AgenciaCars.formularios
 {
     public partial class BUSQ_Modelos : Form
     {
+        modelos obj_modelos = new modelos();
+
         public BUSQ_Modelos()
         {
             InitializeComponent();
@@ -24,9 +27,29 @@ namespace AgenciaCars.formularios
 
         private void BUSQ_Modelos_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'agenciaCarsDataSet.MODELOS' table. You can move, or remove it, as needed.
-            this.mODELOSTableAdapter.Fill(this.agenciaCarsDataSet.MODELOS);
+            DataTable tabla = new DataTable();
+            tabla = this.obj_modelos.buscarModelos();
 
+            if (tabla.Rows.Count != 0)
+            {
+                dataGridView1.DataSource = tabla;
+            }
+        }
+
+        private void actualizarGrilla()
+        {
+            // TODO: This line of code loads data into the 'agenciaCarsDataSet.CLIENTES' table. You can move, or remove it, as needed.
+            //this.cLIENTESTableAdapter.Fill(this.agenciaCarsDataSet.CLIENTES);
+
+            DataTable tabla = new DataTable();
+            tabla = this.obj_modelos.buscarModelos();
+            dataGridView1.DataSource = tabla;
+
+        }
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            actualizarGrilla();
         }
     }
 }

@@ -281,7 +281,7 @@
             // 
             this.txt_nroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_nroDoc.Location = new System.Drawing.Point(161, 152);
-            this.txt_nroDoc.Mask = "00000000000";
+            this.txt_nroDoc.Mask = "00000000";
             this.txt_nroDoc.Name = "txt_nroDoc";
             this.txt_nroDoc.Size = new System.Drawing.Size(279, 26);
             this.txt_nroDoc.TabIndex = 2;
