@@ -147,5 +147,17 @@ namespace AgenciaCars
             BUSQ_Modelos frm = new BUSQ_Modelos();
             frm.ShowDialog();
         }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FAC_Ventas frm = new FAC_Ventas();
+            frm.ShowDialog();
+        }
+
+        private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FAC_Compras frm = new FAC_Compras();
+            frm.ShowDialog();
+        }
     }
 }
