@@ -122,26 +122,29 @@ namespace AgenciaCars.formularios
                 MessageBox.Show("El campo NRO no puede estar vacío");
                 this.txt_nro.Focus();
             }
+            else{
 
-             //validar que no exista el cliente por tipo y nro de doc
+                 //validar que no exista el cliente por tipo y nro de doc
 
-            //se transfieren los cotenidos de los objetos a las propiedades del 
-            //objeto negocio "obj_usuario" para que esté enterado de los datos
-            //que se utilizarán en las siguientes acciones
-            obj_clientes.idTipoDoc = int.Parse(this.cmb_tipoDoc.SelectedValue.ToString());
-            obj_clientes.nroDoc = int.Parse(this.txt_nroDoc.Text);
-            obj_clientes.apellido = this.txt_apellido.Text;
-            obj_clientes.nombre = this.txt_nombre.Text;
-            obj_clientes.calle = this.txt_calle.Text;
-            obj_clientes.nro = int.Parse(this.txt_nro.Text);
-            obj_clientes.email = this.txt_email.Text;
-            obj_clientes.telefono = this.txt_telefono.Text;
-            obj_clientes.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
+                //se transfieren los cotenidos de los objetos a las propiedades del 
+                //objeto negocio "obj_usuario" para que esté enterado de los datos
+                //que se utilizarán en las siguientes acciones
+                obj_clientes.idTipoDoc = int.Parse(this.cmb_tipoDoc.SelectedValue.ToString());
+                obj_clientes.nroDoc = int.Parse(this.txt_nroDoc.Text);
+                obj_clientes.apellido = this.txt_apellido.Text;
+                obj_clientes.nombre = this.txt_nombre.Text;
+                obj_clientes.calle = this.txt_calle.Text;
+                obj_clientes.nro = int.Parse(this.txt_nro.Text);
+                obj_clientes.email = this.txt_email.Text;
+                obj_clientes.telefono = this.txt_telefono.Text;
+                obj_clientes.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
-            this.obj_clientes.grabarCliente();
-            MessageBox.Show("Cliente guardado correctamente.");
+                this.obj_clientes.grabarCliente();
+                MessageBox.Show("Cliente guardado correctamente.");
 
-            blanquear_objetos();
+                blanquear_objetos();
+            }
+
             
         }
 

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgenciaCars.clases;
 
 namespace AgenciaCars.formularios
 {
     public partial class BUSQ_Localidades : Form
     {
+        localidades obj_localidades = new localidades();
+        
         public BUSQ_Localidades()
         {
             InitializeComponent();
@@ -25,8 +28,10 @@ namespace AgenciaCars.formularios
         private void BUSQ_Localidades_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'agenciaCarsDataSet.LOCALIDADES' table. You can move, or remove it, as needed.
-            this.lOCALIDADESTableAdapter.Fill(this.agenciaCarsDataSet.LOCALIDADES);
-
+            //this.lOCALIDADESTableAdapter.Fill(this.agenciaCarsDataSet.LOCALIDADES);
+            DataTable tabla = new DataTable();
+            tabla = this.obj_localidades.Consultar_localidades();
+            dataGridView1.DataSource = tabla;
         }
     }
 }

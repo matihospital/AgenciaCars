@@ -134,7 +134,8 @@ namespace AgenciaCars.clases
             //MessageBox.Show(SqlInsert);
             //se ejcuta en el backEnd el método "grabar_modificar" que ejecuta comandos del 
             //tipo INSERT o UPDATE de SQL 
-            this._BD.grabar_modificar(SqlInsert);           
+           // this._BD.grabar_modificar(SqlInsert);  
+            this._BD.insert_update_delete(SqlInsert);
         }
         //método par amodificar un registro ya existente en la base de datos.
         //La metodología es similar al método anterior, sabiendo que este ejecuta un 
@@ -153,7 +154,7 @@ namespace AgenciaCars.clases
                          + ", email = '" + this._email.ToString() + "'"
                          + ", idLocalidad = " + this._idLocalidad.ToString()
                          + " WHERE idCliente = " + _idCliente;
-            this._BD.grabar_modificar(sqlupdate);
+            this._BD.insert_update_delete(sqlupdate);
         }
     }
 }

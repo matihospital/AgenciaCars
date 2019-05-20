@@ -28,7 +28,10 @@ namespace AgenciaCars.formularios
         private void BUSQ_Paises_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'agenciaCarsDataSet.PAISES' table. You can move, or remove it, as needed.
-            this.pAISESTableAdapter.Fill(this.agenciaCarsDataSet.PAISES);
+            //this.pAISESTableAdapter.Fill(this.agenciaCarsDataSet.PAISES);
+            DataTable tabla = new DataTable();
+            tabla = this.obj_paises.Consultar_paises();
+            dataGridView1.DataSource = tabla;
 
         }
 

@@ -26,6 +26,13 @@ namespace AgenciaCars.clases
         
         // cadena_conexion = "Provider=SQLNCLI11;Data Source=maquis;Persist Security Info=True;User ID=avisuales1;Initial Catalog=_TRATAMIENTO_ERRORES;password=avisuales1";
 
+
+        public enum resultado_acceso { error, correcto }
+        public enum tipo_conexion { simple, transaccion }
+        resultado_acceso control_transaccion = resultado_acceso.correcto;
+        tipo_conexion analisis_tipo_transaccion = tipo_conexion.simple;
+        OleDbTransaction transaccion;
+
         //método conecar, se realiza cada vez que se requiere una nueva acción contra
         //la base de datos.
         //Se utiliza la metodología de acceso instantaneo, que consta de conecar puntualmente
@@ -89,112 +96,7 @@ namespace AgenciaCars.clases
             //se cierra la conexión 
             cerrar();
         }
-        //Método que automatiza un comando INSERT de SQL.
-        //Recibe dos parámetros. El primero son todos los objetos de un formulario en donde se
-        //cargan los datos con los que se realizará el insert. El segundo parámetro es el nombre
-        //de la tabla.
-        public void insert_automatizado(Control.ControlCollection controles, string nombre_tabla)
-        {
-            //Se definen tres variables del tipo string. Columnas servirá para armar la parte del 
-            //comando INSERT referida a la colección de columnas del mismo. Valores hará lo mismo
-            //pero para los valores de asignación a cada columna. SqlInsert será la variable donde
-            //se termine de armar el comando completo. 
 
-            string columnas = "";
-            string valores = "";
-            string sqlinsert = "";
-            //Con el comando foreach se crecorre todos los objetos del formulario para realizar un
-            //análisis de los que son utilizados para crear el comando INSERT.
-            //En este caso, sólo se atenderá los objetos del tipo: TextBox01 y ComboBox01, que son 
-            //los tipos de objetos que contiene información con datos utiles. Para un sistema de mayor
-            //envergadura habrá que agregar el análisis de mayor variedad de objetos, lo que conlleva 
-            //a la creación de otro objetos utilizables.
-
-            foreach (Control item in controles)
-            {
-                //El switch discrimina por el nombre del tipo de objeto.
-                switch (item.GetType().Name)
-                {
-                    //Análisis del tipo TextBox01
-                    case "TextBox01":
-                        //Se pregunta por el nombre de tabla que viene en la propiedad -nombre_tabla- de
-                        //TextBox01 si es distinto a nombre_tabla que es parámetro de entrada, que 
-                        //contiene el nombre de la tabla sobre el que realizaremos el insert.
-                        if (((TextBox01)item)._nombre_tabla != nombre_tabla)
-                        {
-                            //Si el nombre de tabla es distinto, no es de interes el dato y se corta
-                            //el proceso de análisis con el comando -continue- y vuelve a la cabecera 
-                            //del foreach para continuar con el siguiente objeto.
-                            continue;
-                        }
-                        //En caso de ser igual los nombres de tabla, se continua con el nombre del campo.
-                        //Se analiza si el nombre del campo que viene en el objeto esta vacío.
-                        if (((TextBox01)item)._campo == "")
-                        {
-                            //En caso de estar vacío, también se corta el proceso de análisis con -continue-
-                            //, y se vuelve a iniciar el proceso en foreach con el siguiente objeto. 
-                            continue;
-                        }
-                        //Habiendo pasado los dos controles anteriores, se procede a construir el paquete de
-                        //columnas y el paquete de datos. Para este caso hay una diferencia en la concatenación
-                        //de la primera columna y el primer valor, en este caso no debe hacer comas que separen 
-                        //elementos pues son los primeros. Por ello se realiza la pregunta por uno de las dos
-                        //varialbes para ver si está vacia. En ambas salidas de la pregunta se realiza la misma
-                        //accion con la diferencia que en una hay una coma en la concatenación.
-                        if (columnas == "")
-                        {
-                            columnas = columnas + ((TextBox01)item)._campo;
-                            //La concatenación de los valores, requiere un tratamiento especial para los del tipo
-                            //de texto y de fecha, es necesario que estén delimitados con comillas simples, para 
-                            //esto se diseño una función que recibe por parámetro de entrada el dato y el tipo de
-                            //dato questá declarado en el TextBox01 (propiedad creada para este momento).
-                            //Si el tipo de dato lo requiere, la función le agregará las comillas simples, para los
-                            //demás casos no. 
-                            valores = valores + this.formatear_dato(((TextBox01)item).Text, ((TextBox01)item)._tipo);
-                        }
-                        else
-                        {
-                            columnas = columnas + ", " + ((TextBox01)item)._campo;
-                            valores = valores + ", " + this.formatear_dato(((TextBox01)item).Text, ((TextBox01)item)._tipo); ;
-                        }
-                        break;
-                    //El tratamiento del ComboBox01 es de las mismas características que el de TextBox01.
-                    case "ComboBox01":
-                        if (((ComboBox01)item)._nombre_tabla != nombre_tabla)
-                        {
-                            continue;
-                        }
-                        if (((ComboBox01)item)._campo == "")
-                        {
-                            continue;
-                        }
-                        //El valor de devuelto pel el ComboBox01 siempre es numérico, no hace
-                        //falta realizar un analisis del tipo de dato. 
-                        if (columnas == "")
-                        {
-                            columnas = columnas + ((ComboBox01)item)._campo;
-                            valores = valores + ((ComboBox01)item).SelectedValue.ToString();
-                        }
-                        else
-                        {
-                            columnas = columnas + ", " + ((ComboBox01)item)._campo;
-                            valores = valores + ", " + ((ComboBox01)item).SelectedValue.ToString(); ;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            //Construir el comando INSERT concatenando las expresiones estaticas con el 
-            //contenido de las variables que se construyeron y el parámetro de entrada
-            //que contiene el nombre de la tabla
-            sqlinsert = @"INSERT INTO " + nombre_tabla
-                        + " (" + columnas + ") VALUES (" + valores + ")";
-            //MessageBox.Show(sqlinsert);
-            //Transfiere el comando SQL por parámetro al método que se encuarga
-            //de ejecutar comandos, llamada grabar_modificar.
-            this.grabar_modificar(sqlinsert);
-        }
         //Función para formatear datos que serán usados en comando SQL del tipo INSERT O UPDATE.
         //Ingresan por parámetro el dato y el tipo de dato que es una propiedad del objeto 
         //TextBox01, con esto determina si se debe agregar comillas a la expresión que viene
@@ -211,6 +113,29 @@ namespace AgenciaCars.clases
                 //break;
             }
             return dato.Trim();
+        }
+
+        public resultado_acceso insert_update_delete(string comando)
+        {
+            conectar();
+            cmd.CommandText = comando;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                control_transaccion = resultado_acceso.error;
+                MessageBox.Show("Error con la Base de Datos" + "\n"
+                    + "En el comando:" + "\n"
+                    + comando + "\n"
+                    + "El mensaje es:" + "\n"
+                    + e.Message);
+                cerrar();
+                return resultado_acceso.error;
+            }
+            cerrar();
+            return resultado_acceso.correcto;
         }
     }
 }

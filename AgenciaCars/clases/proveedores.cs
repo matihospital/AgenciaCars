@@ -120,7 +120,8 @@ namespace AgenciaCars.clases
                          this._email.ToString() + "', " +
                          this._idLocalidad + ")";
             //MessageBox.Show(SqlInsert);
-            this._BD.grabar_modificar(SqlInsert);
+            //this._BD.grabar_modificar(SqlInsert);
+            this._BD.insert_update_delete(SqlInsert);
         }
         public void modificarProveedor(string _id)
         {
@@ -135,7 +136,7 @@ namespace AgenciaCars.clases
                          + ", email = '" + this._email.ToString() 
                          + ", idLocalidad = " + this._idLocalidad
                          + " WHERE idProveedor = " + _idProveedor;
-            this._BD.grabar_modificar(sqlupdate);
+            this._BD.insert_update_delete(sqlupdate);
         }
     }
 }
