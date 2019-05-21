@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgenciaCars.clases;
+using System.Data;
 
 namespace AgenciaCars.formularios
 {
     public partial class FAC_Compras : Form
     {
+        acceso_BD _BD = new acceso_BD();
+        proveedores obj_proveedores = new proveedores();
+
         public FAC_Compras()
         {
             InitializeComponent();
@@ -29,6 +34,11 @@ namespace AgenciaCars.formularios
 
             this.tipoComprobante.Text = "FACTURA DE COMPRA";
             this.fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            //Proveedores
+            this.cmbProveedor.DataSource = this.obj_proveedores.buscarProveedores();
+            this.cmbProveedor.DisplayMember = "apellido";
+            this.cmbProveedor.ValueMember = "idProveedor";
 
         }
 

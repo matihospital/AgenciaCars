@@ -50,6 +50,7 @@
             this.stockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,9 +60,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sistemaToolStripMenuItem,
             this.clientesToolStripMenuItem,
-            this.proveedoresToolStripMenuItem,
             this.comprasToolStripMenuItem,
+            this.vendedoresToolStripMenuItem,
             this.comprasToolStripMenuItem1,
+            this.proveedoresToolStripMenuItem,
             this.stockToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -228,6 +230,13 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // vendedoresToolStripMenuItem
+            // 
+            this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.vendedoresToolStripMenuItem.Text = "Vendedores";
+            this.vendedoresToolStripMenuItem.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
+            // 
             // Escritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +286,7 @@
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem;
     }
 }
 

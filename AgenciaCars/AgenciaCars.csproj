@@ -99,11 +99,24 @@
     <Compile Include="clases\users.cs" />
     <Compile Include="clases\validaciones.cs" />
     <Compile Include="clases\validar.cs" />
+    <Compile Include="clases\vendedores.cs" />
+    <Compile Include="formularios\ABM_Vendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\ABM_Vendedores.Designer.cs">
+      <DependentUpon>ABM_Vendedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\ABM_Productos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formularios\ABM_Productos.Designer.cs">
       <DependentUpon>ABM_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Vendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Vendedores.Designer.cs">
+      <DependentUpon>BUSQ_Vendedores.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\FAC_Compras.cs">
       <SubType>Form</SubType>
@@ -209,8 +222,14 @@
     <Compile Include="pruebal.Designer.cs">
       <DependentUpon>pruebal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="formularios\ABM_Vendedores.resx">
+      <DependentUpon>ABM_Vendedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\ABM_Productos.resx">
       <DependentUpon>ABM_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Vendedores.resx">
+      <DependentUpon>BUSQ_Vendedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\FAC_Compras.resx">
       <DependentUpon>FAC_Compras.cs</DependentUpon>

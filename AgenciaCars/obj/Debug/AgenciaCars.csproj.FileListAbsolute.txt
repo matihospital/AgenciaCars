@@ -112,3 +112,7 @@ C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.
 C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.csproj.GenerateResource.Cache
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.FAC_Compras.resources
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.FAC_Ventas.resources
+C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.FAC_Compras.resources
+C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.FAC_Ventas.resources
+C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.ABM_Vendedores.resources
+C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Vendedores.resources

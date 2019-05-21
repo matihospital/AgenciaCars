@@ -60,8 +60,8 @@
             this.tipoComprobante = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox018 = new AgenciaCars.clases.TextBox01();
-            this.cliente = new AgenciaCars.clases.TextBox01();
             this.IdFactura = new AgenciaCars.clases.TextBox01();
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -339,19 +339,6 @@
             this.textBox018.Size = new System.Drawing.Size(100, 26);
             this.textBox018.TabIndex = 22;
             // 
-            // cliente
-            // 
-            this.cliente._campo = null;
-            this.cliente._mensaje_error = null;
-            this.cliente._nombre_tabla = null;
-            this.cliente._tipo = AgenciaCars.clases.TextBox01.tipo_dato.texto;
-            this.cliente._validable = false;
-            this.cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cliente.Location = new System.Drawing.Point(31, 142);
-            this.cliente.Name = "cliente";
-            this.cliente.Size = new System.Drawing.Size(182, 26);
-            this.cliente.TabIndex = 22;
-            // 
             // IdFactura
             // 
             this.IdFactura._campo = null;
@@ -366,6 +353,18 @@
             this.IdFactura.Size = new System.Drawing.Size(54, 26);
             this.IdFactura.TabIndex = 22;
             // 
+            // cmbProveedor
+            // 
+            this.cmbProveedor.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(31, 142);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(177, 28);
+            this.cmbProveedor.TabIndex = 28;
+            // 
             // FAC_Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +372,7 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.cmbProveedor);
             this.Controls.Add(this.tipoComprobante);
             this.Controls.Add(this.fecha);
             this.Controls.Add(this.maskedTextBox2);
@@ -386,7 +386,6 @@
             this.Controls.Add(this.label01);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox018);
-            this.Controls.Add(this.cliente);
             this.Controls.Add(this.IdFactura);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -436,12 +435,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private clases.TextBox01 cliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox fecha;
         private System.Windows.Forms.TextBox tipoComprobante;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbProveedor;
     }
 }

@@ -159,5 +159,11 @@ namespace AgenciaCars
             FAC_Compras frm = new FAC_Compras();
             frm.ShowDialog();
         }
+
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BUSQ_Vendedores frm = new BUSQ_Vendedores();
+            frm.ShowDialog();
+        }
     }
 }

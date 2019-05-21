@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgenciaCars.clases;
+using System.Data;
 
 namespace AgenciaCars.formularios
 {
     public partial class FAC_Ventas : Form
     {
         acceso_BD _BD = new acceso_BD();
+        clientes obj_clientes = new clientes();
+        vendedores obj_vendedores = new vendedores();
 
         public FAC_Ventas()
         {
@@ -31,6 +34,16 @@ namespace AgenciaCars.formularios
             //this.fACTURASDETTableAdapter.Fill(this.agenciaCarsDataSet.FACTURASDET);
             this.tipoComprobante.Text = "FACTURA DE VENTA";
             this.fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            //Clientes
+            this.cmbCliente.DataSource = this.obj_clientes.buscarClientes();
+            this.cmbCliente.DisplayMember = "apellido";
+            this.cmbCliente.ValueMember = "idCliente";
+
+            //Vendedores
+            this.cmbVendedor.DataSource = this.obj_vendedores.buscarVendedores();
+            this.cmbVendedor.DisplayMember = "apellido";
+            this.cmbVendedor.ValueMember = "idVendedor";
 
         }
 
