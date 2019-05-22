@@ -91,7 +91,7 @@ namespace AgenciaCars.clases
 
         public DataTable buscarClientes()
         {
-            return this._BD.consulta("SELECT * FROM clientes");
+            return this._BD.consulta("SELECT clientes.*, (clientes.apellido + ' '+ clientes.nombre) ApeNom FROM clientes");
         }
 
         public DataTable buscarPorParametro(string campo, string valor)

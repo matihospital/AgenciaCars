@@ -82,7 +82,7 @@ namespace AgenciaCars.clases
 
         public DataTable buscarProveedores()
         {
-            return _BD.consulta("SELECT * FROM PROVEEDORES");
+            return _BD.consulta("SELECT proveedores.*, (proveedores.apellido + ' '+ proveedores.nombre) ApeNom FROM PROVEEDORES");
         }
 
         public DataTable buscarPorParametro(string campo, string valor)

@@ -150,19 +150,41 @@ namespace AgenciaCars
 
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FAC_Ventas frm = new FAC_Ventas();
-            frm.ShowDialog();
+
         }
 
         private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FAC_Compras frm = new FAC_Compras();
-            frm.ShowDialog();
+            
         }
 
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BUSQ_Vendedores frm = new BUSQ_Vendedores();
+            frm.ShowDialog();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FAC_Ventas frm = new FAC_Ventas();
+            frm.ShowDialog();
+        }
+
+        private void facturasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BUSQ_Ventas frm = new BUSQ_Ventas();
+            frm.ShowDialog();
+        }
+
+        private void nuevaFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FAC_Compras frm = new FAC_Compras();
+            frm.ShowDialog();
+        }
+
+        private void facturasDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BUSQ_Compras frm = new BUSQ_Compras();
             frm.ShowDialog();
         }
     }

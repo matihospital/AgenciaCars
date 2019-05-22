@@ -79,12 +79,17 @@ namespace AgenciaCars.clases
 
         public DataTable buscar_por_id(string id)
         {
-            return this._BD.consulta("SELECT * FROM productos WHERE idProducto =" + id);
+            return this._BD.consulta("SELECT PRO.*, (MAR.descripcion + ' ' +  MDE.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) nombreAuto FROM PRODUCTOS as PRO, MODELOS as MDE, MARCAS as MAR WHERE PRO.idModelo = MDE.idModelo AND mde.idMarca = mar.idMarca AND PRO.idProducto =" + id);
         }
 
         public DataTable buscarProductos()
         {
             return this._BD.consulta("SELECT * FROM productos");
+        }
+
+        public DataTable buscarNombreProductos()
+        {
+            return this._BD.consulta("SELECT PRO.*, (MAR.descripcion + ' ' +  MDE.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) nombreAuto FROM PRODUCTOS as PRO, MODELOS as MDE, MARCAS as MAR WHERE PRO.idModelo = MDE.idModelo AND mde.idMarca = mar.idMarca");
         }
 
         public DataTable buscarPorParametro(string campo, string valor)

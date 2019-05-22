@@ -32,20 +32,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BUSQ_Localidades));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lOCALIDADESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
+            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.lOCALIDADESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.LOCALIDADESTableAdapter();
-            this.lOCALIDADESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idLocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProvinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lOCALIDADESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
+            this.lOCALIDADESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOCALIDADESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.LOCALIDADESTableAdapter();
+            this.agenciaCarsDataSet1 = new AgenciaCars.AgenciaCarsDataSet();
+            this.lOCALIDADESBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,22 +77,18 @@
             this.descripcionDataGridViewTextBoxColumn,
             this.idProvinciaDataGridViewTextBoxColumn,
             this.provincia});
-            this.dataGridView1.DataSource = this.lOCALIDADESBindingSource1;
+            this.dataGridView1.DataSource = this.lOCALIDADESBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 86);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(488, 281);
             this.dataGridView1.TabIndex = 14;
             // 
-            // lOCALIDADESBindingSource
+            // provincia
             // 
-            this.lOCALIDADESBindingSource.DataMember = "LOCALIDADES";
-            this.lOCALIDADESBindingSource.DataSource = this.agenciaCarsDataSet;
-            // 
-            // agenciaCarsDataSet
-            // 
-            this.agenciaCarsDataSet.DataSetName = "AgenciaCarsDataSet";
-            this.agenciaCarsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.provincia.HeaderText = "Provincia";
+            this.provincia.Name = "provincia";
+            this.provincia.ReadOnly = true;
             // 
             // btn_nuevo
             // 
@@ -116,15 +119,6 @@
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // lOCALIDADESTableAdapter
-            // 
-            this.lOCALIDADESTableAdapter.ClearBeforeFill = true;
-            // 
-            // lOCALIDADESBindingSource1
-            // 
-            this.lOCALIDADESBindingSource1.DataMember = "LOCALIDADES";
-            this.lOCALIDADESBindingSource1.DataSource = this.agenciaCarsDataSet;
-            // 
             // idLocalidadDataGridViewTextBoxColumn
             // 
             this.idLocalidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -151,11 +145,50 @@
             this.idProvinciaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idProvinciaDataGridViewTextBoxColumn.Width = 84;
             // 
-            // provincia
+            // lOCALIDADESBindingSource1
             // 
-            this.provincia.HeaderText = "Provincia";
-            this.provincia.Name = "provincia";
-            this.provincia.ReadOnly = true;
+            this.lOCALIDADESBindingSource1.DataMember = "LOCALIDADES";
+            this.lOCALIDADESBindingSource1.DataSource = this.agenciaCarsDataSet;
+            // 
+            // agenciaCarsDataSet
+            // 
+            this.agenciaCarsDataSet.DataSetName = "AgenciaCarsDataSet";
+            this.agenciaCarsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lOCALIDADESBindingSource
+            // 
+            this.lOCALIDADESBindingSource.DataMember = "LOCALIDADES";
+            this.lOCALIDADESBindingSource.DataSource = this.agenciaCarsDataSet;
+            // 
+            // lOCALIDADESTableAdapter
+            // 
+            this.lOCALIDADESTableAdapter.ClearBeforeFill = true;
+            // 
+            // agenciaCarsDataSet1
+            // 
+            this.agenciaCarsDataSet1.DataSetName = "AgenciaCarsDataSet";
+            this.agenciaCarsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lOCALIDADESBindingSource2
+            // 
+            this.lOCALIDADESBindingSource2.DataMember = "LOCALIDADES";
+            this.lOCALIDADESBindingSource2.DataSource = this.agenciaCarsDataSet1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(37, 139);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 21;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(513, 25);
+            this.toolStrip1.TabIndex = 22;
+            this.toolStrip1.Text = "fillByToolStrip";
             // 
             // BUSQ_Localidades
             // 
@@ -164,6 +197,8 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(513, 424);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.dataGridView1);
@@ -176,9 +211,12 @@
             this.Text = "Localidades";
             this.Load += new System.EventHandler(this.BUSQ_Localidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +236,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProvinciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
+        private AgenciaCarsDataSet agenciaCarsDataSet1;
+        private System.Windows.Forms.BindingSource lOCALIDADESBindingSource2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

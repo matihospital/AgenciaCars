@@ -84,6 +84,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="clases\estados.cs" />
+    <Compile Include="clases\facturas.cs" />
     <Compile Include="clases\localidades.cs" />
     <Compile Include="clases\modelos.cs" />
     <Compile Include="clases\marcas.cs" />
@@ -111,6 +112,18 @@
     </Compile>
     <Compile Include="formularios\ABM_Productos.Designer.cs">
       <DependentUpon>ABM_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Compras.Designer.cs">
+      <DependentUpon>BUSQ_Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_Ventas.Designer.cs">
+      <DependentUpon>BUSQ_Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\BUSQ_Vendedores.cs">
       <SubType>Form</SubType>
@@ -227,6 +240,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\ABM_Productos.resx">
       <DependentUpon>ABM_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Compras.resx">
+      <DependentUpon>BUSQ_Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_Ventas.resx">
+      <DependentUpon>BUSQ_Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\BUSQ_Vendedores.resx">
       <DependentUpon>BUSQ_Vendedores.cs</DependentUpon>
