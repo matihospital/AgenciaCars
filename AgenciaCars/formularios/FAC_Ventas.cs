@@ -98,7 +98,7 @@ namespace AgenciaCars.formularios
             {
                 _BD.iniciar_transaccion();
 
-                DataTable existe = _BD.consulta("SELECT ISNULL( (SELECT 1 from facturas where ptoVenta = " + this.txtPuntoVenta.Text + " and nroFactura = " + this.txtNumero.Text + "),0) as existe ");
+                DataTable existe = _BD.consulta("SELECT ISNULL( (SELECT 1 from facturas where ptoVenta = " + this.txtPuntoVenta.Text + " and nroFactura = " + this.txtNumero.Text + " and tipoComprobante = 'V'),0) as existe ");
                 if (existe.Rows[0]["existe"].ToString() == "1")
                 {
                     MessageBox.Show("Ya existe una factura para ese punto de venta y ese numero");

@@ -107,7 +107,7 @@
             this.btn_nuevo.Location = new System.Drawing.Point(12, 520);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(100, 29);
-            this.btn_nuevo.TabIndex = 19;
+            this.btn_nuevo.TabIndex = 11;
             this.btn_nuevo.Text = "Nuevo";
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
@@ -122,7 +122,7 @@
             this.btn_salir.Location = new System.Drawing.Point(224, 520);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(100, 29);
-            this.btn_salir.TabIndex = 20;
+            this.btn_salir.TabIndex = 13;
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
@@ -141,7 +141,7 @@
             this.button1.Location = new System.Drawing.Point(118, 520);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 21;
+            this.button1.TabIndex = 12;
             this.button1.Text = "Anular";
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -305,7 +305,7 @@
             this.txtPuntoVenta.Mask = "0000";
             this.txtPuntoVenta.Name = "txtPuntoVenta";
             this.txtPuntoVenta.Size = new System.Drawing.Size(81, 26);
-            this.txtPuntoVenta.TabIndex = 25;
+            this.txtPuntoVenta.TabIndex = 2;
             // 
             // txtNumero
             // 
@@ -314,7 +314,7 @@
             this.txtNumero.Mask = "00000000";
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(119, 26);
-            this.txtNumero.TabIndex = 25;
+            this.txtNumero.TabIndex = 3;
             // 
             // txtFecha
             // 
@@ -323,7 +323,7 @@
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(100, 26);
-            this.txtFecha.TabIndex = 25;
+            this.txtFecha.TabIndex = 4;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // tipoComprobante
@@ -333,7 +333,7 @@
             this.tipoComprobante.Location = new System.Drawing.Point(91, 88);
             this.tipoComprobante.Name = "tipoComprobante";
             this.tipoComprobante.Size = new System.Drawing.Size(206, 26);
-            this.tipoComprobante.TabIndex = 26;
+            this.tipoComprobante.TabIndex = 1;
             // 
             // cmbCliente
             // 
@@ -345,7 +345,7 @@
             this.cmbCliente.Location = new System.Drawing.Point(31, 143);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(187, 28);
-            this.cmbCliente.TabIndex = 27;
+            this.cmbCliente.TabIndex = 5;
             // 
             // cmbProducto
             // 
@@ -357,7 +357,7 @@
             this.cmbProducto.Location = new System.Drawing.Point(14, 465);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(228, 28);
-            this.cmbProducto.TabIndex = 27;
+            this.cmbProducto.TabIndex = 8;
             // 
             // txtDescripcion
             // 
@@ -365,7 +365,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(225, 145);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(206, 26);
-            this.txtDescripcion.TabIndex = 29;
+            this.txtDescripcion.TabIndex = 6;
             // 
             // label7
             // 
@@ -387,7 +387,7 @@
             this.cmbVendedor.Location = new System.Drawing.Point(437, 143);
             this.cmbVendedor.Name = "cmbVendedor";
             this.cmbVendedor.Size = new System.Drawing.Size(187, 28);
-            this.cmbVendedor.TabIndex = 27;
+            this.cmbVendedor.TabIndex = 7;
             // 
             // btnProducto
             // 
@@ -398,7 +398,7 @@
             this.btnProducto.Location = new System.Drawing.Point(354, 465);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(100, 29);
-            this.btnProducto.TabIndex = 30;
+            this.btnProducto.TabIndex = 10;
             this.btnProducto.Text = "Añadir Producto";
             this.btnProducto.UseVisualStyleBackColor = false;
             this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
@@ -434,7 +434,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(248, 467);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 26);
-            this.txtCantidad.TabIndex = 31;
+            this.txtCantidad.TabIndex = 9;
             // 
             // txtTotal
             // 
@@ -461,7 +461,7 @@
             this.IdFactura.Location = new System.Drawing.Point(31, 88);
             this.IdFactura.Name = "IdFactura";
             this.IdFactura.Size = new System.Drawing.Size(54, 26);
-            this.IdFactura.TabIndex = 22;
+            this.IdFactura.TabIndex = 0;
             // 
             // FAC_Ventas
             // 

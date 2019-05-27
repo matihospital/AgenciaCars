@@ -38,6 +38,13 @@
             this.lOCALIDADESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.LOCALIDADESTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFacturaDet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fACTURASDETBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fACTURASDETTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.FACTURASDETTableAdapter();
             this.label01 = new System.Windows.Forms.Label();
@@ -61,13 +68,6 @@
             this.txtCantidad = new AgenciaCars.clases.TextBox01();
             this.txtTotal = new AgenciaCars.clases.TextBox01();
             this.IdFactura = new AgenciaCars.clases.TextBox01();
-            this.orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFacturaDet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -105,7 +105,7 @@
             this.btn_nuevo.Location = new System.Drawing.Point(12, 520);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(100, 29);
-            this.btn_nuevo.TabIndex = 19;
+            this.btn_nuevo.TabIndex = 10;
             this.btn_nuevo.Text = "Nuevo";
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
@@ -120,7 +120,7 @@
             this.btn_salir.Location = new System.Drawing.Point(224, 520);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(100, 29);
-            this.btn_salir.TabIndex = 20;
+            this.btn_salir.TabIndex = 12;
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
@@ -139,7 +139,7 @@
             this.button1.Location = new System.Drawing.Point(118, 520);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 21;
+            this.button1.TabIndex = 11;
             this.button1.Text = "Anular";
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -161,6 +161,50 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(742, 262);
             this.dataGridView1.TabIndex = 23;
+            // 
+            // orden
+            // 
+            this.orden.HeaderText = "Orden";
+            this.orden.Name = "orden";
+            this.orden.ReadOnly = true;
+            // 
+            // idFacturaDet
+            // 
+            this.idFacturaDet.HeaderText = "idFactura";
+            this.idFacturaDet.Name = "idFacturaDet";
+            this.idFacturaDet.ReadOnly = true;
+            this.idFacturaDet.Visible = false;
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "Cod.Producto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            // 
+            // producto
+            // 
+            this.producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            this.producto.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
             // 
             // fACTURASDETBindingSource
             // 
@@ -238,7 +282,7 @@
             this.txtPuntoVenta.Mask = "0000";
             this.txtPuntoVenta.Name = "txtPuntoVenta";
             this.txtPuntoVenta.Size = new System.Drawing.Size(81, 26);
-            this.txtPuntoVenta.TabIndex = 25;
+            this.txtPuntoVenta.TabIndex = 2;
             // 
             // txtNumero
             // 
@@ -247,7 +291,7 @@
             this.txtNumero.Mask = "00000000";
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(119, 26);
-            this.txtNumero.TabIndex = 25;
+            this.txtNumero.TabIndex = 3;
             // 
             // txtFecha
             // 
@@ -256,16 +300,17 @@
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(100, 26);
-            this.txtFecha.TabIndex = 25;
+            this.txtFecha.TabIndex = 4;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // tipoComprobante
             // 
+            this.tipoComprobante.Enabled = false;
             this.tipoComprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tipoComprobante.Location = new System.Drawing.Point(91, 88);
             this.tipoComprobante.Name = "tipoComprobante";
             this.tipoComprobante.Size = new System.Drawing.Size(206, 26);
-            this.tipoComprobante.TabIndex = 26;
+            this.tipoComprobante.TabIndex = 1;
             // 
             // cmbProveedor
             // 
@@ -277,7 +322,7 @@
             this.cmbProveedor.Location = new System.Drawing.Point(31, 142);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(177, 28);
-            this.cmbProveedor.TabIndex = 28;
+            this.cmbProveedor.TabIndex = 5;
             // 
             // label8
             // 
@@ -299,7 +344,7 @@
             this.btnProducto.Location = new System.Drawing.Point(353, 468);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(100, 29);
-            this.btnProducto.TabIndex = 33;
+            this.btnProducto.TabIndex = 9;
             this.btnProducto.Text = "Añadir Producto";
             this.btnProducto.UseVisualStyleBackColor = false;
             this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
@@ -314,7 +359,7 @@
             this.cmbProducto.Location = new System.Drawing.Point(13, 468);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(228, 28);
-            this.cmbProducto.TabIndex = 32;
+            this.cmbProducto.TabIndex = 7;
             // 
             // label11
             // 
@@ -342,7 +387,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(214, 142);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(206, 26);
-            this.txtDescripcion.TabIndex = 38;
+            this.txtDescripcion.TabIndex = 6;
             // 
             // label7
             // 
@@ -365,7 +410,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(247, 470);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 26);
-            this.txtCantidad.TabIndex = 34;
+            this.txtCantidad.TabIndex = 8;
             // 
             // txtTotal
             // 
@@ -392,51 +437,7 @@
             this.IdFactura.Location = new System.Drawing.Point(31, 88);
             this.IdFactura.Name = "IdFactura";
             this.IdFactura.Size = new System.Drawing.Size(54, 26);
-            this.IdFactura.TabIndex = 22;
-            // 
-            // orden
-            // 
-            this.orden.HeaderText = "Orden";
-            this.orden.Name = "orden";
-            this.orden.ReadOnly = true;
-            // 
-            // idFacturaDet
-            // 
-            this.idFacturaDet.HeaderText = "idFactura";
-            this.idFacturaDet.Name = "idFacturaDet";
-            this.idFacturaDet.ReadOnly = true;
-            this.idFacturaDet.Visible = false;
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "Cod.Producto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            // 
-            // producto
-            // 
-            this.producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // total
-            // 
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
+            this.IdFactura.TabIndex = 0;
             // 
             // FAC_Compras
             // 
