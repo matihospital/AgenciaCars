@@ -56,8 +56,11 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,6 +104,15 @@
     <Compile Include="clases\validaciones.cs" />
     <Compile Include="clases\validar.cs" />
     <Compile Include="clases\vendedores.cs" />
+    <Compile Include="datos\datosListasEstadisticas.cs">
+      <DependentUpon>datosListasEstadisticas.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\datosListasEstadisticas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datosListasEstadisticas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="formularios\ABM_Vendedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +233,12 @@
     <Compile Include="formularios\ABM_Usuarios.Designer.cs">
       <DependentUpon>ABM_Usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\listados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\listados.Designer.cs">
+      <DependentUpon>listados.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +313,9 @@
     <EmbeddedResource Include="formularios\ABM_Usuarios.resx">
       <DependentUpon>ABM_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formularios\listados.resx">
+      <DependentUpon>listados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +332,8 @@
     <EmbeddedResource Include="pruebal.resx">
       <DependentUpon>pruebal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reportes\estadisticasClientesProvincias.rdlc" />
+    <EmbeddedResource Include="reportes\listadoClientes.rdlc" />
     <None Include="AgenciaCarsDataSet.xsc">
       <DependentUpon>AgenciaCarsDataSet.xsd</DependentUpon>
     </None>
@@ -321,6 +344,17 @@
     </None>
     <None Include="AgenciaCarsDataSet.xss">
       <DependentUpon>AgenciaCarsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="datos\datosListasEstadisticas.xsc">
+      <DependentUpon>datosListasEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="datos\datosListasEstadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datosListasEstadisticas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datos\datosListasEstadisticas.xss">
+      <DependentUpon>datosListasEstadisticas.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -362,6 +396,7 @@
     <Content Include="768px-Circle-icons-car.svg.ico" />
     <Content Include="logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgenciaCars.formularios;
 
 namespace AgenciaCars
 {
@@ -16,8 +17,8 @@ namespace AgenciaCars
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Escritorio());
-            //Application.Run(new pruebal());
+            //Application.Run(new Escritorio());
+            Application.Run(new listados());
         }
     }
 }

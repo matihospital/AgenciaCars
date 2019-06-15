@@ -23,7 +23,7 @@ descripcion VARCHAR(50),
 CONSTRAINT tipoDoc_pk PRIMARY KEY (idTipoDoc))
 
 CREATE TABLE ESTADOS
-(idEstado
+(idEstado INT,
 descripcion VARCHAR(50),
 CONSTRAINT estado_pk PRIMARY KEY (idEstado))
 
@@ -69,7 +69,7 @@ email VARCHAR(50),
 idLocalidad INT NOT NULL,
 idEstado INT NOT NULL,
 CONSTRAINT vendedor_pk PRIMARY KEY (idVendedor),
-CONSTRAINT localidad_proveedores_fk FOREIGN KEY (idLocalidad) REFERENCES LOCALIDADES(idLocalidad))
+CONSTRAINT localidad_vendedores_fk FOREIGN KEY (idLocalidad) REFERENCES LOCALIDADES(idLocalidad),
 CONSTRAINT estado_proveedores_fk FOREIGN KEY (idEstado) REFERENCES ESTADOS(idEstado))
 
 CREATE TABLE MARCAS
@@ -78,7 +78,7 @@ descripcion VARCHAR(150),
 idPais INT NOT NULL,
 idEstado INT NOT NULL,
 CONSTRAINT marca_pk PRIMARY KEY (idMarca),
-CONSTRAINT pais_marcas_fk FOREIGN KEY (idPais) REFERENCES PAISES(idPais))
+CONSTRAINT pais_marcas_fk FOREIGN KEY (idPais) REFERENCES PAISES(idPais),
 CONSTRAINT estado_marcas_fk FOREIGN KEY (idEstado) REFERENCES ESTADOS(idEstado))
 
 CREATE TABLE MODELOS
@@ -87,7 +87,7 @@ idMarca INT NOT NULL,
 descripcion VARCHAR(150),
 idEstado INT NOT NULL,
 CONSTRAINT modelo_pk PRIMARY KEY (idModelo),
-CONSTRAINT marca_modelo_fk FOREIGN KEY (idMarca) REFERENCES MARCAS(idMarca))
+CONSTRAINT marca_modelo_fk FOREIGN KEY (idMarca) REFERENCES MARCAS(idMarca),
 CONSTRAINT estado_modelos_fk FOREIGN KEY (idEstado) REFERENCES ESTADOS(idEstado))
 
 
@@ -105,7 +105,7 @@ CONSTRAINT producto_pk PRIMARY KEY (idProducto),
 CONSTRAINT modelo_productos_fk FOREIGN KEY (idModelo) REFERENCES MODELOS(idModelo),
 CONSTRAINT proveedor_productos_fk FOREIGN KEY (idProveedor) REFERENCES PROVEEDORES(idProveedor),
 CONSTRAINT pais_productos_fk FOREIGN KEY (idPais) REFERENCES PAISES(idPais),
-CONSTRAINT precio_productos_ck CHECK (precio>0))
+CONSTRAINT precio_productos_ck CHECK (precio>0),
 CONSTRAINT estado_productos_fk FOREIGN KEY (idEstado) REFERENCES ESTADOS(idEstado))
 
 
@@ -124,7 +124,7 @@ CONSTRAINT factura_pk PRIMARY KEY (idFactura),
 CONSTRAINT cliente_facturas_fk FOREIGN KEY (idCliente) REFERENCES CLIENTES(idCliente),
 CONSTRAINT proveedor_facturas_fk FOREIGN KEY (idProveedor) REFERENCES PROVEEDORES(idProveedor),
 CONSTRAINT total_facturas_ck CHECK (total > 0),
-CONSTRAINT tipoComprobante_facturas_ck CHECK (tipoComprobante IN ('C','V') ))
+CONSTRAINT tipoComprobante_facturas_ck CHECK (tipoComprobante IN ('C','V') ),
 CONSTRAINT estado_factura_fk FOREIGN KEY (idEstado) REFERENCES ESTADOS(idEstado))
 
 CREATE TABLE FACTURASDET
