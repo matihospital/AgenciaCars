@@ -151,3 +151,11 @@ C:\Users\Matias\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.c
 C:\Users\Matias\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.listados.resources
 C:\Users\Matias\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.cache
 C:\Users\Matias\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.compiled
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.ABM_Vendedores.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Compras.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Ventas.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Vendedores.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.listados.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.cache
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.compiled
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.Indicadores.resources

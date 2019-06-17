@@ -17,8 +17,8 @@ namespace AgenciaCars
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Escritorio());
-            Application.Run(new listados());
+            Application.Run(new Escritorio());
+            //Application.Run(new listados());
         }
     }
 }

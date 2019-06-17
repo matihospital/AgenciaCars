@@ -44,6 +44,8 @@
             this.facturasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturasDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +54,9 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.indicadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nuevaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturasDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,9 @@
             this.vendedoresToolStripMenuItem,
             this.comprasToolStripMenuItem1,
             this.proveedoresToolStripMenuItem,
-            this.stockToolStripMenuItem});
+            this.stockToolStripMenuItem,
+            this.informesToolStripMenuItem,
+            this.indicadoresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1300, 24);
@@ -186,6 +190,20 @@
             this.comprasToolStripMenuItem1.Text = "Compras";
             this.comprasToolStripMenuItem1.Click += new System.EventHandler(this.comprasToolStripMenuItem1_Click);
             // 
+            // nuevaFacturaToolStripMenuItem
+            // 
+            this.nuevaFacturaToolStripMenuItem.Name = "nuevaFacturaToolStripMenuItem";
+            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaFacturaToolStripMenuItem.Text = " Nueva Factura";
+            this.nuevaFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevaFacturaToolStripMenuItem_Click);
+            // 
+            // facturasDeCompraToolStripMenuItem
+            // 
+            this.facturasDeCompraToolStripMenuItem.Name = "facturasDeCompraToolStripMenuItem";
+            this.facturasDeCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facturasDeCompraToolStripMenuItem.Text = "Facturas de Compra";
+            this.facturasDeCompraToolStripMenuItem.Click += new System.EventHandler(this.facturasDeCompraToolStripMenuItem_Click);
+            // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
@@ -251,6 +269,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "AGENCIA CARS";
             // 
+            // informesToolStripMenuItem
+            // 
+            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
+            this.informesToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.informesToolStripMenuItem.Text = "Listados";
+            this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
+            // 
+            // indicadoresToolStripMenuItem
+            // 
+            this.indicadoresToolStripMenuItem.Name = "indicadoresToolStripMenuItem";
+            this.indicadoresToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.indicadoresToolStripMenuItem.Text = "Indicadores";
+            this.indicadoresToolStripMenuItem.Click += new System.EventHandler(this.indicadoresToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -260,20 +292,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // nuevaFacturaToolStripMenuItem
-            // 
-            this.nuevaFacturaToolStripMenuItem.Name = "nuevaFacturaToolStripMenuItem";
-            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nuevaFacturaToolStripMenuItem.Text = " Nueva Factura";
-            this.nuevaFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevaFacturaToolStripMenuItem_Click);
-            // 
-            // facturasDeCompraToolStripMenuItem
-            // 
-            this.facturasDeCompraToolStripMenuItem.Name = "facturasDeCompraToolStripMenuItem";
-            this.facturasDeCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.facturasDeCompraToolStripMenuItem.Text = "Facturas de Compra";
-            this.facturasDeCompraToolStripMenuItem.Click += new System.EventHandler(this.facturasDeCompraToolStripMenuItem_Click);
             // 
             // Escritorio
             // 
@@ -329,6 +347,8 @@
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nuevaFacturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasDeCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem indicadoresToolStripMenuItem;
     }
 }
 
