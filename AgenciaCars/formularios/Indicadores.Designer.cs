@@ -33,6 +33,8 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.EstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
             this.datosListasEstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,6 +54,8 @@
             this.ListadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datosListasEstadisticas1 = new AgenciaCars.datos.datosListasEstadisticas();
             this.datosListasEstadisticas1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewer6 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.EstadisticasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticasBindingSource)).BeginInit();
@@ -60,6 +64,8 @@
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoClientesBindingSource)).BeginInit();
@@ -161,7 +167,6 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Ventas por Cliente";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // reportViewer3
             // 
@@ -176,6 +181,7 @@
             this.reportViewer3.Name = "reportViewer3";
             this.reportViewer3.Size = new System.Drawing.Size(813, 545);
             this.reportViewer3.TabIndex = 2;
+            this.reportViewer3.Load += new System.EventHandler(this.reportViewer3_Load);
             // 
             // tabPage4
             // 
@@ -205,22 +211,24 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.reportViewer5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(805, 541);
             this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "Compras por Modelo";
+            this.tabPage5.Text = "Compras por Mes";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.reportViewer6);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(805, 541);
             this.tabPage6.TabIndex = 6;
-            this.tabPage6.Text = "Compras por Proveedor";
+            this.tabPage6.Text = "Auto mas Vendido por Mes";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // agenciaCarsDataSet
@@ -248,6 +256,36 @@
             this.datosListasEstadisticas1BindingSource.DataSource = this.datosListasEstadisticas1;
             this.datosListasEstadisticas1BindingSource.Position = 0;
             // 
+            // reportViewer5
+            // 
+            this.reportViewer5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource5.Name = "DataSet1";
+            reportDataSource5.Value = this.EstadisticasBindingSource;
+            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewer5.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasComprasMes.rdlc";
+            this.reportViewer5.Location = new System.Drawing.Point(-4, -1);
+            this.reportViewer5.Name = "reportViewer5";
+            this.reportViewer5.Size = new System.Drawing.Size(813, 543);
+            this.reportViewer5.TabIndex = 4;
+            this.reportViewer5.Load += new System.EventHandler(this.reportViewer5_Load);
+            // 
+            // reportViewer6
+            // 
+            this.reportViewer6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource6.Name = "DataSet1";
+            reportDataSource6.Value = this.EstadisticasBindingSource;
+            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer6.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasAutoMasVendido.rdlc";
+            this.reportViewer6.Location = new System.Drawing.Point(-4, -1);
+            this.reportViewer6.Name = "reportViewer6";
+            this.reportViewer6.Size = new System.Drawing.Size(813, 543);
+            this.reportViewer6.TabIndex = 5;
+            this.reportViewer6.Load += new System.EventHandler(this.reportViewer6_Load);
+            // 
             // Indicadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +303,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoClientesBindingSource)).EndInit();
@@ -295,5 +335,7 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer4;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer5;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer6;
     }
 }

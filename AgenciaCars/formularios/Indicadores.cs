@@ -64,7 +64,7 @@ namespace AgenciaCars.formularios
             this.reportViewer2.RefreshReport();
         }
 
-        private void tabPage3_Click(object sender, EventArgs e)
+        private void reportViewer3_Load(object sender, EventArgs e)
         {
             acceso_BD bd = new acceso_BD();
             string sql = "";
@@ -75,6 +75,7 @@ namespace AgenciaCars.formularios
                     FROM FACTURAS as fac, 
                          CLIENTES as cli
                     WHERE fac.idCliente = cli.idCliente
+                    AND fac.tipoComprobante = 'V'
                     GROUP BY cli.apellido + ' ' + cli.nombre ";
 
             EstadisticasBindingSource.DataSource = bd.consulta(sql);
@@ -100,6 +101,45 @@ namespace AgenciaCars.formularios
             this.reportViewer4.RefreshReport();
         }
 
+        private void reportViewer5_Load(object sender, EventArgs e)
+        {
+            acceso_BD bd = new acceso_BD();
+            string sql = "";
+
+            //Compras por Mes
+            sql = @"SELECT LEFT(CONVERT(varchar, fac.fecha,112),6) as descriptor,
+                           sum(fad.precioUnitario) as dato
+                    FROM FACTURAS as fac, 
+                         FACTURASDET as fad
+                    WHERE fac.idFactura = fad.idFactura
+                    AND fac.tipoComprobante = 'C' 
+                    GROUP BY LEFT(CONVERT(varchar, fac.fecha,112),6) ";
+
+            EstadisticasBindingSource.DataSource = bd.consulta(sql);
+            this.reportViewer5.RefreshReport();
+        }
+
+        private void reportViewer6_Load(object sender, EventArgs e)
+        {
+            acceso_BD bd = new acceso_BD();
+            string sql = "";
+
+            //Compras por Mes
+            sql = @"SELECT mod.descripcion as descriptor,
+                           sum(fad.precioUnitario) as dato
+                    FROM FACTURAS as fac, 
+                         FACTURASDET as fad,
+                         PRODUCTOS as pro,
+                         MODELOS as mod
+                    WHERE fac.idFactura = fad.idFactura
+                    AND fac.tipoComprobante = 'V' 
+                    AND fad.idProducto = pro.idProducto
+                    AND pro.idModelo = mod.idModelo
+                    GROUP BY mod.descripcion ";
+
+            EstadisticasBindingSource.DataSource = bd.consulta(sql);
+            this.reportViewer5.RefreshReport();
+        }
 
     }
 }
