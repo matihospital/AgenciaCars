@@ -41,19 +41,44 @@ namespace AgenciaCars.formularios
                            cli.nombre,
                            cli.telefono,
                            cli.email
-                    FROM CLIENTES as cli, 
-                         TIPOS_DOCUMENTOS as tpd
-                    WHERE cli.idTipoDoc = tpd.idTipoDoc";
-            tabla = bd.consulta(sql);
+                    FROM CLIENTES as cli JOIN 
+                    TIPOS_DOCUMENTOS as tpd ON cli.idTipoDoc = tpd.idTipoDoc
+                    WHERE 1=1";
 
-            if (tabla.Rows.Count == 0)
+            if (!string.IsNullOrEmpty(txtPatron.Text))
             {
-                MessageBox.Show("No hay datos para mostrar");
-                return;
-            }
+                int i;
+                if (int.TryParse(txtPatron.Text, out i))
+                {
+                    sql += " AND idCliente = " + txtPatron.Text;
+                }
+                else
+                {
+                    if (txtPatron.Text.IndexOf("-") != -1)
+                    {
+                        string[] datos;
+                        datos = txtPatron.Text.Split('-');
+                        sql += @" AND legajo BETWEEN " + datos[0]
+                            + " AND " + datos[1];
+                    }
+                    else
+                    {
+                        sql += @" AND apellido like '%"
+                            + txtPatron.Text.Trim() + "%'";
+                    }
+                }
+             }
 
-            datosListasEstadisticasBindingSource.DataSource = tabla;
-            reportViewer1.RefreshReport();
+                tabla = bd.consulta(sql);
+                if (tabla.Rows.Count == 0)
+                {
+                    MessageBox.Show("No hay datos para mostrar");
+                    return;
+                }
+
+                datosListasEstadisticasBindingSource.DataSource = tabla;
+                reportViewer1.RefreshReport();
+            
         }
 
         private void iniciarEstadistica()
@@ -114,8 +139,8 @@ namespace AgenciaCars.formularios
                 return;
             }
             datosListasEstadisticas2BindingSource.DataSource = tabla;
-           
             reportViewer2.RefreshReport();
         }
+
     }
 }

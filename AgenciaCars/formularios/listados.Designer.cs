@@ -48,6 +48,9 @@
             this.txtpatroproduc = new System.Windows.Forms.TextBox();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
             this.agenciaCarsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ListadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -111,6 +114,9 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(-1, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -140,7 +146,7 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.datosListasEstadisticasBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.listadoClientes.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.listadoClientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(-4, 66);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(789, 408);
@@ -222,7 +228,7 @@
             reportDataSource2.Name = "Productosdataset";
             reportDataSource2.Value = this.datosListasEstadisticas2BindingSource;
             this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer2.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.ListadoProductos.rdlc";
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.ListadoProductos.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(-4, 59);
             this.reportViewer2.Name = "reportViewer2";
             this.reportViewer2.Size = new System.Drawing.Size(789, 419);
@@ -235,8 +241,38 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(781, 474);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Proveedores";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(781, 474);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Vendedores";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(781, 474);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Facturas";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(781, 474);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Productos Vendidos";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // agenciaCarsDataSet
             // 
@@ -343,5 +379,8 @@
         private System.Windows.Forms.BindingSource productosBindingSource2;
         private System.Windows.Forms.BindingSource productosBindingSource1;
         private System.Windows.Forms.BindingSource ListadoProductoBindingSource;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
     }
 }
