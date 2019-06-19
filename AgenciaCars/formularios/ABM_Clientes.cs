@@ -45,16 +45,16 @@ namespace AgenciaCars.formularios
 
             //Paises
             this.cmb_pais.DataSource = this.obj_paises.Consultar_paises();
-            this.cmb_pais.DisplayMember = "descripcion";
-            this.cmb_pais.ValueMember = "idPais";
+            this.cmb_pais.DisplayMember = "Pais";
+            this.cmb_pais.ValueMember = "Id";
             //Provincias
             this.cmb_provincia.DataSource = this.obj_provincias.ConsultarProvinciasPais(this.cmb_pais.SelectedValue.ToString());
-            this.cmb_provincia.DisplayMember = "descripcion";
-            this.cmb_provincia.ValueMember = "idProvincia";
+            this.cmb_provincia.DisplayMember = "Provincia";
+            this.cmb_provincia.ValueMember = "Id";
             //Localidades
             this.cmb_localidad.DataSource = this.obj_localidades.ConsultarLocalidadesProvincia(this.cmb_provincia.SelectedValue.ToString());
-            this.cmb_localidad.DisplayMember = "descripcion";
-            this.cmb_localidad.ValueMember = "idLocalidad";
+            this.cmb_localidad.DisplayMember = "Localidad";
+            this.cmb_localidad.ValueMember = "Id";
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -177,8 +177,8 @@ namespace AgenciaCars.formularios
             if (this.cmb_provincia.SelectedIndex != 0)  {
                 cmb_localidad.DataSource = null;
                 this.cmb_localidad.DataSource = this.obj_localidades.ConsultarLocalidadesProvincia(this.cmb_provincia.SelectedValue.ToString());
-                this.cmb_localidad.DisplayMember = "descripcion";
-                this.cmb_localidad.ValueMember = "idLocalidad";
+                this.cmb_localidad.DisplayMember = "Localidad";
+                this.cmb_localidad.ValueMember = "Id";
             }
         }
 
@@ -189,8 +189,8 @@ namespace AgenciaCars.formularios
             {
                 cmb_provincia.DataSource = null;
                 this.cmb_provincia.DataSource = this.obj_provincias.ConsultarProvinciasPais(this.cmb_pais.SelectedValue.ToString());
-                this.cmb_provincia.DisplayMember = "descripcion";
-                this.cmb_provincia.ValueMember = "idProvincia";
+                this.cmb_provincia.DisplayMember = "Provincia";
+                this.cmb_provincia.ValueMember = "Id";
 
             }
         }

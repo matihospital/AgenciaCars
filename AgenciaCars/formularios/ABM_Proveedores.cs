@@ -157,8 +157,8 @@ namespace AgenciaCars.formularios
             {
                 cmb_localidad.DataSource = null;
                 this.cmb_localidad.DataSource = this.obj_localidades.ConsultarLocalidadesProvincia(this.cmb_provincia.SelectedValue.ToString());
-                this.cmb_localidad.DisplayMember = "descripcion";
-                this.cmb_localidad.ValueMember = "idLocalidad";
+                this.cmb_localidad.DisplayMember = "Localidad";
+                this.cmb_localidad.ValueMember = "Id";
             }
         }
 
@@ -169,8 +169,8 @@ namespace AgenciaCars.formularios
             {
                 cmb_provincia.DataSource = null;
                 this.cmb_provincia.DataSource = this.obj_provincias.ConsultarProvinciasPais(this.cmb_pais.SelectedValue.ToString());
-                this.cmb_provincia.DisplayMember = "descripcion";
-                this.cmb_provincia.ValueMember = "idProvincia";
+                this.cmb_provincia.DisplayMember = "Provincia";
+                this.cmb_provincia.ValueMember = "Id";
 
             }
         }

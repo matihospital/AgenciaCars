@@ -30,12 +30,12 @@ namespace AgenciaCars.formularios
             producto = obj_productos.buscar_por_id(this.cmbProducto.SelectedValue.ToString());
 
             int index = dataGridView1.Rows.Add();
-            this.dataGridView1.Rows[index].Cells["orden"].Value = index;
-            this.dataGridView1.Rows[index].Cells["idProducto"].Value = producto.Rows[0]["idProducto"];
-            this.dataGridView1.Rows[index].Cells["producto"].Value = producto.Rows[0]["nombreAuto"];
-            this.dataGridView1.Rows[index].Cells["precio"].Value = producto.Rows[0]["precio"]; ;
+            this.dataGridView1.Rows[index].Cells["orden"].Value = index+1;
+            this.dataGridView1.Rows[index].Cells["idProducto"].Value = producto.Rows[0]["Id"];
+            this.dataGridView1.Rows[index].Cells["producto"].Value = producto.Rows[0]["Producto"];
+            this.dataGridView1.Rows[index].Cells["precio"].Value = producto.Rows[0]["Precio"]; ;
             this.dataGridView1.Rows[index].Cells["cantidad"].Value = this.txtCantidad.Text ;
-            this.dataGridView1.Rows[index].Cells["total"].Value = int.Parse(producto.Rows[0]["precio"].ToString()) * int.Parse(this.txtCantidad.Text);
+            this.dataGridView1.Rows[index].Cells["total"].Value = int.Parse(producto.Rows[0]["Precio"].ToString()) * int.Parse(this.txtCantidad.Text);
 
             this.txtTotal.Text = (Convert.ToInt32(this.txtTotal.Text) + Convert.ToInt32(this.dataGridView1.Rows[index].Cells["total"].Value)).ToString();
         }
@@ -64,8 +64,8 @@ namespace AgenciaCars.formularios
 
             //Productos
             this.cmbProducto.DataSource = this.obj_productos.buscarNombreProductos();
-            this.cmbProducto.DisplayMember = "nombreAuto";
-            this.cmbProducto.ValueMember = "idProducto";
+            this.cmbProducto.DisplayMember = "Producto";
+            this.cmbProducto.ValueMember = "Id";
 
             this.txtCantidad.Text = "0";
             this.txtTotal.Text = "0";
@@ -139,7 +139,7 @@ namespace AgenciaCars.formularios
                     }
                     else
                     {
-                        for (int i = 1; i < dataGridView1.Rows.Count; i++)
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             string sqlDetalle = @"INSERT INTO FACTURASDET (orden,
                                                                            idFactura,

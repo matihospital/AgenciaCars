@@ -35,6 +35,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Indicadores));
             this.EstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
             this.datosListasEstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -292,7 +293,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 568);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Indicadores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Indicadores";
             this.Load += new System.EventHandler(this.listados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EstadisticasBindingSource)).EndInit();
