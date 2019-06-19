@@ -36,14 +36,11 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listados));
             this.ListadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listadoProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ListadoProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listadoVendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
             this.ListadoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -76,12 +73,14 @@
             this.btnVendidos = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.listadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
+            this.datosListasEstadisticas1 = new AgenciaCars.datos.datosListasEstadisticas();
+            this.listadoVendidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ListadoClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoVendedoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProductoBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -90,6 +89,10 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoVendidosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ListadoClientesBindingSource
@@ -107,16 +110,6 @@
             // listadoVendedoresBindingSource
             // 
             this.listadoVendedoresBindingSource.DataMember = "ListadoVendedores";
-            // 
-            // listadoFacturasBindingSource
-            // 
-            this.listadoFacturasBindingSource.DataMember = "ListadoFacturas";
-            this.listadoFacturasBindingSource.DataSource = this.datosListasEstadisticas;
-            // 
-            // datosListasEstadisticas
-            // 
-            this.datosListasEstadisticas.DataSetName = "datosListasEstadisticas";
-            this.datosListasEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ListadoProductoBindingSource
             // 
@@ -242,7 +235,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.listadoProductosBindingSource;
+            reportDataSource2.Value = this.ListadoProductoBindingSource;
             this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer2.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.ListadoProductos.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(-4, 38);
@@ -435,12 +428,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource7.Name = "DataSet1";
-            reportDataSource7.Value = this.listadoVendedoresBindingSource;
-            reportDataSource8.Name = "DataSet2";
-            reportDataSource8.Value = this.listadoVendedoresBindingSource;
+            reportDataSource7.Value = this.listadoVendidosBindingSource;
             this.reportViewer6.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewer6.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.listadoVendedores.rdlc";
+            this.reportViewer6.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.ListadoVendidos.rdlc";
             this.reportViewer6.Location = new System.Drawing.Point(0, 37);
             this.reportViewer6.Name = "reportViewer6";
             this.reportViewer6.Size = new System.Drawing.Size(859, 491);
@@ -454,6 +444,7 @@
             this.btnVendidos.TabIndex = 11;
             this.btnVendidos.Text = "Buscar";
             this.btnVendidos.UseVisualStyleBackColor = true;
+            this.btnVendidos.Click += new System.EventHandler(this.btnVendidos_Click);
             // 
             // label6
             // 
@@ -471,6 +462,26 @@
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 9;
             // 
+            // listadoFacturasBindingSource
+            // 
+            this.listadoFacturasBindingSource.DataMember = "ListadoFacturas";
+            this.listadoFacturasBindingSource.DataSource = this.datosListasEstadisticas;
+            // 
+            // datosListasEstadisticas
+            // 
+            this.datosListasEstadisticas.DataSetName = "datosListasEstadisticas";
+            this.datosListasEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // datosListasEstadisticas1
+            // 
+            this.datosListasEstadisticas1.DataSetName = "datosListasEstadisticas";
+            this.datosListasEstadisticas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // listadoVendidosBindingSource
+            // 
+            this.listadoVendidosBindingSource.DataMember = "ListadoVendidos";
+            this.listadoVendidosBindingSource.DataSource = this.datosListasEstadisticas1;
+            // 
             // listados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,8 +497,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoVendedoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProductoBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -502,6 +511,10 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoVendidosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,6 +559,8 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.BindingSource listadoFacturasBindingSource;
         private datos.datosListasEstadisticas datosListasEstadisticas;
+        private System.Windows.Forms.BindingSource listadoVendidosBindingSource;
+        private datos.datosListasEstadisticas datosListasEstadisticas1;
 
     }
 }

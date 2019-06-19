@@ -84,11 +84,11 @@ namespace AgenciaCars.formularios
             DataTable tabla = new DataTable();
             string sql = "";
 
-            sql = @"SELECT pro.idProducto
+            sql = @"SELECT pro.idProducto as idProducto
                     , (mar.descripcion + ' ' + mod.descripcion) as producto 
-                    ,pro.anio
-                    ,pro.color
-                    ,pro.precio
+                    ,pro.anio as anio
+                    ,pro.color as color
+                    ,FORMAT(pro.precio, 'C', 'en') as precio
                     FROM PRODUCTOS as pro, MODELOS as mod, MARCAS as mar
                     WHERE pro.idModelo = mod.idModelo
                     AND mod.idMarca = mar.idMarca
@@ -121,7 +121,7 @@ namespace AgenciaCars.formularios
             string sql = "";
 
             sql = @"SELECT prov.idProveedor
-                    ,prov.idTipoDoc
+                    ,tpd.descripcion as tipoDoc
                     ,prov.nroDoc
                     ,prov.apellido
                     ,prov.nombre
@@ -130,8 +130,8 @@ namespace AgenciaCars.formularios
                     ,prov.telefono
                     ,prov.email
                     ,prov.idLocalidad    
-                    FROM PROVEEDORES as prov JOIN TIPOS_DOCUMENTOS AS doc on 
-                    prov.idTipoDoc = doc.idTipoDoc
+                    FROM PROVEEDORES as prov JOIN TIPOS_DOCUMENTOS AS tpd on 
+                    prov.idTipoDoc = tpd.idTipoDoc
                     WHERE 1=1
                     ";
             if (!string.IsNullOrEmpty(txtPatron.Text))
@@ -177,7 +177,7 @@ namespace AgenciaCars.formularios
             string sql = "";
 
             sql = @"SELECT ven.idVendedor
-                    ,ven.idTipoDoc
+                    ,tpd.descripcion as tipoDoc
                     ,ven.nroDoc
                     ,ven.apellido
                     ,ven.nombre
@@ -186,8 +186,8 @@ namespace AgenciaCars.formularios
                     ,ven.telefono
                     ,ven.email
                     ,ven.idLocalidad    
-                    FROM vendedores as ven JOIN TIPOS_DOCUMENTOS AS doc on 
-                    ven.idTipoDoc = doc.idTipoDoc
+                    FROM vendedores as ven JOIN TIPOS_DOCUMENTOS AS tpd on 
+                    ven.idTipoDoc = tpd.idTipoDoc
                     WHERE 1=1
                     ";
             if (!string.IsNullOrEmpty(txtPatron.Text))
@@ -233,9 +233,20 @@ namespace AgenciaCars.formularios
             DataTable tabla = new DataTable();
             string sql = "";
 
-            sql = @"SELECT fac.idFactura
-                    FROM FACTURAS as fac
-                    WHERE 1=1";
+            sql = @"SELECT fac.idFactura as idFactura,
+                           (CASE fac.tipoComprobante
+                                 WHEN 'C' THEN 'Factura de Compra'
+                                 WHEN 'V' THEN 'Factura de Venta'
+                            END)         
+                            as tipoComprobante,
+                           FORMAT(fac.ptoVenta, '0000') as ptoVenta,
+                           FORMAT(fac.nroFactura, '00000000') as nroFactura,
+                           convert(varchar, fac.fecha, 3) as fecha,
+                           (cli.nombre + ' ' + cli.apellido) as cliente,
+                           FORMAT(fac.total, 'C', 'en') as total
+                    FROM FACTURAS as fac, clientes as cli
+                    WHERE fac.idCliente = cli.idCliente 
+                    AND 1=1";
             if (!string.IsNullOrEmpty(txtPatron.Text))
             {
                 int i;
@@ -253,8 +264,47 @@ namespace AgenciaCars.formularios
                 return;
             }
 
-            ListadoProductoBindingSource.DataSource = tabla;
+            listadoFacturasBindingSource.DataSource = tabla;
             reportViewer5.RefreshReport();
+        }
+
+        private void btnVendidos_Click(object sender, EventArgs e)
+        {
+            acceso_BD bd = new acceso_BD();
+            DataTable tabla = new DataTable();
+            string sql = "";
+
+            sql = @"SELECT pro.idProducto as idProducto
+                    , (mar.descripcion + ' ' + mod.descripcion) as producto 
+                    ,pro.anio as anio
+                    ,pro.color as color
+                    ,FORMAT(pro.precio, 'C', 'en') as precio
+                    ,convert(varchar, fac.fecha, 3) as fechaVenta
+                    ,(FORMAT(fac.ptoVenta, '0000') + '-' + FORMAT(fac.nroFactura, '00000000')) as factura
+                    FROM PRODUCTOS as pro, MODELOS as mod, MARCAS as mar, FACTURAS as fac, FACTURASDET as fad
+                    WHERE pro.idModelo = mod.idModelo
+                    AND mod.idMarca = mar.idMarca
+                    AND fad.idProducto = pro.idProducto
+                    and fad.idFactura = fac.idFactura
+                    AND 1=1";
+            if (!string.IsNullOrEmpty(txtPatron.Text))
+            {
+                int i;
+                if (int.TryParse(txtPatron.Text, out i))
+                {
+                    sql += " AND idProducto = " + txtPatron.Text;
+                }
+            }
+            tabla = bd.consulta(sql);
+
+            if (tabla.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para mostrar");
+                return;
+            }
+
+            listadoVendidosBindingSource.DataSource = tabla;
+            reportViewer6.RefreshReport();
         }
     }
 }

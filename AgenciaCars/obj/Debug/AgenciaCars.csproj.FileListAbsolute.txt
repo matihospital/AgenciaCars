@@ -194,3 +194,7 @@ C:\Users\Rossi\Documents\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.pruebal.r
 C:\Users\Rossi\Documents\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.csproj.GenerateResource.Cache
 C:\Users\Rossi\Documents\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.cache
 C:\Users\Rossi\Documents\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.compiled
+C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.Indicadores.resources
+C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.listados.resources
+C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.cache
+C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.compiled
