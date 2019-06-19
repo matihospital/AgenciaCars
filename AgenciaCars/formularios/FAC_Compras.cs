@@ -112,7 +112,7 @@ namespace AgenciaCars.formularios
                     }
                     else
                     {
-                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        for (int i = 1; i < dataGridView1.Rows.Count; i++)
                         {
                             string sqlDetalle = @"INSERT INTO FACTURASDET (orden,
                                                                            idFactura,

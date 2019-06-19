@@ -41,23 +41,23 @@ namespace AgenciaCars.formularios
 
             //Marcas
             this.cmb_marca.DataSource = this.obj_marcas.buscarMarcas();
-            this.cmb_marca.DisplayMember = "descripcion";
-            this.cmb_marca.ValueMember = "idMarca";
+            this.cmb_marca.DisplayMember = "Marca";
+            this.cmb_marca.ValueMember = "Id";
             
             //Modelos
             this.cmb_modelo.DataSource = this.obj_modelos.ConsultarModelosMarca(this.cmb_marca.SelectedValue.ToString());
-            this.cmb_modelo.DisplayMember = "descripcion";
-            this.cmb_modelo.ValueMember = "idModelo";
+            this.cmb_modelo.DisplayMember = "Modelo";
+            this.cmb_modelo.ValueMember = "Id";
 
             //Paises
             this.cmb_pais.DataSource = this.obj_paises.Consultar_paises();
-            this.cmb_pais.DisplayMember = "descripcion";
-            this.cmb_pais.ValueMember = "idPais";
+            this.cmb_pais.DisplayMember = "Pais";
+            this.cmb_pais.ValueMember = "Id";
 
             //Proveedores
             this.cmb_proveedor.DataSource = this.obj_proveedores.buscarProveedores();
-            this.cmb_proveedor.DisplayMember = "apellido";
-            this.cmb_proveedor.ValueMember = "idProveedor";
+            this.cmb_proveedor.DisplayMember = "Proveedor";
+            this.cmb_proveedor.ValueMember = "Id";
 
             this.ActiveControl = this.txt_descripcion;
             this.cmb_proveedor.SelectedIndex = -1;

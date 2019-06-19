@@ -34,6 +34,7 @@ namespace AgenciaCars.formularios
             if (tabla.Rows.Count != 0)
             {
                 dataGridView1.DataSource = tabla;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
 

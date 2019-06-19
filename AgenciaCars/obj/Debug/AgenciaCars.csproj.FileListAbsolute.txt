@@ -159,3 +159,4 @@ C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.for
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.cache
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.compiled
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.Indicadores.resources
+C:\Users\Matias\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.Indicadores.resources

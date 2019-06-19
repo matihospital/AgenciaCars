@@ -35,8 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cLIENTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vENDEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
+            this.cLIENTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ck_id = new System.Windows.Forms.RadioButton();
             this.ck_nroDoc = new System.Windows.Forms.RadioButton();
             this.ck_apellido = new System.Windows.Forms.RadioButton();
@@ -45,23 +46,11 @@
             this.btn_salir = new System.Windows.Forms.Button();
             this.cLIENTESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.CLIENTESTableAdapter();
             this.btn_actualizar = new System.Windows.Forms.Button();
-            this.vENDEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vENDEDORESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.VENDEDORESTableAdapter();
-            this.idVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTipoDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vENDEDORESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,36 +105,27 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idVendedor,
-            this.idTipoDocDataGridViewTextBoxColumn,
-            this.nroDocDataGridViewTextBoxColumn,
-            this.apellidoDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.calleDataGridViewTextBoxColumn,
-            this.nroDataGridViewTextBoxColumn,
-            this.telefonoDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.idLocalidadDataGridViewTextBoxColumn,
-            this.localidad});
-            this.dataGridView1.DataSource = this.vENDEDORESBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 138);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(696, 229);
             this.dataGridView1.TabIndex = 14;
             // 
-            // cLIENTESBindingSource
+            // vENDEDORESBindingSource
             // 
-            this.cLIENTESBindingSource.DataMember = "CLIENTES";
-            this.cLIENTESBindingSource.DataSource = this.agenciaCarsDataSet;
+            this.vENDEDORESBindingSource.DataMember = "VENDEDORES";
+            this.vENDEDORESBindingSource.DataSource = this.agenciaCarsDataSet;
             // 
             // agenciaCarsDataSet
             // 
             this.agenciaCarsDataSet.DataSetName = "AgenciaCarsDataSet";
             this.agenciaCarsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cLIENTESBindingSource
+            // 
+            this.cLIENTESBindingSource.DataMember = "CLIENTES";
+            this.cLIENTESBindingSource.DataSource = this.agenciaCarsDataSet;
             // 
             // ck_id
             // 
@@ -248,110 +228,9 @@
             this.btn_actualizar.UseVisualStyleBackColor = false;
             this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
-            // vENDEDORESBindingSource
-            // 
-            this.vENDEDORESBindingSource.DataMember = "VENDEDORES";
-            this.vENDEDORESBindingSource.DataSource = this.agenciaCarsDataSet;
-            // 
             // vENDEDORESTableAdapter
             // 
             this.vENDEDORESTableAdapter.ClearBeforeFill = true;
-            // 
-            // idVendedor
-            // 
-            this.idVendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idVendedor.DataPropertyName = "idVendedor";
-            this.idVendedor.HeaderText = "Id";
-            this.idVendedor.Name = "idVendedor";
-            this.idVendedor.ReadOnly = true;
-            this.idVendedor.Width = 41;
-            // 
-            // idTipoDocDataGridViewTextBoxColumn
-            // 
-            this.idTipoDocDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idTipoDocDataGridViewTextBoxColumn.DataPropertyName = "idTipoDoc";
-            this.idTipoDocDataGridViewTextBoxColumn.HeaderText = "Tipo Doc.";
-            this.idTipoDocDataGridViewTextBoxColumn.Name = "idTipoDocDataGridViewTextBoxColumn";
-            this.idTipoDocDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idTipoDocDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // nroDocDataGridViewTextBoxColumn
-            // 
-            this.nroDocDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nroDocDataGridViewTextBoxColumn.DataPropertyName = "nroDoc";
-            this.nroDocDataGridViewTextBoxColumn.HeaderText = "Nro. Doc";
-            this.nroDocDataGridViewTextBoxColumn.Name = "nroDocDataGridViewTextBoxColumn";
-            this.nroDocDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroDocDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.apellidoDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // calleDataGridViewTextBoxColumn
-            // 
-            this.calleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.calleDataGridViewTextBoxColumn.DataPropertyName = "calle";
-            this.calleDataGridViewTextBoxColumn.HeaderText = "Calle";
-            this.calleDataGridViewTextBoxColumn.Name = "calleDataGridViewTextBoxColumn";
-            this.calleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.calleDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // nroDataGridViewTextBoxColumn
-            // 
-            this.nroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nroDataGridViewTextBoxColumn.DataPropertyName = "nro";
-            this.nroDataGridViewTextBoxColumn.HeaderText = "Nro.";
-            this.nroDataGridViewTextBoxColumn.Name = "nroDataGridViewTextBoxColumn";
-            this.nroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroDataGridViewTextBoxColumn.Width = 52;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefonoDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // idLocalidadDataGridViewTextBoxColumn
-            // 
-            this.idLocalidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idLocalidadDataGridViewTextBoxColumn.DataPropertyName = "idLocalidad";
-            this.idLocalidadDataGridViewTextBoxColumn.HeaderText = "idLocalidad";
-            this.idLocalidadDataGridViewTextBoxColumn.Name = "idLocalidadDataGridViewTextBoxColumn";
-            this.idLocalidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLocalidadDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // localidad
-            // 
-            this.localidad.HeaderText = "Localidad";
-            this.localidad.Name = "localidad";
-            this.localidad.ReadOnly = true;
             // 
             // BUSQ_Vendedores
             // 
@@ -380,9 +259,9 @@
             this.Text = "Vendedores";
             this.Load += new System.EventHandler(this.BUSQ_Vendedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vENDEDORESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,16 +286,5 @@
         private System.Windows.Forms.Button btn_actualizar;
         private System.Windows.Forms.BindingSource vENDEDORESBindingSource;
         private AgenciaCarsDataSetTableAdapters.VENDEDORESTableAdapter vENDEDORESTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idVendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idTipoDocDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroDocDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idLocalidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn localidad;
     }
 }

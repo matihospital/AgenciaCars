@@ -13,7 +13,7 @@ namespace AgenciaCars.clases
         acceso_BD _BD = new acceso_BD();
 
         public DataTable Consultar_paises(){
-            return _BD.consulta("SELECT * FROM PAISES");
+            return _BD.consulta("SELECT pai.idPais as Id, pai.descripcion as Pais FROM PAISES as pai");
         }
     }
 }

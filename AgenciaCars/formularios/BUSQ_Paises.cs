@@ -32,6 +32,7 @@ namespace AgenciaCars.formularios
             DataTable tabla = new DataTable();
             tabla = this.obj_paises.Consultar_paises();
             dataGridView1.DataSource = tabla;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 

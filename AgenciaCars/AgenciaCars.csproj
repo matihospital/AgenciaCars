@@ -341,9 +341,10 @@
     <EmbeddedResource Include="pruebal.resx">
       <DependentUpon>pruebal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportes\estadisticasAutoMasVendido.rdlc" />
+    <EmbeddedResource Include="reportes\estadisticasVentasMes.rdlc" />
     <EmbeddedResource Include="reportes\estadisticasComprasMes.rdlc" />
     <EmbeddedResource Include="reportes\estadisticasProductosMarca.rdlc" />
+    <EmbeddedResource Include="reportes\estadisticasVentasCliente.rdlc" />
     <EmbeddedResource Include="reportes\estadisticasVentasVendedor.rdlc" />
     <EmbeddedResource Include="reportes\estadisticasClientesProvincias.rdlc" />
     <EmbeddedResource Include="reportes\listadoClientes.rdlc" />

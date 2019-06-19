@@ -13,7 +13,12 @@ namespace AgenciaCars.clases
         acceso_BD _BD = new acceso_BD();
 
         public DataTable Consultar_localidades(){
-            return _BD.consulta("SELECT * FROM LOCALIDADES");
+            return _BD.consulta(@"SELECT loc.idLocalidad as Id,
+                                         loc.descripcion as Localidad,
+                                         pro.descripcion as Provincia 
+                                  FROM LOCALIDADES as loc, 
+                                       PROVINCIAS as pro
+                                  WHERE loc.idProvincia = pro.idProvincia");
         }
 
         public DataTable ConsultarLocalidadesProvincia(String idProvincia)

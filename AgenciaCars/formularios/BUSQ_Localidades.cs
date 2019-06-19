@@ -27,52 +27,12 @@ namespace AgenciaCars.formularios
 
         private void BUSQ_Localidades_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'agenciaCarsDataSet1.LOCALIDADES' table. You can move, or remove it, as needed.
-            this.lOCALIDADESTableAdapter.Fill(this.agenciaCarsDataSet1.LOCALIDADES);
             // TODO: This line of code loads data into the 'agenciaCarsDataSet.LOCALIDADES' table. You can move, or remove it, as needed.
             //this.lOCALIDADESTableAdapter.Fill(this.agenciaCarsDataSet.LOCALIDADES);
             DataTable tabla = new DataTable();
             tabla = this.obj_localidades.Consultar_localidades();
             dataGridView1.DataSource = tabla;
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.lOCALIDADESTableAdapter.FillBy(this.agenciaCarsDataSet.LOCALIDADES);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.lOCALIDADESTableAdapter.FillBy(this.agenciaCarsDataSet.LOCALIDADES);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByToolStripButton_Click_2(object sender, EventArgs e)
-        {
-            try
-            {
-                this.lOCALIDADESTableAdapter.FillBy(this.agenciaCarsDataSet.LOCALIDADES);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

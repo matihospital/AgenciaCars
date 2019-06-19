@@ -54,13 +54,13 @@ namespace AgenciaCars.formularios
 
             //Clientes
             this.cmbCliente.DataSource = this.obj_clientes.buscarClientes();
-            this.cmbCliente.DisplayMember = "ApeNom";
-            this.cmbCliente.ValueMember = "idCliente";
+            this.cmbCliente.DisplayMember = "Cliente";
+            this.cmbCliente.ValueMember = "Id";
 
             //Vendedores
             this.cmbVendedor.DataSource = this.obj_vendedores.buscarVendedores();
-            this.cmbVendedor.DisplayMember = "ApeNom";
-            this.cmbVendedor.ValueMember = "idVendedor";
+            this.cmbVendedor.DisplayMember = "Vendedor";
+            this.cmbVendedor.ValueMember = "Id";
 
             //Productos
             this.cmbProducto.DataSource = this.obj_productos.buscarNombreProductos();
@@ -139,7 +139,7 @@ namespace AgenciaCars.formularios
                     }
                     else
                     {
-                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        for (int i = 1; i < dataGridView1.Rows.Count; i++)
                         {
                             string sqlDetalle = @"INSERT INTO FACTURASDET (orden,
                                                                            idFactura,

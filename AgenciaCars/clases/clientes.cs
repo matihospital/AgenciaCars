@@ -91,7 +91,18 @@ namespace AgenciaCars.clases
 
         public DataTable buscarClientes()
         {
-            return this._BD.consulta("SELECT clientes.*, (clientes.apellido + ' '+ clientes.nombre) ApeNom FROM clientes");
+            return this._BD.consulta(@"SELECT cli.idCliente as Id,
+                                              (cli.apellido + ' '+ cli.nombre) as Cliente,   
+                                              tpd.descripcion as TipoDoc,
+                                              cli.nroDoc as NroDoc,
+                                              cli.calle as Calle,
+                                              cli.nro as Numero,
+                                              cli.telefono as Telefono,
+                                              cli.email as Email,
+                                              loc.descripcion as Localidad     
+                                       FROM clientes as cli, tipos_documentos as tpd, localidades as loc
+                                       WHERE cli.idTipoDoc = tpd.idTipoDoc
+                                       AND cli.idLocalidad = loc.idLocalidad");
         }
 
         public DataTable buscarPorParametro(string campo, string valor)

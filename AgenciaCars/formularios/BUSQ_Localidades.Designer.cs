@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BUSQ_Localidades));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idLocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProvinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lOCALIDADESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
             this.btn_nuevo = new System.Windows.Forms.Button();
@@ -67,51 +63,12 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idLocalidadDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn,
-            this.idProvinciaDataGridViewTextBoxColumn,
-            this.provincia});
-            this.dataGridView1.DataSource = this.lOCALIDADESBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 86);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(488, 281);
             this.dataGridView1.TabIndex = 14;
-            // 
-            // idLocalidadDataGridViewTextBoxColumn
-            // 
-            this.idLocalidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idLocalidadDataGridViewTextBoxColumn.DataPropertyName = "idLocalidad";
-            this.idLocalidadDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idLocalidadDataGridViewTextBoxColumn.Name = "idLocalidadDataGridViewTextBoxColumn";
-            this.idLocalidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLocalidadDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Localidad";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idProvinciaDataGridViewTextBoxColumn
-            // 
-            this.idProvinciaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idProvinciaDataGridViewTextBoxColumn.DataPropertyName = "idProvincia";
-            this.idProvinciaDataGridViewTextBoxColumn.HeaderText = "idProvincia";
-            this.idProvinciaDataGridViewTextBoxColumn.Name = "idProvinciaDataGridViewTextBoxColumn";
-            this.idProvinciaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idProvinciaDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // provincia
-            // 
-            this.provincia.HeaderText = "Provincia";
-            this.provincia.Name = "provincia";
-            this.provincia.ReadOnly = true;
             // 
             // lOCALIDADESBindingSource
             // 
@@ -210,10 +167,6 @@
         private System.Windows.Forms.BindingSource lOCALIDADESBindingSource;
         private AgenciaCarsDataSetTableAdapters.LOCALIDADESTableAdapter lOCALIDADESTableAdapter;
         private System.Windows.Forms.BindingSource lOCALIDADESBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idLocalidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProvinciaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
         private AgenciaCarsDataSet agenciaCarsDataSet1;
         private System.Windows.Forms.BindingSource lOCALIDADESBindingSource2;
     }

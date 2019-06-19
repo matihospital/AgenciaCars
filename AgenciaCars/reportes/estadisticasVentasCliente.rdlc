@@ -46,7 +46,7 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
-              <Subtype>ExplodedPie</Subtype>
+              <Subtype>Doughnut</Subtype>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -74,7 +74,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Meses</Caption>
+                  <Caption>Axis Title</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -149,7 +149,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Compras en $</Caption>
+                  <Caption>Axis Title</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -256,7 +256,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.14111cm</Top>
+        <Top>0.07056cm</Top>
         <Height>9.38009cm</Height>
         <Width>14.41979cm</Width>
         <Style>
@@ -291,7 +291,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Modelo</Value>
+                              <Value>Cliente</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -528,10 +528,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.79017in</Height>
+    <Height>3.75892in</Height>
     <Style />
   </Body>
-  <Width>9.81609in</Width>
+  <Width>8.9375in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -545,7 +545,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>MODELO MAS VENDIDO POR MES</Value>
+                  <Value>VENTAS POR CLIENTE</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>

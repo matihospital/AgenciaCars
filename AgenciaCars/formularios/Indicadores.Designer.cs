@@ -48,14 +48,14 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.reportViewer4 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.reportViewer6 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
             this.agenciaCarsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ListadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datosListasEstadisticas1 = new AgenciaCars.datos.datosListasEstadisticas();
             this.datosListasEstadisticas1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewer6 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.EstadisticasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticasBindingSource)).BeginInit();
@@ -176,7 +176,7 @@
             reportDataSource3.Name = "DataSet1";
             reportDataSource3.Value = this.EstadisticasBindingSource;
             this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer3.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasVentasVendedor.rdlc";
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasVentasCliente.rdlc";
             this.reportViewer3.Location = new System.Drawing.Point(-4, -2);
             this.reportViewer3.Name = "reportViewer3";
             this.reportViewer3.Size = new System.Drawing.Size(813, 545);
@@ -220,6 +220,21 @@
             this.tabPage5.Text = "Compras por Mes";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // reportViewer5
+            // 
+            this.reportViewer5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource5.Name = "DataSet1";
+            reportDataSource5.Value = this.EstadisticasBindingSource;
+            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewer5.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasComprasMes.rdlc";
+            this.reportViewer5.Location = new System.Drawing.Point(-4, -1);
+            this.reportViewer5.Name = "reportViewer5";
+            this.reportViewer5.Size = new System.Drawing.Size(813, 543);
+            this.reportViewer5.TabIndex = 4;
+            this.reportViewer5.Load += new System.EventHandler(this.reportViewer5_Load);
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.reportViewer6);
@@ -228,8 +243,23 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(805, 541);
             this.tabPage6.TabIndex = 6;
-            this.tabPage6.Text = "Auto mas Vendido por Mes";
+            this.tabPage6.Text = "Ventas por Mes";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer6
+            // 
+            this.reportViewer6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource6.Name = "DataSet1";
+            reportDataSource6.Value = this.EstadisticasBindingSource;
+            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer6.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasVentasMes.rdlc";
+            this.reportViewer6.Location = new System.Drawing.Point(-4, -1);
+            this.reportViewer6.Name = "reportViewer6";
+            this.reportViewer6.Size = new System.Drawing.Size(813, 543);
+            this.reportViewer6.TabIndex = 5;
+            this.reportViewer6.Load += new System.EventHandler(this.reportViewer6_Load);
             // 
             // agenciaCarsDataSet
             // 
@@ -255,36 +285,6 @@
             // 
             this.datosListasEstadisticas1BindingSource.DataSource = this.datosListasEstadisticas1;
             this.datosListasEstadisticas1BindingSource.Position = 0;
-            // 
-            // reportViewer5
-            // 
-            this.reportViewer5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource5.Name = "DataSet1";
-            reportDataSource5.Value = this.EstadisticasBindingSource;
-            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewer5.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasComprasMes.rdlc";
-            this.reportViewer5.Location = new System.Drawing.Point(-4, -1);
-            this.reportViewer5.Name = "reportViewer5";
-            this.reportViewer5.Size = new System.Drawing.Size(813, 543);
-            this.reportViewer5.TabIndex = 4;
-            this.reportViewer5.Load += new System.EventHandler(this.reportViewer5_Load);
-            // 
-            // reportViewer6
-            // 
-            this.reportViewer6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource6.Name = "DataSet1";
-            reportDataSource6.Value = this.EstadisticasBindingSource;
-            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource6);
-            this.reportViewer6.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasAutoMasVendido.rdlc";
-            this.reportViewer6.Location = new System.Drawing.Point(-4, -1);
-            this.reportViewer6.Name = "reportViewer6";
-            this.reportViewer6.Size = new System.Drawing.Size(813, 543);
-            this.reportViewer6.TabIndex = 5;
-            this.reportViewer6.Load += new System.EventHandler(this.reportViewer6_Load);
             // 
             // Indicadores
             // 

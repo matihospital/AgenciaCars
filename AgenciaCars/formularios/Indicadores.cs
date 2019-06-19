@@ -21,10 +21,6 @@ namespace AgenciaCars.formularios
 
         private void listados_Load(object sender, EventArgs e)
         {
-
-            //this.reportViewer1.RefreshReport();
-            //this.reportViewer2.RefreshReport();
-            //iniciarEstadistica();
         }
 
 
@@ -69,7 +65,7 @@ namespace AgenciaCars.formularios
             acceso_BD bd = new acceso_BD();
             string sql = "";
 
-            //Ventas por Vendedor
+            //Ventas por Cliente
             sql = @"SELECT cli.apellido + ' ' + cli.nombre  as descriptor,
                            count(1) as dato
                     FROM FACTURAS as fac, 
@@ -124,21 +120,17 @@ namespace AgenciaCars.formularios
             acceso_BD bd = new acceso_BD();
             string sql = "";
 
-            //Compras por Mes
-            sql = @"SELECT mod.descripcion as descriptor,
+            //Ventas por Mes
+            sql = @"SELECT LEFT(CONVERT(varchar, fac.fecha,112),6) as descriptor,
                            sum(fad.precioUnitario) as dato
                     FROM FACTURAS as fac, 
-                         FACTURASDET as fad,
-                         PRODUCTOS as pro,
-                         MODELOS as mod
+                         FACTURASDET as fad
                     WHERE fac.idFactura = fad.idFactura
                     AND fac.tipoComprobante = 'V' 
-                    AND fad.idProducto = pro.idProducto
-                    AND pro.idModelo = mod.idModelo
-                    GROUP BY mod.descripcion ";
+                    GROUP BY LEFT(CONVERT(varchar, fac.fecha,112),6)  ";
 
             EstadisticasBindingSource.DataSource = bd.consulta(sql);
-            this.reportViewer5.RefreshReport();
+            this.reportViewer6.RefreshReport();
         }
 
     }
