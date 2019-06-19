@@ -45,15 +45,6 @@
             this.btn_salir = new System.Windows.Forms.Button();
             this.pRODUCTOSTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.PRODUCTOSTableAdapter();
             this.btn_actualizar = new System.Windows.Forms.Button();
-            this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idModeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPaisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
@@ -83,19 +74,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idProductoDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn,
-            this.color,
-            this.precio,
-            this.anioDataGridViewTextBoxColumn,
-            this.idModeloDataGridViewTextBoxColumn,
-            this.idProveedorDataGridViewTextBoxColumn,
-            this.idPaisDataGridViewTextBoxColumn,
-            this.idEstado});
-            this.dataGridView1.DataSource = this.pRODUCTOSBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 146);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -239,81 +218,6 @@
             this.btn_actualizar.UseVisualStyleBackColor = false;
             this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
-            // idProductoDataGridViewTextBoxColumn
-            // 
-            this.idProductoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
-            this.idProductoDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
-            this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idProductoDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 88;
-            // 
-            // color
-            // 
-            this.color.DataPropertyName = "color";
-            this.color.HeaderText = "Color";
-            this.color.Name = "color";
-            this.color.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.DataPropertyName = "precio";
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // anioDataGridViewTextBoxColumn
-            // 
-            this.anioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.anioDataGridViewTextBoxColumn.DataPropertyName = "anio";
-            this.anioDataGridViewTextBoxColumn.HeaderText = "Año";
-            this.anioDataGridViewTextBoxColumn.Name = "anioDataGridViewTextBoxColumn";
-            this.anioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.anioDataGridViewTextBoxColumn.Width = 51;
-            // 
-            // idModeloDataGridViewTextBoxColumn
-            // 
-            this.idModeloDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idModeloDataGridViewTextBoxColumn.DataPropertyName = "idModelo";
-            this.idModeloDataGridViewTextBoxColumn.HeaderText = "idModelo";
-            this.idModeloDataGridViewTextBoxColumn.Name = "idModeloDataGridViewTextBoxColumn";
-            this.idModeloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idModeloDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // idProveedorDataGridViewTextBoxColumn
-            // 
-            this.idProveedorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idProveedorDataGridViewTextBoxColumn.DataPropertyName = "idProveedor";
-            this.idProveedorDataGridViewTextBoxColumn.HeaderText = "idProveedor";
-            this.idProveedorDataGridViewTextBoxColumn.Name = "idProveedorDataGridViewTextBoxColumn";
-            this.idProveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idProveedorDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // idPaisDataGridViewTextBoxColumn
-            // 
-            this.idPaisDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.idPaisDataGridViewTextBoxColumn.DataPropertyName = "idPais";
-            this.idPaisDataGridViewTextBoxColumn.HeaderText = "idPais";
-            this.idPaisDataGridViewTextBoxColumn.Name = "idPaisDataGridViewTextBoxColumn";
-            this.idPaisDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPaisDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // idEstado
-            // 
-            this.idEstado.DataPropertyName = "idEstado";
-            this.idEstado.HeaderText = "Estado";
-            this.idEstado.Name = "idEstado";
-            this.idEstado.ReadOnly = true;
-            // 
             // BUSQ_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,14 +271,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_actualizar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idModeloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProveedorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPaisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEstado;
     }
 }

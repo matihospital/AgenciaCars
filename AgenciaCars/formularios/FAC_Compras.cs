@@ -35,13 +35,13 @@ namespace AgenciaCars.formularios
 
             //Proveedores
             this.cmbProveedor.DataSource = this.obj_proveedores.buscarProveedores();
-            this.cmbProveedor.DisplayMember = "ApeNom";
-            this.cmbProveedor.ValueMember = "idProveedor";
+            this.cmbProveedor.DisplayMember = "Proveedor";
+            this.cmbProveedor.ValueMember = "Id";
 
             //Productos
             this.cmbProducto.DataSource = this.obj_productos.buscarNombreProductos();
-            this.cmbProducto.DisplayMember = "nombreAuto";
-            this.cmbProducto.ValueMember = "idProducto";
+            this.cmbProducto.DisplayMember = "Producto";
+            this.cmbProducto.ValueMember = "Id";
 
             this.txtCantidad.Text = "0";
             this.txtTotal.Text = "0";
