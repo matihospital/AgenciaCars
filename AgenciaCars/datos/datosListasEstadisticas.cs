@@ -4,7 +4,11 @@ namespace AgenciaCars.datos {
     
     
     public partial class datosListasEstadisticas {
-        partial class ListadoProductoDataTable
+        partial class ListadoVendedoresDataTable
+        {
+        }
+    
+        partial class ListadoProductosDataTable
         {
         }
     }
