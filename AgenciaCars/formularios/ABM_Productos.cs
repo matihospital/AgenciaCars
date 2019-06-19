@@ -142,8 +142,8 @@ namespace AgenciaCars.formularios
             {
                 cmb_modelo.DataSource = null;
                 this.cmb_modelo.DataSource = this.obj_modelos.ConsultarModelosMarca(this.cmb_marca.SelectedValue.ToString());
-                this.cmb_modelo.DisplayMember = "descripcion";
-                this.cmb_modelo.ValueMember = "idModelo";
+                this.cmb_modelo.DisplayMember = "Modelo";
+                this.cmb_modelo.ValueMember = "Id";
             }
         }
 

@@ -79,17 +79,44 @@ namespace AgenciaCars.clases
 
         public DataTable buscar_por_id(string id)
         {
-            return this._BD.consulta("SELECT PRO.*, (MAR.descripcion + ' ' +  MDE.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) nombreAuto FROM PRODUCTOS as PRO, MODELOS as MDE, MARCAS as MAR WHERE PRO.idModelo = MDE.idModelo AND mde.idMarca = mar.idMarca AND PRO.idProducto =" + id);
+            return this._BD.consulta(@"SELECT PRO.*,
+                                              PRO.idProducto as Id, 
+                                              (MAR.descripcion + ' ' +  MDE.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) nombreAuto 
+                                       FROM PRODUCTOS as PRO, MODELOS as MDE, MARCAS as MAR 
+                                       WHERE PRO.idModelo = MDE.idModelo 
+                                       AND mde.idMarca = mar.idMarca 
+                                       AND PRO.idProducto =" + id);
         }
 
         public DataTable buscarProductos()
         {
-            return this._BD.consulta("SELECT * FROM productos");
+            return this._BD.consulta(@"SELECT pro.idProducto as Id,
+                                              mar.descripcion as Marca,
+                                              mod.descripcion as Modelo,
+                                              pro.anio as Año,
+                                              pro.color as Color,
+                                              pro.precio as Precio,
+                                              pro.descripcion as Observaciones
+                                      FROM productos as pro,
+                                           marcas as mar,
+                                           modelos as mod
+                                      WHERE pro.idModelo = mod.idModelo
+                                      AND mod.idMarca = mar.idMarca");
         }
 
         public DataTable buscarNombreProductos()
         {
-            return this._BD.consulta("SELECT PRO.*, (MAR.descripcion + ' ' +  MDE.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) nombreAuto FROM PRODUCTOS as PRO, MODELOS as MDE, MARCAS as MAR WHERE PRO.idModelo = MDE.idModelo AND mde.idMarca = mar.idMarca");
+            return this._BD.consulta(@"SELECT pro.idProducto as Id,
+                                              mar.descripcion as Marca,
+                                              mod.descripcion as Modelo,
+                                              pro.anio as Año,
+                                              pro.color as Color,
+                                              pro.precio as Precio,
+                                              pro.descripcion as Observaciones, 
+                                               (MAR.descripcion + ' ' +  mod.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) Producto
+                                        FROM PRODUCTOS as PRO, MODELOS as mod, MARCAS as MAR 
+                                        WHERE PRO.idModelo = mod.idModelo 
+                                        AND mod.idMarca = mar.idMarca");
         }
 
         public DataTable buscarPorParametro(string campo, string valor)

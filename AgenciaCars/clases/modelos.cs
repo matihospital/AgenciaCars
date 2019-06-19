@@ -22,7 +22,12 @@ namespace AgenciaCars.clases
 
         public DataTable ConsultarModelosMarca(String idMarca)
         {
-            return _BD.consulta("SELECT * FROM MODELOS WHERE idMarca=" + idMarca);
+            return _BD.consulta(@"SELECT mod.idModelo as Id,
+                                         mod.descripcion as Modelo,
+                                         mar.descripcion as Marca 
+                                 FROM MODELOS as mod, MARCAS as mar
+                                 WHERE mod.idMarca = mar.idMarca
+                                 AND mar.idMarca=" + idMarca);
         }
     }
 }
