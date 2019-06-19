@@ -24,7 +24,8 @@ namespace AgenciaCars.formularios
 
             //this.reportViewer1.RefreshReport();
             //this.reportViewer2.RefreshReport();
-            iniciarEstadistica();
+            //iniciarEstadistica();
+            //this.reportViewer2.RefreshReport();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -45,7 +46,8 @@ namespace AgenciaCars.formularios
                     WHERE cli.idTipoDoc = tpd.idTipoDoc";
             tabla = bd.consulta(sql);
 
-            if (tabla.Rows.Count == 0) {
+            if (tabla.Rows.Count == 0)
+            {
                 MessageBox.Show("No hay datos para mostrar");
                 return;
             }
@@ -70,6 +72,50 @@ namespace AgenciaCars.formularios
 
             EstadisticasBindingSource.DataSource = bd.consulta(sql);
             this.reportViewer2.RefreshReport();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportViewer2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_buscar_prod_Click(object sender, EventArgs e)
+        {
+            acceso_BD bd = new acceso_BD();
+            DataTable tabla = new DataTable();
+            string sql = "";
+
+            sql = @"SELECT pro.idProducto
+                    ,pro.descripcion
+                    ,pro.anio
+                    ,pro.idModelo
+                    ,pro.color
+                    ,pro.precio
+                    ,pro.idProveedor
+                    ,pro.idPais
+                    ,pro.idEstado
+                    FROM PRODUCTOS as pro
+                    ";
+            tabla = bd.consulta(sql);
+
+            if (tabla.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para mostrar");
+                return;
+            }
+            datosListasEstadisticas2BindingSource.DataSource = tabla;
+           
+            reportViewer2.RefreshReport();
         }
     }
 }

@@ -33,6 +33,36 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ListadoProducto" msprop:Generator_TableClassName="ListadoProductoDataTable" msprop:Generator_TableVarName="tableListadoProducto" msprop:Generator_RowChangedName="ListadoProductoRowChanged" msprop:Generator_TablePropName="ListadoProducto" msprop:Generator_RowDeletingName="ListadoProductoRowDeleting" msprop:Generator_RowChangingName="ListadoProductoRowChanging" msprop:Generator_RowEvHandlerName="ListadoProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadoProductoRowDeleted" msprop:Generator_RowClassName="ListadoProductoRow" msprop:Generator_UserTableName="ListadoProducto" msprop:Generator_RowEvArgName="ListadoProductoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idProducto" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:string" minOccurs="0" />
+              <xs:element name="idModelo" msprop:Generator_ColumnVarNameInTable="columnidModelo" msprop:Generator_ColumnPropNameInRow="idModelo" msprop:Generator_ColumnPropNameInTable="idModeloColumn" msprop:Generator_UserColumnName="idModelo" type="xs:string" minOccurs="0" />
+              <xs:element name="color" msprop:Generator_ColumnVarNameInTable="columncolor" msprop:Generator_ColumnPropNameInRow="color" msprop:Generator_ColumnPropNameInTable="colorColumn" msprop:Generator_UserColumnName="color" type="xs:string" minOccurs="0" />
+              <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:string" minOccurs="0" />
+              <xs:element name="idProveedor" msprop:Generator_ColumnVarNameInTable="columnidProveedor" msprop:Generator_ColumnPropNameInRow="idProveedor" msprop:Generator_ColumnPropNameInTable="idProveedorColumn" msprop:Generator_UserColumnName="idProveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="idPais" msprop:Generator_ColumnVarNameInTable="columnidPais" msprop:Generator_ColumnPropNameInRow="idPais" msprop:Generator_ColumnPropNameInTable="idPaisColumn" msprop:Generator_UserColumnName="idPais" type="xs:string" minOccurs="0" />
+              <xs:element name="idEstado" msprop:Generator_ColumnVarNameInTable="columnidEstado" msprop:Generator_ColumnPropNameInRow="idEstado" msprop:Generator_ColumnPropNameInTable="idEstadoColumn" msprop:Generator_UserColumnName="idEstado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Productos" msprop:Generator_TableClassName="ProductosDataTable" msprop:Generator_TableVarName="tableProductos" msprop:Generator_TablePropName="Productos" msprop:Generator_RowDeletingName="ProductosRowDeleting" msprop:Generator_RowChangingName="ProductosRowChanging" msprop:Generator_RowEvHandlerName="ProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductosRowDeleted" msprop:Generator_UserTableName="Productos" msprop:Generator_RowChangedName="ProductosRowChanged" msprop:Generator_RowEvArgName="ProductosRowChangeEvent" msprop:Generator_RowClassName="ProductosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdProducto" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:string" minOccurs="0" />
+              <xs:element name="idModelo" msprop:Generator_ColumnVarNameInTable="columnidModelo" msprop:Generator_ColumnPropNameInRow="idModelo" msprop:Generator_ColumnPropNameInTable="idModeloColumn" msprop:Generator_UserColumnName="idModelo" type="xs:string" minOccurs="0" />
+              <xs:element name="color" msprop:Generator_ColumnVarNameInTable="columncolor" msprop:Generator_ColumnPropNameInRow="color" msprop:Generator_ColumnPropNameInTable="colorColumn" msprop:Generator_UserColumnName="color" type="xs:string" minOccurs="0" />
+              <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:string" minOccurs="0" />
+              <xs:element name="idProveedor" msprop:Generator_ColumnVarNameInTable="columnidProveedor" msprop:Generator_ColumnPropNameInRow="idProveedor" msprop:Generator_ColumnPropNameInTable="idProveedorColumn" msprop:Generator_UserColumnName="idProveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="idPais" msprop:Generator_ColumnVarNameInTable="columnidPais" msprop:Generator_ColumnPropNameInRow="idPais" msprop:Generator_ColumnPropNameInTable="idPaisColumn" msprop:Generator_UserColumnName="idPais" type="xs:string" minOccurs="0" />
+              <xs:element name="idEstado" msprop:Generator_ColumnVarNameInTable="columnidEstado" msprop:Generator_ColumnPropNameInRow="idEstado" msprop:Generator_ColumnPropNameInTable="idEstadoColumn" msprop:Generator_UserColumnName="idEstado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
