@@ -347,6 +347,8 @@
     <EmbeddedResource Include="reportes\estadisticasVentasCliente.rdlc" />
     <EmbeddedResource Include="reportes\estadisticasVentasVendedor.rdlc" />
     <EmbeddedResource Include="reportes\estadisticasClientesProvincias.rdlc" />
+    <EmbeddedResource Include="reportes\listadoFacturas.rdlc" />
+    <EmbeddedResource Include="reportes\listadoVendedores.rdlc" />
     <EmbeddedResource Include="reportes\listadoClientes.rdlc" />
     <None Include="AgenciaCarsDataSet.xsc">
       <DependentUpon>AgenciaCarsDataSet.xsd</DependentUpon>
