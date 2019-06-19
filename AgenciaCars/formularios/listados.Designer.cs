@@ -31,11 +31,7 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.datosListasEstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
-            this.datosListasEstadisticas2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datosListasEstadisticas2 = new AgenciaCars.datos.datosListasEstadisticas();
-            this.EstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -48,61 +44,67 @@
             this.txtpatroproduc = new System.Windows.Forms.TextBox();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
             this.agenciaCarsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ListadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datosListasEstadisticas1 = new AgenciaCars.datos.datosListasEstadisticas();
+            this.productosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
+            this.datosListasEstadisticas2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datosListasEstadisticas2 = new AgenciaCars.datos.datosListasEstadisticas();
             this.datosListasEstadisticas1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datosListasEstadisticas1 = new AgenciaCars.datos.datosListasEstadisticas();
+            this.proveedoresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datosListasEstadisticas3 = new AgenciaCars.datos.datosListasEstadisticas();
+            this.datosListasEstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ListadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.ListadoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EstadisticasBindingSource)).BeginInit();
+            this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pROVEEDORESBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.pROVEEDORESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.PROVEEDORESTableAdapter();
+            this.proveedoresBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.proveedoresBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.pROVEEDORESBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.proveedoresBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListadoClientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EstadisticasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProductoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pROVEEDORESBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pROVEEDORESBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // datosListasEstadisticasBindingSource
-            // 
-            this.datosListasEstadisticasBindingSource.DataSource = this.datosListasEstadisticas;
-            this.datosListasEstadisticasBindingSource.Position = 0;
-            // 
-            // datosListasEstadisticas
-            // 
-            this.datosListasEstadisticas.DataSetName = "datosListasEstadisticas";
-            this.datosListasEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // datosListasEstadisticas2BindingSource
-            // 
-            this.datosListasEstadisticas2BindingSource.DataSource = this.datosListasEstadisticas2;
-            this.datosListasEstadisticas2BindingSource.Position = 0;
-            // 
-            // datosListasEstadisticas2
-            // 
-            this.datosListasEstadisticas2.DataSetName = "datosListasEstadisticas";
-            this.datosListasEstadisticas2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // EstadisticasBindingSource
-            // 
-            this.EstadisticasBindingSource.DataMember = "Estadisticas";
-            this.EstadisticasBindingSource.DataSource = this.datosListasEstadisticas;
             // 
             // tabControl1
             // 
@@ -144,7 +146,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.datosListasEstadisticasBindingSource;
+            reportDataSource1.Value = this.proveedoresBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.listadoClientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(-4, 66);
@@ -236,6 +238,10 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.reportViewer3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -243,6 +249,43 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Proveedores";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(212, 30);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Cargar Filtro";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(96, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // reportViewer3
+            // 
+            reportDataSource3.Name = "DataSet3";
+            reportDataSource3.Value = this.proveedoresBindingSource6;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.Proveedores.rdlc";
+            this.reportViewer3.Location = new System.Drawing.Point(0, 86);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.Size = new System.Drawing.Size(781, 388);
+            this.reportViewer3.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -284,20 +327,70 @@
             this.agenciaCarsDataSetBindingSource.DataSource = this.agenciaCarsDataSet;
             this.agenciaCarsDataSetBindingSource.Position = 0;
             // 
-            // ListadoClientesBindingSource
+            // productosBindingSource2
             // 
-            this.ListadoClientesBindingSource.DataMember = "ListadoClientes";
-            this.ListadoClientesBindingSource.DataSource = this.datosListasEstadisticas;
+            this.productosBindingSource2.DataMember = "Productos";
+            this.productosBindingSource2.DataSource = this.datosListasEstadisticas1BindingSource;
+            // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataMember = "Proveedores";
+            this.proveedoresBindingSource.DataSource = this.datosListasEstadisticas;
+            // 
+            // datosListasEstadisticas
+            // 
+            this.datosListasEstadisticas.DataSetName = "datosListasEstadisticas";
+            this.datosListasEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // datosListasEstadisticas2BindingSource
+            // 
+            this.datosListasEstadisticas2BindingSource.DataSource = this.datosListasEstadisticas2;
+            this.datosListasEstadisticas2BindingSource.Position = 0;
+            // 
+            // datosListasEstadisticas2
+            // 
+            this.datosListasEstadisticas2.DataSetName = "datosListasEstadisticas";
+            this.datosListasEstadisticas2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // datosListasEstadisticas1BindingSource
+            // 
+            this.datosListasEstadisticas1BindingSource.DataSource = this.datosListasEstadisticas1;
+            this.datosListasEstadisticas1BindingSource.Position = 0;
             // 
             // datosListasEstadisticas1
             // 
             this.datosListasEstadisticas1.DataSetName = "datosListasEstadisticas";
             this.datosListasEstadisticas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // datosListasEstadisticas1BindingSource
+            // proveedoresBindingSource1
             // 
-            this.datosListasEstadisticas1BindingSource.DataSource = this.datosListasEstadisticas1;
-            this.datosListasEstadisticas1BindingSource.Position = 0;
+            this.proveedoresBindingSource1.DataMember = "Proveedores";
+            this.proveedoresBindingSource1.DataSource = this.datosListasEstadisticas;
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.datosListasEstadisticas3;
+            // 
+            // datosListasEstadisticas3
+            // 
+            this.datosListasEstadisticas3.DataSetName = "datosListasEstadisticas";
+            this.datosListasEstadisticas3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // datosListasEstadisticasBindingSource
+            // 
+            this.datosListasEstadisticasBindingSource.DataSource = this.datosListasEstadisticas;
+            this.datosListasEstadisticasBindingSource.Position = 0;
+            // 
+            // EstadisticasBindingSource
+            // 
+            this.EstadisticasBindingSource.DataMember = "Estadisticas";
+            this.EstadisticasBindingSource.DataSource = this.datosListasEstadisticas;
+            // 
+            // ListadoClientesBindingSource
+            // 
+            this.ListadoClientesBindingSource.DataMember = "ListadoClientes";
+            this.ListadoClientesBindingSource.DataSource = this.datosListasEstadisticas;
             // 
             // productosBindingSource
             // 
@@ -309,15 +402,44 @@
             this.productosBindingSource1.DataMember = "Productos";
             this.productosBindingSource1.DataSource = this.datosListasEstadisticas;
             // 
-            // productosBindingSource2
-            // 
-            this.productosBindingSource2.DataMember = "Productos";
-            this.productosBindingSource2.DataSource = this.datosListasEstadisticas1BindingSource;
-            // 
             // ListadoProductoBindingSource
             // 
             this.ListadoProductoBindingSource.DataMember = "ListadoProducto";
             this.ListadoProductoBindingSource.DataSource = this.datosListasEstadisticas;
+            // 
+            // dataTable1BindingSource1
+            // 
+            this.dataTable1BindingSource1.DataMember = "DataTable1";
+            this.dataTable1BindingSource1.DataSource = this.datosListasEstadisticas;
+            // 
+            // pROVEEDORESBindingSource2
+            // 
+            this.pROVEEDORESBindingSource2.DataMember = "PROVEEDORES";
+            this.pROVEEDORESBindingSource2.DataSource = this.agenciaCarsDataSetBindingSource;
+            // 
+            // pROVEEDORESTableAdapter
+            // 
+            this.pROVEEDORESTableAdapter.ClearBeforeFill = true;
+            // 
+            // proveedoresBindingSource3
+            // 
+            this.proveedoresBindingSource3.DataMember = "Proveedores";
+            this.proveedoresBindingSource3.DataSource = this.datosListasEstadisticas2BindingSource;
+            // 
+            // proveedoresBindingSource4
+            // 
+            this.proveedoresBindingSource4.DataMember = "Proveedores";
+            this.proveedoresBindingSource4.DataSource = this.datosListasEstadisticasBindingSource;
+            // 
+            // pROVEEDORESBindingSource5
+            // 
+            this.pROVEEDORESBindingSource5.DataMember = "PROVEEDORES";
+            this.pROVEEDORESBindingSource5.DataSource = this.agenciaCarsDataSetBindingSource;
+            // 
+            // proveedoresBindingSource6
+            // 
+            this.proveedoresBindingSource6.DataMember = "Proveedores";
+            this.proveedoresBindingSource6.DataSource = this.datosListasEstadisticasBindingSource;
             // 
             // listados
             // 
@@ -328,25 +450,37 @@
             this.Name = "listados";
             this.Text = "Listados";
             this.Load += new System.EventHandler(this.listados_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EstadisticasBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListadoClientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EstadisticasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProductoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pROVEEDORESBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pROVEEDORESBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,5 +516,20 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private datos.datosListasEstadisticas datosListasEstadisticas3;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource1;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource1;
+        private System.Windows.Forms.BindingSource pROVEEDORESBindingSource2;
+        private AgenciaCarsDataSetTableAdapters.PROVEEDORESTableAdapter pROVEEDORESTableAdapter;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource3;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource6;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource4;
+        private System.Windows.Forms.BindingSource pROVEEDORESBindingSource5;
     }
 }

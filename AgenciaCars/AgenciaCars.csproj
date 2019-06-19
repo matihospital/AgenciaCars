@@ -341,14 +341,18 @@
     <EmbeddedResource Include="pruebal.resx">
       <DependentUpon>pruebal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportes\estadisticasVentasMes.rdlc" />
-    <EmbeddedResource Include="reportes\estadisticasComprasMes.rdlc" />
-    <EmbeddedResource Include="reportes\estadisticasProductosMarca.rdlc" />
-    <EmbeddedResource Include="reportes\estadisticasVentasCliente.rdlc" />
-    <EmbeddedResource Include="reportes\estadisticasVentasVendedor.rdlc" />
-    <EmbeddedResource Include="reportes\estadisticasClientesProvincias.rdlc" />
-    <EmbeddedResource Include="reportes\listadoClientes.rdlc" />
-    <EmbeddedResource Include="reportes\ListadoProductos.rdlc" />
+    <EmbeddedResource Include="reporte\estadisticasClientesProvincias.rdlc" />
+    <EmbeddedResource Include="reporte\estadisticasComprasMes.rdlc" />
+    <EmbeddedResource Include="reporte\estadisticasProductosMarca.rdlc" />
+    <EmbeddedResource Include="reporte\estadisticasVentasCliente.rdlc" />
+    <EmbeddedResource Include="reporte\estadisticasVentasMes.rdlc" />
+    <EmbeddedResource Include="reporte\estadisticasVentasVendedor.rdlc" />
+    <EmbeddedResource Include="reporte\Facturas.rdlc" />
+    <EmbeddedResource Include="reporte\listadoClientes.rdlc" />
+    <EmbeddedResource Include="reporte\ListadoProductos.rdlc" />
+    <EmbeddedResource Include="reporte\Productos Vendidos.rdlc" />
+    <EmbeddedResource Include="reporte\Proveedores.rdlc" />
+    <EmbeddedResource Include="reporte\Vendedores.rdlc" />
     <None Include="AgenciaCarsDataSet.xsc">
       <DependentUpon>AgenciaCarsDataSet.xsd</DependentUpon>
     </None>

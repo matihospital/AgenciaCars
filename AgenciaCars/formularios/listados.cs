@@ -21,11 +21,14 @@ namespace AgenciaCars.formularios
 
         private void listados_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'agenciaCarsDataSet.PROVEEDORES' table. You can move, or remove it, as needed.
+            //this.pROVEEDORESTableAdapter.Fill(this.agenciaCarsDataSet.PROVEEDORES);
 
             //this.reportViewer1.RefreshReport();
             //this.reportViewer2.RefreshReport();
             //iniciarEstadistica();
             //this.reportViewer2.RefreshReport();
+            //this.reportViewer3.RefreshReport();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -58,7 +61,7 @@ namespace AgenciaCars.formularios
                     {
                         string[] datos;
                         datos = txtPatron.Text.Split('-');
-                        sql += @" AND legajo BETWEEN " + datos[0]
+                        sql += @" AND idCliente BETWEEN " + datos[0]
                             + " AND " + datos[1];
                     }
                     else
@@ -130,7 +133,30 @@ namespace AgenciaCars.formularios
                     ,pro.idPais
                     ,pro.idEstado
                     FROM PRODUCTOS as pro
-                    ";
+                    WHERE 1=1";
+            if (!string.IsNullOrEmpty(txtPatron.Text))
+            {
+                int i;
+                if (int.TryParse(txtPatron.Text, out i))
+                {
+                    sql += " AND idProducto = " + txtPatron.Text;
+                }
+                else
+                {
+                    if (txtPatron.Text.IndexOf("-") != -1)
+                    {
+                        string[] datos;
+                        datos = txtPatron.Text.Split('-');
+                        sql += @" AND idProducto BETWEEN " + datos[0]
+                            + " AND " + datos[1];
+                    }
+                    else
+                    {
+                        sql += @" AND color like '%"
+                            + txtPatron.Text.Trim() + "%'";
+                    }
+                }
+            }
             tabla = bd.consulta(sql);
 
             if (tabla.Rows.Count == 0)
@@ -140,6 +166,62 @@ namespace AgenciaCars.formularios
             }
             datosListasEstadisticas2BindingSource.DataSource = tabla;
             reportViewer2.RefreshReport();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            acceso_BD bd = new acceso_BD();
+            DataTable tabla = new DataTable();
+            string sql = "";
+
+            sql = @"SELECT prov.idProveedor
+                    ,prov.idTipoDoc
+                    ,prov.nroDoc
+                    ,prov.apellido
+                    ,prov.nombre
+                    ,prov.calle
+                    ,prov.nro
+                    ,prov.telefono
+                    ,prov.email
+                    ,prov.idLocalidad    
+                    FROM PROVEEDORES as prov JOIN TIPOS_DOCUMENTOS AS doc on 
+                    prov.idTipoDoc = doc.idTipoDoc
+                    WHERE 1=1
+                    ";
+            if (!string.IsNullOrEmpty(txtPatron.Text))
+            {
+                int i;
+                if (int.TryParse(txtPatron.Text, out i))
+                {
+                    sql += " AND idProveedor = " + txtPatron.Text;
+                }
+                else
+                {
+                    if (txtPatron.Text.IndexOf("-") != -1)
+                    {
+                        string[] datos;
+                        datos = txtPatron.Text.Split('-');
+                        sql += @" AND idProveedor BETWEEN " + datos[0]
+                            + " AND " + datos[1];
+                    }
+                    else
+                    {
+                        sql += @" AND apellido like '%"
+                            + txtPatron.Text.Trim() + "%'";
+                    }
+                }
+            }
+            tabla = bd.consulta(sql);
+
+            if (tabla.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para mostrar");
+                return;
+            }
+            //datosListasEstadisticas2BindingSource.DataSource = tabla;
+            proveedoresBindingSource6.DataSource = tabla;
+            //datosListasEstadisticas3BindingSource.DataSource = tabla;
+            reportViewer3.RefreshReport();
         }
 
     }
