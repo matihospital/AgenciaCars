@@ -112,7 +112,7 @@ namespace AgenciaCars.formularios
 
             //Cargo los datos del cliente
             cliente.txt_idCliente.Text = cli.Rows[0]["idCliente"].ToString();
-            cliente.cmb_tipoDoc.SelectedValue = int.Parse(cli.Rows[0]["idTipoDoc"].ToString());
+            cliente.cmb_tipoDoc.SelectedItem = cli.Rows[0]["idTipoDoc"];
             cliente.txt_nroDoc.Text = cli.Rows[0]["nroDoc"].ToString();
             cliente.txt_apellido.Text = cli.Rows[0]["apellido"].ToString();
             cliente.txt_nombre.Text = cli.Rows[0]["nombre"].ToString();
@@ -123,7 +123,8 @@ namespace AgenciaCars.formularios
             cliente.cmb_pais.SelectedValue = int.Parse(cli.Rows[0]["idPais"].ToString());
             cliente.cmb_provincia.SelectedValue = int.Parse(cli.Rows[0]["idProvincia"].ToString());
             cliente.cmb_localidad.SelectedValue = int.Parse(cli.Rows[0]["idLocalidad"].ToString());
-
+            //cliente.cmb_tipoDoc.SelectedValue = cli.Rows[0]["idTipoDoc"];
+            
             //Abro la pantalla
             cliente.ShowDialog();
             
