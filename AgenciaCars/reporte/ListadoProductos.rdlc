@@ -142,7 +142,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Año</Value>
+                              <Value>Stock</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -353,21 +353,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="producto">
+                    <Textbox Name="Producto">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!producto.Value</Value>
+                              <Value>=Fields!Producto.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>producto</rd:DefaultName>
+                      <rd:DefaultName>Producto</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -402,14 +402,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="anio">
+                    <Textbox Name="Cantidad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!anio.Value</Value>
+                              <Value>=Fields!Cantidad.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -418,7 +418,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>anio</rd:DefaultName>
+                      <rd:DefaultName>Cantidad</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -453,21 +453,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="color">
+                    <Textbox Name="Color">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!color.Value</Value>
+                              <Value>=Fields!Color.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>color</rd:DefaultName>
+                      <rd:DefaultName>Color</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -502,14 +502,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="precio">
+                    <Textbox Name="Precio">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!precio.Value</Value>
+                              <Value>=Fields!Precio.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -518,7 +518,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>precio</rd:DefaultName>
+                      <rd:DefaultName>Precio</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -700,28 +700,32 @@
       <Fields>
         <Field Name="idProducto">
           <DataField>idProducto</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="producto">
-          <DataField>producto</DataField>
+        <Field Name="Producto">
+          <DataField>Producto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="anio">
           <DataField>anio</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Color">
+          <DataField>Color</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="color">
-          <DataField>color</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Precio">
+          <DataField>Precio</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="precio">
-          <DataField>precio</DataField>
+        <Field Name="Cantidad">
+          <DataField>Cantidad</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>datosListasEstadisticas</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Matias\Documents\GitHub\AgenciaCars\AgenciaCars\datos\datosListasEstadisticas.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Rossi\Documents\AgenciaCars\AgenciaCars\datos\datosListasEstadisticas.xsd</rd:SchemaPath>
         <rd:TableName>ListadoProductos</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

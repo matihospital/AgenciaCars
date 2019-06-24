@@ -18,7 +18,7 @@ namespace AgenciaCars.clases
         OleDbCommand cmd = new OleDbCommand();
         //string cadena_conexion = "Provider=SQLNCLI11;Data Source=MATI\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=AgenciaCars;";
         //string cadena_conexion = "Provider=SQLNCLI11;Data Source=NBDELLPABLO;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
-        string cadena_conexion = "Provider=SQLNCLI11;Data Source=LAPTOP-L2T9FM0J;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
+        string cadena_conexion = @"Provider=SQLNCLI11;Data Source=Rossi-Pc\sqlenzo;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
         //string cadena_conexion = @"Provider=SQLNCLI11;Data Source=Rossi-Pc\sqlenzo;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
 
         public enum resultado_acceso { error, correcto }
