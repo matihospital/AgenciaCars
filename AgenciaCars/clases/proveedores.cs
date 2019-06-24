@@ -77,7 +77,24 @@ namespace AgenciaCars.clases
 
         public DataTable buscar_por_id(string id)
         {
-            return this._BD.consulta("SELECT * FROM proveedores WHERE idProveedor=" + id);
+            return this._BD.consulta(@"SELECT prv.idProveedor,
+                                              prv.idTipoDoc,
+                                              prv.nroDoc,
+                                              prv.apellido,
+                                              prv.nombre,
+                                              prv.telefono,
+                                              prv.email,
+                                              prv.calle,
+                                              prv.nro,
+                                              prv.idLocalidad,
+                                              pro.idProvincia,
+                                              pai.idPais        
+                                       FROM proveedores as prv, localidades as loc, provincias as pro, paises as pai
+                                       WHERE prv.idProveedor = " + id +
+                                       @" AND prv.idLocalidad = loc.idLocalidad
+                                          AND loc.idProvincia = pro.idProvincia
+                                          AND pro.idPais = pai.idPais"
+                                       );
         }
 
         public DataTable buscarProveedores()

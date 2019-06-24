@@ -251,7 +251,7 @@
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
             this.btn_cancelar.TabIndex = 11;
-            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.Text = "Limpiar Campos";
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
@@ -273,7 +273,7 @@
             // txt_anio
             // 
             this.txt_anio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_anio.Location = new System.Drawing.Point(164, 145);
+            this.txt_anio.Location = new System.Drawing.Point(164, 143);
             this.txt_anio.Mask = "0000";
             this.txt_anio.Name = "txt_anio";
             this.txt_anio.Size = new System.Drawing.Size(47, 26);
@@ -419,31 +419,31 @@
         private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label lbl_descripcion;
         private System.Windows.Forms.Label lbl_año;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label lbl_modelo;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label lbl_color;
-        private System.Windows.Forms.TextBox txt_color;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label lbl_estado;
         private System.Windows.Forms.TextBox textBox3;
-        protected System.Windows.Forms.TextBox txt_id;
-        private System.Windows.Forms.ComboBox cmb_modelo;
-        private System.Windows.Forms.ComboBox cmb_estado;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_aceptar;
-        private System.Windows.Forms.MaskedTextBox txt_anio;
-        private System.Windows.Forms.ComboBox cmb_pais;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmb_proveedor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox txt_precio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmb_marca;
+        public System.Windows.Forms.TextBox txt_descripcion;
+        public System.Windows.Forms.TextBox txt_color;
+        public System.Windows.Forms.TextBox txt_id;
+        public System.Windows.Forms.ComboBox cmb_modelo;
+        public System.Windows.Forms.ComboBox cmb_estado;
+        public System.Windows.Forms.MaskedTextBox txt_anio;
+        public System.Windows.Forms.ComboBox cmb_pais;
+        public System.Windows.Forms.ComboBox cmb_proveedor;
+        public System.Windows.Forms.MaskedTextBox txt_precio;
+        public System.Windows.Forms.ComboBox cmb_marca;
     }
 }
