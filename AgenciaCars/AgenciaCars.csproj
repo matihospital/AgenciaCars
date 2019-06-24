@@ -94,6 +94,7 @@
     <Compile Include="clases\productos.cs" />
     <Compile Include="clases\provincias.cs" />
     <Compile Include="clases\paises.cs" />
+    <Compile Include="clases\stock.cs" />
     <Compile Include="clases\tiposDoc.cs" />
     <Compile Include="clases\perfiles.cs" />
     <Compile Include="clases\proveedores.cs" />
@@ -130,6 +131,12 @@
     </Compile>
     <Compile Include="formularios\BUSQ_Compras.Designer.cs">
       <DependentUpon>BUSQ_Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\BUSQ_STOCK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\BUSQ_STOCK.Designer.cs">
+      <DependentUpon>BUSQ_STOCK.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\BUSQ_Ventas.cs">
       <SubType>Form</SubType>
@@ -267,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\BUSQ_Compras.resx">
       <DependentUpon>BUSQ_Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\BUSQ_STOCK.resx">
+      <DependentUpon>BUSQ_STOCK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\BUSQ_Ventas.resx">
       <DependentUpon>BUSQ_Ventas.cs</DependentUpon>
