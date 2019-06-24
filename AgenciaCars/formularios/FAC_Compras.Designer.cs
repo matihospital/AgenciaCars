@@ -65,6 +65,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtCantidad = new AgenciaCars.clases.TextBox01();
             this.txtTotal = new AgenciaCars.clases.TextBox01();
             this.IdFactura = new AgenciaCars.clases.TextBox01();
@@ -117,7 +119,7 @@
             this.btn_salir.FlatAppearance.BorderSize = 2;
             this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salir.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_salir.Location = new System.Drawing.Point(224, 520);
+            this.btn_salir.Location = new System.Drawing.Point(118, 520);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(100, 29);
             this.btn_salir.TabIndex = 12;
@@ -136,7 +138,7 @@
             this.button1.FlatAppearance.BorderSize = 2;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button1.Location = new System.Drawing.Point(118, 520);
+            this.button1.Location = new System.Drawing.Point(654, 520);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 29);
             this.button1.TabIndex = 11;
@@ -399,6 +401,29 @@
             this.label7.TabIndex = 37;
             this.label7.Text = "Observaciones";
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Enabled = false;
+            this.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(426, 140);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(177, 28);
+            this.cmbEstado.TabIndex = 38;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(426, 124);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "Estado";
+            // 
             // txtCantidad
             // 
             this.txtCantidad._campo = null;
@@ -446,6 +471,8 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label11);
@@ -528,5 +555,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Label label10;
     }
 }

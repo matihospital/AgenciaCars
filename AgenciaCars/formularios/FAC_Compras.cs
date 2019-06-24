@@ -17,6 +17,7 @@ namespace AgenciaCars.formularios
         acceso_BD _BD = new acceso_BD();
         proveedores obj_proveedores = new proveedores();
         productos obj_productos = new productos();
+        estados obj_estados = new estados();
 
         public FAC_Compras()
         {
@@ -37,6 +38,11 @@ namespace AgenciaCars.formularios
             this.cmbProveedor.DataSource = this.obj_proveedores.buscarProveedores();
             this.cmbProveedor.DisplayMember = "Proveedor";
             this.cmbProveedor.ValueMember = "Id";
+
+            //Estado
+            this.cmbEstado.DataSource = this.obj_estados.Consultar_estados();
+            this.cmbEstado.DisplayMember = "descripcion";
+            this.cmbEstado.ValueMember = "idEstado";
 
             //Productos
             this.cmbProducto.DataSource = this.obj_productos.buscarNombreProductos();
@@ -114,6 +120,7 @@ namespace AgenciaCars.formularios
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
+                            //Inserto el detalle
                             string sqlDetalle = @"INSERT INTO FACTURASDET (orden,
                                                                            idFactura,
                                                                            idProducto,
@@ -126,6 +133,31 @@ namespace AgenciaCars.formularios
                                                       + dataGridView1.Rows[i].Cells["precio"].Value
                                                       + ")";
                             _BD.insert_update_delete(sqlDetalle);
+
+                            //Actualizo Stock (Verifico si existe, si no lo creo)
+                            DataTable existeStock = _BD.consulta("SELECT ISNULL( (SELECT 1 from stock where idProducto = " + dataGridView1.Rows[i].Cells["idProducto"].Value + "),0) as existe ");
+                            if (existeStock.Rows[0]["existe"].ToString() == "1")
+                            {
+                                string sqlStock = @"UPDATE STOCK
+                                                SET cantidad = cantidad +1
+                                                WHERE idProducto = " + dataGridView1.Rows[i].Cells["idProducto"].Value;
+                                _BD.insert_update_delete(sqlStock);
+                            }
+                            else
+                            {
+                                DataTable ConsultaIdStock = _BD.consulta("SELECT ISNULL(max(idStock),0)+1 as idStock from STOCK");
+                                int idStock = int.Parse(ConsultaIdStock.Rows[0]["idStock"].ToString());
+
+                                string sqlStock = @"INSERT INTO STOCK (idStock, idProducto, cantidad)
+                                                    VALUES( "
+                                                    + idStock + ", "
+                                                    + dataGridView1.Rows[i].Cells["idProducto"].Value + ", "
+                                                    + 1 + ")" ;    
+                                _BD.insert_update_delete(sqlStock);
+                            };
+
+                            
+                            
                         }
                         _BD.cerrar_transaccion();
                         blanquear_objetos();

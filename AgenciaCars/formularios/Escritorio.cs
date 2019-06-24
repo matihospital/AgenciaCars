@@ -199,5 +199,11 @@ namespace AgenciaCars
             Indicadores frm = new Indicadores();
             frm.ShowDialog();
         }
+
+        private void stockToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BUSQ_Stock frm = new BUSQ_Stock();
+            frm.ShowDialog();
+        }
     }
 }
