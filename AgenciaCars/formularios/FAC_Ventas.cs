@@ -233,7 +233,6 @@ namespace AgenciaCars.formularios
                 }
 
                 _BD.cerrar_transaccion();
-                blanquear_objetos();
             }
             else
             {
