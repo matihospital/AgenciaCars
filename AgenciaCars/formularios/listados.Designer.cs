@@ -41,10 +41,6 @@
             this.ListadoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ListadoProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listadoVendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
-            this.listadoVendidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datosListasEstadisticas1 = new AgenciaCars.datos.datosListasEstadisticas();
             this.listadoProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -77,14 +73,14 @@
             this.btnVendidos = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.listadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
+            this.listadoVendidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datosListasEstadisticas1 = new AgenciaCars.datos.datosListasEstadisticas();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoVendedoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoVendidosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductosBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -93,6 +89,10 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoVendidosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).BeginInit();
             this.SuspendLayout();
             // 
             // ListadoClientesBindingSource
@@ -110,26 +110,6 @@
             // listadoVendedoresBindingSource
             // 
             this.listadoVendedoresBindingSource.DataMember = "ListadoVendedores";
-            // 
-            // listadoFacturasBindingSource
-            // 
-            this.listadoFacturasBindingSource.DataMember = "ListadoFacturas";
-            this.listadoFacturasBindingSource.DataSource = this.datosListasEstadisticas;
-            // 
-            // datosListasEstadisticas
-            // 
-            this.datosListasEstadisticas.DataSetName = "datosListasEstadisticas";
-            this.datosListasEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // listadoVendidosBindingSource
-            // 
-            this.listadoVendidosBindingSource.DataMember = "ListadoVendidos";
-            this.listadoVendidosBindingSource.DataSource = this.datosListasEstadisticas1;
-            // 
-            // datosListasEstadisticas1
-            // 
-            this.datosListasEstadisticas1.DataSetName = "datosListasEstadisticas";
-            this.datosListasEstadisticas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // listadoProductosBindingSource
             // 
@@ -482,6 +462,26 @@
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 9;
             // 
+            // listadoFacturasBindingSource
+            // 
+            this.listadoFacturasBindingSource.DataMember = "ListadoFacturas";
+            this.listadoFacturasBindingSource.DataSource = this.datosListasEstadisticas;
+            // 
+            // datosListasEstadisticas
+            // 
+            this.datosListasEstadisticas.DataSetName = "datosListasEstadisticas";
+            this.datosListasEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // listadoVendidosBindingSource
+            // 
+            this.listadoVendidosBindingSource.DataMember = "ListadoVendidos";
+            this.listadoVendidosBindingSource.DataSource = this.datosListasEstadisticas1;
+            // 
+            // datosListasEstadisticas1
+            // 
+            this.datosListasEstadisticas1.DataSetName = "datosListasEstadisticas";
+            this.datosListasEstadisticas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // listados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,10 +497,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoProveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoVendedoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoVendidosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductosBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -515,6 +511,10 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoVendidosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosListasEstadisticas1)).EndInit();
             this.ResumeLayout(false);
 
         }

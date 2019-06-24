@@ -282,11 +282,13 @@ namespace AgenciaCars.formularios
                     ,FORMAT(pro.precio, 'C', 'en') as precio
                     ,convert(varchar, fac.fecha, 3) as fechaVenta
                     ,(FORMAT(fac.ptoVenta, '0000') + '-' + FORMAT(fac.nroFactura, '00000000')) as factura
-                    FROM PRODUCTOS as pro, MODELOS as mod, MARCAS as mar, FACTURAS as fac, FACTURASDET as fad
+                    ,stock.cantidad as Stock
+                    FROM PRODUCTOS as pro, MODELOS as mod, MARCAS as mar, FACTURAS as fac, FACTURASDET as fad , STOCK as stock 
                     WHERE pro.idModelo = mod.idModelo
                     AND mod.idMarca = mar.idMarca
                     AND fad.idProducto = pro.idProducto
                     and fad.idFactura = fac.idFactura
+                    AND stock.idProducto = pro.idProducto
                     AND 1=1";
             if (!string.IsNullOrEmpty(txtPatron.Text))
             {

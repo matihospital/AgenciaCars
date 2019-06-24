@@ -2408,6 +2408,8 @@ namespace AgenciaCars.datos {
             
             private global::System.Data.DataColumn columnfactura;
             
+            private global::System.Data.DataColumn columnstock;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ListadoVendidosDataTable() {
@@ -2499,6 +2501,14 @@ namespace AgenciaCars.datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn stockColumn {
+                get {
+                    return this.columnstock;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2534,7 +2544,7 @@ namespace AgenciaCars.datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListadoVendidosRow AddListadoVendidosRow(int idProducto, string producto, int anio, string color, double precio, string fechaVenta, string factura) {
+            public ListadoVendidosRow AddListadoVendidosRow(int idProducto, string producto, int anio, string color, double precio, string fechaVenta, string factura, string stock) {
                 ListadoVendidosRow rowListadoVendidosRow = ((ListadoVendidosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idProducto,
@@ -2543,7 +2553,8 @@ namespace AgenciaCars.datos {
                         color,
                         precio,
                         fechaVenta,
-                        factura};
+                        factura,
+                        stock};
                 rowListadoVendidosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListadoVendidosRow);
                 return rowListadoVendidosRow;
@@ -2573,6 +2584,7 @@ namespace AgenciaCars.datos {
                 this.columnprecio = base.Columns["precio"];
                 this.columnfechaVenta = base.Columns["fechaVenta"];
                 this.columnfactura = base.Columns["factura"];
+                this.columnstock = base.Columns["stock"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2592,6 +2604,8 @@ namespace AgenciaCars.datos {
                 base.Columns.Add(this.columnfechaVenta);
                 this.columnfactura = new global::System.Data.DataColumn("factura", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfactura);
+                this.columnstock = new global::System.Data.DataColumn("stock", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstock);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3944,6 +3958,22 @@ namespace AgenciaCars.datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string stock {
+                get {
+                    try {
+                        return ((string)(this[this.tableListadoVendidos.stockColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'stock\' in table \'ListadoVendidos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListadoVendidos.stockColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidProductoNull() {
                 return this.IsNull(this.tableListadoVendidos.idProductoColumn);
             }
@@ -4024,6 +4054,18 @@ namespace AgenciaCars.datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetfacturaNull() {
                 this[this.tableListadoVendidos.facturaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsstockNull() {
+                return this.IsNull(this.tableListadoVendidos.stockColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetstockNull() {
+                this[this.tableListadoVendidos.stockColumn] = global::System.Convert.DBNull;
             }
         }
         
