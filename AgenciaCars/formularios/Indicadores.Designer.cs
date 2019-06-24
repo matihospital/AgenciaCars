@@ -35,6 +35,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Indicadores));
             this.EstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datosListasEstadisticas = new AgenciaCars.datos.datosListasEstadisticas();
             this.datosListasEstadisticasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -124,7 +125,7 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.EstadisticasBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasClientesProvincias.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.estadisticasClientesProvincias.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(-4, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(813, 545);
@@ -150,7 +151,7 @@
             reportDataSource2.Name = "DataSet1";
             reportDataSource2.Value = this.EstadisticasBindingSource;
             this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer2.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasVentasVendedor.rdlc";
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.estadisticasVentasVendedor.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(-4, -2);
             this.reportViewer2.Name = "reportViewer2";
             this.reportViewer2.Size = new System.Drawing.Size(813, 545);
@@ -176,7 +177,7 @@
             reportDataSource3.Name = "DataSet1";
             reportDataSource3.Value = this.EstadisticasBindingSource;
             this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer3.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasVentasCliente.rdlc";
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.estadisticasVentasCliente.rdlc";
             this.reportViewer3.Location = new System.Drawing.Point(-4, -2);
             this.reportViewer3.Name = "reportViewer3";
             this.reportViewer3.Size = new System.Drawing.Size(813, 545);
@@ -202,7 +203,7 @@
             reportDataSource4.Name = "DataSet1";
             reportDataSource4.Value = this.EstadisticasBindingSource;
             this.reportViewer4.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewer4.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasProductosMarca.rdlc";
+            this.reportViewer4.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.estadisticasProductosMarca.rdlc";
             this.reportViewer4.Location = new System.Drawing.Point(-4, 0);
             this.reportViewer4.Name = "reportViewer4";
             this.reportViewer4.Size = new System.Drawing.Size(813, 543);
@@ -228,7 +229,7 @@
             reportDataSource5.Name = "DataSet1";
             reportDataSource5.Value = this.EstadisticasBindingSource;
             this.reportViewer5.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewer5.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasComprasMes.rdlc";
+            this.reportViewer5.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.estadisticasComprasMes.rdlc";
             this.reportViewer5.Location = new System.Drawing.Point(-4, -1);
             this.reportViewer5.Name = "reportViewer5";
             this.reportViewer5.Size = new System.Drawing.Size(813, 543);
@@ -254,7 +255,7 @@
             reportDataSource6.Name = "DataSet1";
             reportDataSource6.Value = this.EstadisticasBindingSource;
             this.reportViewer6.LocalReport.DataSources.Add(reportDataSource6);
-            this.reportViewer6.LocalReport.ReportEmbeddedResource = "AgenciaCars.reportes.estadisticasVentasMes.rdlc";
+            this.reportViewer6.LocalReport.ReportEmbeddedResource = "AgenciaCars.reporte.estadisticasVentasMes.rdlc";
             this.reportViewer6.Location = new System.Drawing.Point(-4, -1);
             this.reportViewer6.Name = "reportViewer6";
             this.reportViewer6.Size = new System.Drawing.Size(813, 543);
@@ -292,7 +293,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 568);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Indicadores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Indicadores";
             this.Load += new System.EventHandler(this.listados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EstadisticasBindingSource)).EndInit();

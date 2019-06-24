@@ -86,7 +86,24 @@ namespace AgenciaCars.clases
         //usuario
         public DataTable buscar_por_id (string id)
         {
-           return this._BD.consulta("SELECT * FROM clientes WHERE idCliente=" + id);
+            return this._BD.consulta(@"SELECT cli.idCliente,
+                                              cli.idTipoDoc,
+                                              cli.nroDoc,
+                                              cli.apellido,
+                                              cli.nombre,
+                                              cli.telefono,
+                                              cli.email,
+                                              cli.calle,
+                                              cli.nro,
+                                              cli.idLocalidad,
+                                              prv.idProvincia,
+                                              pai.idPais        
+                                       FROM clientes as cli, localidades as loc, provincias as prv, paises as pai
+                                       WHERE cli.idCliente = " + id +
+                                       @" AND cli.idLocalidad = loc.idLocalidad
+                                          AND loc.idProvincia = prv.idProvincia
+                                          AND prv.idPais = pai.idPais"
+                                       );
         }
 
         public DataTable buscarClientes()
@@ -118,8 +135,6 @@ namespace AgenciaCars.clases
         //métod para garbar un nuevo registro en la base de datos en la tabla users
         public void grabarCliente()
         {
-            //se define una variable del tipo string con la que se escrite el comando INSERT
-            //SQL con el que se inserta un nuevo registro en la base de datos. 
             string SqlInsert = "";
             SqlInsert = @" INSERT INTO clientes (
                          idCliente,
@@ -141,16 +156,10 @@ namespace AgenciaCars.clases
                          this._nro + ", '" +
                          this._telefono.ToString() + "', '" +
                          this._email.ToString() + "', " +
-                         this._idLocalidad+ ")";
-            //MessageBox.Show(SqlInsert);
-            //se ejcuta en el backEnd el método "grabar_modificar" que ejecuta comandos del 
-            //tipo INSERT o UPDATE de SQL 
-           // this._BD.grabar_modificar(SqlInsert);  
+                         this._idLocalidad+ ")";  
             this._BD.insert_update_delete(SqlInsert);
         }
-        //método par amodificar un registro ya existente en la base de datos.
-        //La metodología es similar al método anterior, sabiendo que este ejecuta un 
-        //comando UPDATE de SQL en la base de datos. 
+
         public void modificarCliente (string _id)
         {
             string sqlupdate = "";
@@ -164,7 +173,7 @@ namespace AgenciaCars.clases
                          + ", telefono = '" + this._telefono.ToString() + "'"
                          + ", email = '" + this._email.ToString() + "'"
                          + ", idLocalidad = " + this._idLocalidad.ToString()
-                         + " WHERE idCliente = " + _idCliente;
+                         + " WHERE idCliente = " + _id;
             this._BD.insert_update_delete(sqlupdate);
         }
     }

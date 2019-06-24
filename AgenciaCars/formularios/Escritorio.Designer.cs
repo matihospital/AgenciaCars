@@ -53,9 +53,9 @@
             this.modelosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indicadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -227,7 +227,7 @@
             this.marcasToolStripMenuItem,
             this.modelosToolStripMenuItem});
             this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.parametrosToolStripMenuItem.Text = "Parametros";
             // 
             // marcasToolStripMenuItem
@@ -247,27 +247,16 @@
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem1
             // 
             this.stockToolStripMenuItem1.Name = "stockToolStripMenuItem1";
-            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.stockToolStripMenuItem1.Text = "Stock";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label1.Location = new System.Drawing.Point(941, 646);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(347, 51);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "AGENCIA CARS";
+            this.stockToolStripMenuItem1.Click += new System.EventHandler(this.stockToolStripMenuItem1_Click);
             // 
             // informesToolStripMenuItem
             // 
@@ -282,6 +271,18 @@
             this.indicadoresToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.indicadoresToolStripMenuItem.Text = "Indicadores";
             this.indicadoresToolStripMenuItem.Click += new System.EventHandler(this.indicadoresToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label1.Location = new System.Drawing.Point(941, 646);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(347, 51);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "AGENCIA CARS";
             // 
             // pictureBox1
             // 

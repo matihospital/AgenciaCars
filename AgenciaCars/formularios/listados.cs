@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgenciaCars.clases;
-using System.Data;
 
 namespace AgenciaCars.formularios
 {
@@ -21,16 +20,10 @@ namespace AgenciaCars.formularios
 
         private void listados_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'agenciaCarsDataSet.PROVEEDORES' table. You can move, or remove it, as needed.
-            //this.pROVEEDORESTableAdapter.Fill(this.agenciaCarsDataSet.PROVEEDORES);
-
-            //this.reportViewer1.RefreshReport();
-            //this.reportViewer2.RefreshReport();
-            //iniciarEstadistica();
-            //this.reportViewer2.RefreshReport();
-            //this.reportViewer3.RefreshReport();
         }
 
+
+        //Clientes
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             acceso_BD bd = new acceso_BD();
@@ -79,82 +72,33 @@ namespace AgenciaCars.formularios
                     return;
                 }
 
-                datosListasEstadisticasBindingSource.DataSource = tabla;
+                ListadoClientesBindingSource.DataSource = tabla;
                 reportViewer1.RefreshReport();
             
         }
 
-        private void iniciarEstadistica()
-        {
-            acceso_BD bd = new acceso_BD();
-            string sql = "";
-
-            sql = @"SELECT prov.descripcion as descriptor,
-                           count(1) as dato
-                    FROM CLIENTES as cli, 
-                         LOCALIDADES as loc,
-                         PROVINCIAS as prov
-                    WHERE cli.idLocalidad = loc.idLocalidad
-                    AND loc.idProvincia = prov.idProvincia
-                    GROUP BY prov.descripcion ";
-
-            EstadisticasBindingSource.DataSource = bd.consulta(sql);
-            this.reportViewer2.RefreshReport();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reportViewer2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Productos
         private void btn_buscar_prod_Click(object sender, EventArgs e)
         {
             acceso_BD bd = new acceso_BD();
             DataTable tabla = new DataTable();
             string sql = "";
 
-            sql = @"SELECT pro.idProducto
-                    ,pro.descripcion
-                    ,pro.anio
-                    ,pro.idModelo
-                    ,pro.color
-                    ,pro.precio
-                    ,pro.idProveedor
-                    ,pro.idPais
-                    ,pro.idEstado
-                    FROM PRODUCTOS as pro
-                    WHERE 1=1";
+            sql = @"SELECT pro.idProducto as idProducto
+                    , (mar.descripcion + ' ' + mod.descripcion) as producto 
+                    ,pro.anio as anio
+                    ,pro.color as color
+                    ,FORMAT(pro.precio, 'C', 'en') as precio
+                    FROM PRODUCTOS as pro, MODELOS as mod, MARCAS as mar
+                    WHERE pro.idModelo = mod.idModelo
+                    AND mod.idMarca = mar.idMarca
+                    AND 1=1";
             if (!string.IsNullOrEmpty(txtPatron.Text))
             {
                 int i;
                 if (int.TryParse(txtPatron.Text, out i))
                 {
                     sql += " AND idProducto = " + txtPatron.Text;
-                }
-                else
-                {
-                    if (txtPatron.Text.IndexOf("-") != -1)
-                    {
-                        string[] datos;
-                        datos = txtPatron.Text.Split('-');
-                        sql += @" AND idProducto BETWEEN " + datos[0]
-                            + " AND " + datos[1];
-                    }
-                    else
-                    {
-                        sql += @" AND color like '%"
-                            + txtPatron.Text.Trim() + "%'";
-                    }
                 }
             }
             tabla = bd.consulta(sql);
@@ -164,10 +108,12 @@ namespace AgenciaCars.formularios
                 MessageBox.Show("No hay datos para mostrar");
                 return;
             }
-            datosListasEstadisticas2BindingSource.DataSource = tabla;
+
+            ListadoProductoBindingSource.DataSource = tabla;
             reportViewer2.RefreshReport();
         }
 
+        //Proveedores
         private void button1_Click(object sender, EventArgs e)
         {
             acceso_BD bd = new acceso_BD();
@@ -175,7 +121,7 @@ namespace AgenciaCars.formularios
             string sql = "";
 
             sql = @"SELECT prov.idProveedor
-                    ,prov.idTipoDoc
+                    ,tpd.descripcion as tipoDoc
                     ,prov.nroDoc
                     ,prov.apellido
                     ,prov.nombre
@@ -184,8 +130,8 @@ namespace AgenciaCars.formularios
                     ,prov.telefono
                     ,prov.email
                     ,prov.idLocalidad    
-                    FROM PROVEEDORES as prov JOIN TIPOS_DOCUMENTOS AS doc on 
-                    prov.idTipoDoc = doc.idTipoDoc
+                    FROM PROVEEDORES as prov JOIN TIPOS_DOCUMENTOS AS tpd on 
+                    prov.idTipoDoc = tpd.idTipoDoc
                     WHERE 1=1
                     ";
             if (!string.IsNullOrEmpty(txtPatron.Text))
@@ -218,11 +164,147 @@ namespace AgenciaCars.formularios
                 MessageBox.Show("No hay datos para mostrar");
                 return;
             }
-            //datosListasEstadisticas2BindingSource.DataSource = tabla;
-            proveedoresBindingSource6.DataSource = tabla;
-            //datosListasEstadisticas3BindingSource.DataSource = tabla;
+
+            ListadoProveedoresBindingSource.DataSource = tabla;
             reportViewer3.RefreshReport();
         }
 
+        //Vendedores
+        private void btnVendedores_Click(object sender, EventArgs e)
+        {
+            acceso_BD bd = new acceso_BD();
+            DataTable tabla = new DataTable();
+            string sql = "";
+
+            sql = @"SELECT ven.idVendedor
+                    ,tpd.descripcion as tipoDoc
+                    ,ven.nroDoc
+                    ,ven.apellido
+                    ,ven.nombre
+                    ,ven.calle
+                    ,ven.nro
+                    ,ven.telefono
+                    ,ven.email
+                    ,ven.idLocalidad    
+                    FROM vendedores as ven JOIN TIPOS_DOCUMENTOS AS tpd on 
+                    ven.idTipoDoc = tpd.idTipoDoc
+                    WHERE 1=1
+                    ";
+            if (!string.IsNullOrEmpty(txtPatron.Text))
+            {
+                int i;
+                if (int.TryParse(txtPatron.Text, out i))
+                {
+                    sql += " AND idVendedor = " + txtPatron.Text;
+                }
+                else
+                {
+                    if (txtPatron.Text.IndexOf("-") != -1)
+                    {
+                        string[] datos;
+                        datos = txtPatron.Text.Split('-');
+                        sql += @" AND idVendedor BETWEEN " + datos[0]
+                            + " AND " + datos[1];
+                    }
+                    else
+                    {
+                        sql += @" AND apellido like '%"
+                            + txtPatron.Text.Trim() + "%'";
+                    }
+                }
+            }
+            tabla = bd.consulta(sql);
+
+            if (tabla.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para mostrar");
+                return;
+            }
+
+            listadoVendedoresBindingSource.DataSource = tabla;
+            reportViewer4.RefreshReport();
+
+        }
+
+        //Facturas
+        private void btnFacturas_Click(object sender, EventArgs e)
+        {
+            acceso_BD bd = new acceso_BD();
+            DataTable tabla = new DataTable();
+            string sql = "";
+
+            sql = @"SELECT fac.idFactura as idFactura,
+                           (CASE fac.tipoComprobante
+                                 WHEN 'C' THEN 'Factura de Compra'
+                                 WHEN 'V' THEN 'Factura de Venta'
+                            END)         
+                            as tipoComprobante,
+                           FORMAT(fac.ptoVenta, '0000') as ptoVenta,
+                           FORMAT(fac.nroFactura, '00000000') as nroFactura,
+                           convert(varchar, fac.fecha, 3) as fecha,
+                           (cli.nombre + ' ' + cli.apellido) as cliente,
+                           FORMAT(fac.total, 'C', 'en') as total
+                    FROM FACTURAS as fac, clientes as cli
+                    WHERE fac.idCliente = cli.idCliente 
+                    AND 1=1";
+            if (!string.IsNullOrEmpty(txtPatron.Text))
+            {
+                int i;
+                if (int.TryParse(txtPatron.Text, out i))
+                {
+                    sql += " AND idFactura = " + txtPatron.Text;
+                }
+
+            }
+            tabla = bd.consulta(sql);
+
+            if (tabla.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para mostrar");
+                return;
+            }
+
+            listadoFacturasBindingSource.DataSource = tabla;
+            reportViewer5.RefreshReport();
+        }
+
+        private void btnVendidos_Click(object sender, EventArgs e)
+        {
+            acceso_BD bd = new acceso_BD();
+            DataTable tabla = new DataTable();
+            string sql = "";
+
+            sql = @"SELECT pro.idProducto as idProducto
+                    , (mar.descripcion + ' ' + mod.descripcion) as producto 
+                    ,pro.anio as anio
+                    ,pro.color as color
+                    ,FORMAT(pro.precio, 'C', 'en') as precio
+                    ,convert(varchar, fac.fecha, 3) as fechaVenta
+                    ,(FORMAT(fac.ptoVenta, '0000') + '-' + FORMAT(fac.nroFactura, '00000000')) as factura
+                    FROM PRODUCTOS as pro, MODELOS as mod, MARCAS as mar, FACTURAS as fac, FACTURASDET as fad
+                    WHERE pro.idModelo = mod.idModelo
+                    AND mod.idMarca = mar.idMarca
+                    AND fad.idProducto = pro.idProducto
+                    and fad.idFactura = fac.idFactura
+                    AND 1=1";
+            if (!string.IsNullOrEmpty(txtPatron.Text))
+            {
+                int i;
+                if (int.TryParse(txtPatron.Text, out i))
+                {
+                    sql += " AND idProducto = " + txtPatron.Text;
+                }
+            }
+            tabla = bd.consulta(sql);
+
+            if (tabla.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para mostrar");
+                return;
+            }
+
+            listadoVendidosBindingSource.DataSource = tabla;
+            reportViewer6.RefreshReport();
+        }
     }
 }

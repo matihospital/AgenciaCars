@@ -79,12 +79,17 @@ namespace AgenciaCars.clases
 
         public DataTable buscar_por_id(string id)
         {
-            return this._BD.consulta(@"SELECT PRO.*,
-                                              PRO.idProducto as Id, 
-                                              (MAR.descripcion + ' ' +  MDE.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) nombreAuto 
-                                       FROM PRODUCTOS as PRO, MODELOS as MDE, MARCAS as MAR 
-                                       WHERE PRO.idModelo = MDE.idModelo 
-                                       AND mde.idMarca = mar.idMarca 
+            return this._BD.consulta(@"SELECT PRO.idProducto as Id,
+                                              mar.descripcion as Marca,
+                                              mod.descripcion as Modelo,
+                                              pro.anio as Año,
+                                              pro.color as Color,
+                                              pro.precio as Precio,
+                                              pro.descripcion as Observaciones,
+                                              (MAR.descripcion + ' ' +  mod.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) as Producto 
+                                       FROM PRODUCTOS as PRO, MODELOS as mod, MARCAS as MAR 
+                                       WHERE PRO.idModelo = mod.idModelo 
+                                       AND mod.idMarca = mar.idMarca 
                                        AND PRO.idProducto =" + id);
         }
 

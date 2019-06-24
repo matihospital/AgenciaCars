@@ -101,5 +101,32 @@ namespace AgenciaCars.formularios
         {
             actualizarGrilla();
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ABM_Clientes cliente = new formularios.ABM_Clientes();
+            
+            //Busco los datos del cliente
+            DataTable cli = new DataTable();
+            cli = this.obj_clientes.buscar_por_id(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            //Cargo los datos del cliente
+            cliente.txt_idCliente.Text = cli.Rows[0]["idCliente"].ToString();
+            cliente.cmb_tipoDoc.SelectedValue = int.Parse(cli.Rows[0]["idTipoDoc"].ToString());
+            cliente.txt_nroDoc.Text = cli.Rows[0]["nroDoc"].ToString();
+            cliente.txt_apellido.Text = cli.Rows[0]["apellido"].ToString();
+            cliente.txt_nombre.Text = cli.Rows[0]["nombre"].ToString();
+            cliente.txt_telefono.Text = cli.Rows[0]["telefono"].ToString();
+            cliente.txt_email.Text = cli.Rows[0]["email"].ToString();
+            cliente.txt_calle.Text = cli.Rows[0]["calle"].ToString();
+            cliente.txt_nro.Text = cli.Rows[0]["nro"].ToString();
+            cliente.cmb_pais.SelectedValue = int.Parse(cli.Rows[0]["idPais"].ToString());
+            cliente.cmb_provincia.SelectedValue = int.Parse(cli.Rows[0]["idProvincia"].ToString());
+            cliente.cmb_localidad.SelectedValue = int.Parse(cli.Rows[0]["idLocalidad"].ToString());
+
+            //Abro la pantalla
+            cliente.ShowDialog();
+            
+        }
     }
 }
