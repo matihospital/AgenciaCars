@@ -34,7 +34,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pAISESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
-            this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.pAISESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.PAISESTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,6 +60,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 86);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(488, 281);
             this.dataGridView1.TabIndex = 14;
             // 
@@ -73,20 +73,6 @@
             // 
             this.agenciaCarsDataSet.DataSetName = "AgenciaCarsDataSet";
             this.agenciaCarsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btn_nuevo
-            // 
-            this.btn_nuevo.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_nuevo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn_nuevo.FlatAppearance.BorderSize = 2;
-            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_nuevo.Location = new System.Drawing.Point(12, 383);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(100, 29);
-            this.btn_nuevo.TabIndex = 19;
-            this.btn_nuevo.Text = "Nuevo";
-            this.btn_nuevo.UseVisualStyleBackColor = false;
             // 
             // btn_salir
             // 
@@ -115,7 +101,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(513, 424);
             this.Controls.Add(this.btn_salir);
-            this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -137,7 +122,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_salir;
         private AgenciaCarsDataSet agenciaCarsDataSet;
         private System.Windows.Forms.BindingSource pAISESBindingSource;

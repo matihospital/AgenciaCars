@@ -101,5 +101,34 @@ namespace AgenciaCars.formularios
         {
             actualizarGrilla();
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ABM_Vendedores vendedor = new formularios.ABM_Vendedores();
+
+            //Busco los datos del cliente
+            DataTable ven = new DataTable();
+            ven = this.obj_vendedores.buscar_por_id(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            //Cargo los datos del cliente
+            vendedor.txt_idVendedor.Text = ven.Rows[0]["idVendedor"].ToString();
+            //vendedor.cmb_tipoDoc.SelectedItem = ven.Rows[0]["idTipoDoc"];
+            vendedor.txt_nroDoc.Text = ven.Rows[0]["nroDoc"].ToString();
+            vendedor.txt_apellido.Text = ven.Rows[0]["apellido"].ToString();
+            vendedor.txt_nombre.Text = ven.Rows[0]["nombre"].ToString();
+            vendedor.txt_telefono.Text = ven.Rows[0]["telefono"].ToString();
+            vendedor.txt_email.Text = ven.Rows[0]["email"].ToString();
+            vendedor.txt_calle.Text = ven.Rows[0]["calle"].ToString();
+            vendedor.txt_nro.Text = ven.Rows[0]["nro"].ToString();
+            vendedor.cmb_pais.SelectedValue = int.Parse(ven.Rows[0]["idPais"].ToString());
+            vendedor.cmb_provincia.SelectedValue = int.Parse(ven.Rows[0]["idProvincia"].ToString());
+            vendedor.cmb_localidad.SelectedValue = int.Parse(ven.Rows[0]["idLocalidad"].ToString());
+            //cliente.cmb_tipoDoc.SelectedValue = cli.Rows[0]["idTipoDoc"];
+
+            vendedor.cmb_tipoDoc.Items.Add(ven.Rows[0]["idTipoDoc"].ToString());
+
+            //Abro la pantalla
+            vendedor.ShowDialog();
+        }
     }
 }
