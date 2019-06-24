@@ -461,15 +461,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_salir;
         private AgenciaCarsDataSet agenciaCarsDataSet;
         private System.Windows.Forms.BindingSource lOCALIDADESBindingSource;
         private AgenciaCarsDataSetTableAdapters.LOCALIDADESTableAdapter lOCALIDADESTableAdapter;
         private System.Windows.Forms.Button btnAnular;
-        private clases.TextBox01 IdFactura;
-        private clases.TextBox01 txtTotal;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource fACTURASDETBindingSource;
         private AgenciaCarsDataSetTableAdapters.FACTURASDETTableAdapter fACTURASDETTableAdapter;
         private System.Windows.Forms.Label label01;
@@ -480,18 +476,22 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.MaskedTextBox txtPuntoVenta;
-        private System.Windows.Forms.MaskedTextBox txtNumero;
-        private System.Windows.Forms.MaskedTextBox txtFecha;
-        private System.Windows.Forms.TextBox tipoComprobante;
-        private System.Windows.Forms.ComboBox cmbCliente;
-        private System.Windows.Forms.ComboBox cmbProducto;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbVendedor;
-        private System.Windows.Forms.Button btnProducto;
-        private clases.TextBox01 txtCantidad;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Button btn_nuevo;
+        public clases.TextBox01 IdFactura;
+        public clases.TextBox01 txtTotal;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.MaskedTextBox txtPuntoVenta;
+        public System.Windows.Forms.MaskedTextBox txtNumero;
+        public System.Windows.Forms.MaskedTextBox txtFecha;
+        public System.Windows.Forms.TextBox tipoComprobante;
+        public System.Windows.Forms.ComboBox cmbCliente;
+        public System.Windows.Forms.ComboBox cmbProducto;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.ComboBox cmbVendedor;
+        public System.Windows.Forms.Button btnProducto;
+        public clases.TextBox01 txtCantidad;
     }
 }

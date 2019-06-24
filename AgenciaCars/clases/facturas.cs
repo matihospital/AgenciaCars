@@ -45,15 +45,15 @@ namespace AgenciaCars.clases
             return this._BD.consulta(@"SELECT fac.idFactura Id, 
                                               FORMAT(fac.ptoVenta, '0000') PV, 
                                               FORMAT(fac.nroFactura, '00000000') Numero, 
-                                              prov.idProveedor Proveedor, 
+                                              fac.idProveedor Proveedor, 
+                                              fac.idCliente Cliente,
+                                              fac.idVendedor Vendedor,  
                                               fac.fecha as Fecha, 
                                               fac.idEstado as Estado,
                                               fac.descripcion as Observaciones,
                                               FORMAT(fac.total, 'C', 'en') Total
-                                        FROM facturas as fac, proveedores as prov
-                                        WHERE tipoComprobante = 'C'
-                                        AND fac.idProveedor = prov.idProveedor
-                                        AND fac.idFactura = "+ id);
+                                        FROM facturas as fac
+                                        WHERE fac.idFactura = " + id);
         }
 
         public DataTable buscarDetallePorId(string id)
