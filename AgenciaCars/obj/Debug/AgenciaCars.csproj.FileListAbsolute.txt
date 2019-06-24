@@ -202,4 +202,8 @@ C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.for
 C:\Users\Rossi\Documents\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Stock.resources
 =======
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 >>>>>>> 5484ed1b4b1b8dee1c8fc1bdf6cafa0212a67b8b
+=======
+C:\Users\Matias\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Stock.resources
+>>>>>>> 4733dbe18e5758d85d3ec970d2afe9f4fcdc0431
