@@ -198,3 +198,4 @@ C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.
 C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.cache
 C:\Users\Trabajo\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\RdlCompile.compiled
 C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.formularios.BUSQ_Stock.resources
+C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\obj\Debug\AgenciaCars.csprojResolveAssemblyReference.cache

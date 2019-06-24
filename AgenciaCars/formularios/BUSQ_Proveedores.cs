@@ -13,7 +13,7 @@ namespace AgenciaCars.formularios
 {
     public partial class BUSQ_Proveedores: Form
     {
-        proveedores obj_provedores = new proveedores();
+        proveedores obj_proveedores = new proveedores();
 
         public BUSQ_Proveedores()
         {
@@ -43,7 +43,7 @@ namespace AgenciaCars.formularios
             // TODO: This line of code loads data into the 'agenciaCarsDataSet.CLIENTES' table. You can move, or remove it, as needed.
             //this.pROVEEDORESTableAdapter.Fill(this.agenciaCarsDataSet.PROVEEDORES);
             DataTable tabla = new DataTable();
-            tabla = this.obj_provedores.buscarProveedores();
+            tabla = this.obj_proveedores.buscarProveedores();
             dataGridView1.DataSource = tabla;
 
         }
@@ -69,19 +69,19 @@ namespace AgenciaCars.formularios
                 //Busco segun lo seleccionado
                 if (this.ck_id.Checked)
                 {
-                    tabla = this.obj_provedores.buscarPorParametro("idProveedor", this.txt_busqueda.Text);
+                    tabla = this.obj_proveedores.buscarPorParametro("idProveedor", this.txt_busqueda.Text);
                 }
                 else if (this.ck_nrodoc.Checked)
                 {
-                    tabla = this.obj_provedores.buscarPorParametro("nroDoc", this.txt_busqueda.Text);
+                    tabla = this.obj_proveedores.buscarPorParametro("nroDoc", this.txt_busqueda.Text);
                 }
                 else if (this.ck_apellido.Checked)
                 {
-                    tabla = this.obj_provedores.buscarSiContiene("apellido", this.txt_busqueda.Text);
+                    tabla = this.obj_proveedores.buscarSiContiene("apellido", this.txt_busqueda.Text);
                 }
                 else if (this.ck_nombre.Checked)
                 {
-                    tabla = this.obj_provedores.buscarSiContiene("nombre", this.txt_busqueda.Text);
+                    tabla = this.obj_proveedores.buscarSiContiene("nombre", this.txt_busqueda.Text);
                 }
                 else { return; }
 
@@ -95,6 +95,32 @@ namespace AgenciaCars.formularios
                 dataGridView1.DataSource = tabla;
 
             }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ABM_Proveedores proveedor = new formularios.ABM_Proveedores();
+
+            //Busco los datos del proveedor
+            DataTable prv = new DataTable();
+            prv = this.obj_proveedores.buscar_por_id(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            //Cargo los datos del proveedor
+            proveedor.txt_idProveedor.Text = prv.Rows[0]["idProveedor"].ToString();
+            proveedor.cmb_tipoDoc.SelectedValue = int.Parse(prv.Rows[0]["idTipoDoc"].ToString());
+            proveedor.txt_nroDoc.Text = prv.Rows[0]["nroDoc"].ToString();
+            proveedor.txt_apellido.Text = prv.Rows[0]["apellido"].ToString();
+            proveedor.txt_nombre.Text = prv.Rows[0]["nombre"].ToString();
+            proveedor.txt_telefono.Text = prv.Rows[0]["telefono"].ToString();
+            proveedor.txt_email.Text = prv.Rows[0]["email"].ToString();
+            proveedor.txt_calle.Text = prv.Rows[0]["calle"].ToString();
+            proveedor.txt_nro.Text = prv.Rows[0]["nro"].ToString();
+            proveedor.cmb_pais.SelectedValue = int.Parse(prv.Rows[0]["idPais"].ToString());
+            proveedor.cmb_provincia.SelectedValue = int.Parse(prv.Rows[0]["idProvincia"].ToString());
+            proveedor.cmb_localidad.SelectedValue = int.Parse(prv.Rows[0]["idLocalidad"].ToString());
+
+            //Abro la pantalla
+            proveedor.ShowDialog();
         }
     }
 }

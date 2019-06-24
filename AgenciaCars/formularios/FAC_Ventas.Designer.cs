@@ -419,9 +419,9 @@
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
             this.label11.Location = new System.Drawing.Point(12, 449);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.Size = new System.Drawing.Size(101, 13);
             this.label11.TabIndex = 28;
-            this.label11.Text = "Producto";
+            this.label11.Text = "Productos en Stock";
             // 
             // txtCantidad
             // 
@@ -435,6 +435,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 26);
             this.txtCantidad.TabIndex = 9;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // txtTotal
             // 
@@ -443,6 +444,7 @@
             this.txtTotal._nombre_tabla = null;
             this.txtTotal._tipo = AgenciaCars.clases.TextBox01.tipo_dato.texto;
             this.txtTotal._validable = false;
+            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtTotal.Location = new System.Drawing.Point(654, 453);
             this.txtTotal.Name = "txtTotal";

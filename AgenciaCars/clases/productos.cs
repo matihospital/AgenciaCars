@@ -124,6 +124,23 @@ namespace AgenciaCars.clases
                                         AND mod.idMarca = mar.idMarca");
         }
 
+        public DataTable buscarNombreProductosStock()
+        {
+            return this._BD.consulta(@"SELECT pro.idProducto as Id,
+                                              mar.descripcion as Marca,
+                                              mod.descripcion as Modelo,
+                                              pro.anio as Año,
+                                              pro.color as Color,
+                                              pro.precio as Precio,
+                                              pro.descripcion as Observaciones, 
+                                               (MAR.descripcion + ' ' +  mod.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) Producto
+                                        FROM PRODUCTOS as PRO, MODELOS as mod, MARCAS as MAR, STOCK sto
+                                        WHERE PRO.idModelo = mod.idModelo 
+                                        AND mod.idMarca = mar.idMarca
+                                        AND pro.idProducto = sto.idProducto
+                                        AND sto.cantidad > 0");
+        }
+
         public DataTable buscarPorParametro(string campo, string valor)
         {
             return this._BD.consulta("SELECT * FROM productos WHERE " + campo + " =" + valor);

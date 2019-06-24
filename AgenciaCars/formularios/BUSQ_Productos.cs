@@ -111,5 +111,25 @@ namespace AgenciaCars.formularios
             actualizarGrilla();
             this.txt_busqueda.Text = "";
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ABM_Productos producto = new formularios.ABM_Productos();
+
+            //Busco los datos del producto
+            DataTable pro = new DataTable();
+            pro = this.obj_productos.buscar_por_id(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            //Cargo los datos del producto
+            producto.txt_id.Text = pro.Rows[0]["Id"].ToString();
+            producto.txt_descripcion.Text = pro.Rows[0]["Observaciones"].ToString();
+            producto.txt_anio.Text = pro.Rows[0]["Año"].ToString();
+            producto.txt_color.Text = pro.Rows[0]["Color"].ToString();
+            producto.txt_precio.Text = pro.Rows[0]["Precio"].ToString();
+            
+
+            //Abro la pantalla
+            producto.ShowDialog();
+        }
     }
 }

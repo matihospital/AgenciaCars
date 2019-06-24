@@ -26,18 +26,33 @@ namespace AgenciaCars.formularios
 
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            DataTable producto = new DataTable();
-            producto = obj_productos.buscar_por_id(this.cmbProducto.SelectedValue.ToString());
+            
+            if (string.IsNullOrWhiteSpace(txtCantidad.Text))
+            {
+                MessageBox.Show("El campo CANTIDAD no puede estar vacío.");
+                this.txtCantidad.Focus();
 
-            int index = dataGridView1.Rows.Add();
-            this.dataGridView1.Rows[index].Cells["orden"].Value = index+1;
-            this.dataGridView1.Rows[index].Cells["idProducto"].Value = producto.Rows[0]["Id"];
-            this.dataGridView1.Rows[index].Cells["producto"].Value = producto.Rows[0]["Producto"];
-            this.dataGridView1.Rows[index].Cells["precio"].Value = producto.Rows[0]["Precio"]; ;
-            this.dataGridView1.Rows[index].Cells["cantidad"].Value = this.txtCantidad.Text ;
-            this.dataGridView1.Rows[index].Cells["total"].Value = int.Parse(producto.Rows[0]["Precio"].ToString()) * int.Parse(this.txtCantidad.Text);
+            }
+            else if (int.Parse(this.txtCantidad.Text) <= 0)
+            {
+                MessageBox.Show("La cantidad no puede ser menor a 1");
+            }
 
-            this.txtTotal.Text = (Convert.ToInt32(this.txtTotal.Text) + Convert.ToInt32(this.dataGridView1.Rows[index].Cells["total"].Value)).ToString();
+            else
+            {
+                    DataTable producto = new DataTable();
+                    producto = obj_productos.buscar_por_id(this.cmbProducto.SelectedValue.ToString());
+
+                    int index = dataGridView1.Rows.Add();
+                    this.dataGridView1.Rows[index].Cells["orden"].Value = index + 1;
+                    this.dataGridView1.Rows[index].Cells["idProducto"].Value = producto.Rows[0]["Id"];
+                    this.dataGridView1.Rows[index].Cells["producto"].Value = producto.Rows[0]["Producto"];
+                    this.dataGridView1.Rows[index].Cells["precio"].Value = producto.Rows[0]["Precio"]; ;
+                    this.dataGridView1.Rows[index].Cells["cantidad"].Value = this.txtCantidad.Text;
+                    this.dataGridView1.Rows[index].Cells["total"].Value = int.Parse(producto.Rows[0]["Precio"].ToString()) * int.Parse(this.txtCantidad.Text);
+
+                    this.txtTotal.Text = (Convert.ToInt32(this.txtTotal.Text) + Convert.ToInt32(this.dataGridView1.Rows[index].Cells["total"].Value)).ToString();
+            }
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
@@ -47,8 +62,7 @@ namespace AgenciaCars.formularios
 
         private void Facturas_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'agenciaCarsDataSet.FACTURASDET' table. You can move, or remove it, as needed.
-            //this.fACTURASDETTableAdapter.Fill(this.agenciaCarsDataSet.FACTURASDET);
+
             this.tipoComprobante.Text = "FACTURA DE VENTA";
             this.txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
@@ -63,11 +77,11 @@ namespace AgenciaCars.formularios
             this.cmbVendedor.ValueMember = "Id";
 
             //Productos
-            this.cmbProducto.DataSource = this.obj_productos.buscarNombreProductos();
+            this.cmbProducto.DataSource = this.obj_productos.buscarNombreProductosStock();
             this.cmbProducto.DisplayMember = "Producto";
             this.cmbProducto.ValueMember = "Id";
 
-            this.txtCantidad.Text = "0";
+            this.txtCantidad.Text = "1";
             this.txtTotal.Text = "0";
 
         }
@@ -76,8 +90,7 @@ namespace AgenciaCars.formularios
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
 
-            //Validar que no haya campos vacios (VER DE HACER UN FOR POR CADA CAMPO)
-
+            //Validar que no haya campos vacios
             if (this.txtPuntoVenta.Text == "")
             {
                 MessageBox.Show("El campo PUNTO DE VENTA no puede estar vacío");
@@ -153,6 +166,12 @@ namespace AgenciaCars.formularios
                                                       + dataGridView1.Rows[i].Cells["precio"].Value
                                                       + ")";
                             _BD.insert_update_delete(sqlDetalle);
+
+                            //Actualizo Stock
+                            string sqlStock = @"UPDATE STOCK
+                                                SET cantidad = cantidad -1
+                                                WHERE idProducto = " + dataGridView1.Rows[i].Cells["idProducto"].Value;
+                            _BD.insert_update_delete(sqlStock);
                         }
                         _BD.cerrar_transaccion();
                         blanquear_objetos();
@@ -169,6 +188,20 @@ namespace AgenciaCars.formularios
             this.dataGridView1.Rows.Clear();
             this.txtTotal.Text = "0";
             this.txtPuntoVenta.Focus();
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
     }
