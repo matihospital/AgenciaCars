@@ -36,15 +36,8 @@
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.lOCALIDADESTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.LOCALIDADESTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFacturaDet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fACTURASDETBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fACTURASDETTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.FACTURASDETTableAdapter();
             this.label01 = new System.Windows.Forms.Label();
@@ -119,7 +112,7 @@
             this.btn_salir.FlatAppearance.BorderSize = 2;
             this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salir.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_salir.Location = new System.Drawing.Point(224, 520);
+            this.btn_salir.Location = new System.Drawing.Point(118, 520);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(100, 29);
             this.btn_salir.TabIndex = 13;
@@ -131,82 +124,31 @@
             // 
             this.lOCALIDADESTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // btnAnular
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button1.Location = new System.Drawing.Point(118, 520);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Anular";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAnular.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAnular.FlatAppearance.BorderSize = 2;
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnAnular.Location = new System.Drawing.Point(654, 520);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(100, 29);
+            this.btnAnular.TabIndex = 12;
+            this.btnAnular.Text = "Anular";
+            this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orden,
-            this.idFacturaDet,
-            this.idProducto,
-            this.producto,
-            this.cantidad,
-            this.precio,
-            this.Total});
             this.dataGridView1.Location = new System.Drawing.Point(12, 185);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(742, 262);
             this.dataGridView1.TabIndex = 23;
-            // 
-            // orden
-            // 
-            this.orden.HeaderText = "Orden";
-            this.orden.Name = "orden";
-            this.orden.ReadOnly = true;
-            // 
-            // idFacturaDet
-            // 
-            this.idFacturaDet.HeaderText = "idFactura";
-            this.idFacturaDet.Name = "idFacturaDet";
-            this.idFacturaDet.ReadOnly = true;
-            this.idFacturaDet.Visible = false;
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "Cod. Producto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            // 
-            // producto
-            // 
-            this.producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
             // 
             // fACTURASDETBindingSource
             // 
@@ -496,7 +438,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.IdFactura);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.label1);
@@ -524,7 +466,7 @@
         private AgenciaCarsDataSet agenciaCarsDataSet;
         private System.Windows.Forms.BindingSource lOCALIDADESBindingSource;
         private AgenciaCarsDataSetTableAdapters.LOCALIDADESTableAdapter lOCALIDADESTableAdapter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAnular;
         private clases.TextBox01 IdFactura;
         private clases.TextBox01 txtTotal;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -551,12 +493,5 @@
         private clases.TextBox01 txtCantidad;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idFacturaDet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

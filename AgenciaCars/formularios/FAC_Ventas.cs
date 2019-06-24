@@ -43,6 +43,13 @@ namespace AgenciaCars.formularios
                     DataTable producto = new DataTable();
                     producto = obj_productos.buscar_por_id(this.cmbProducto.SelectedValue.ToString());
 
+                    this.dataGridView1.Columns.Add("orden", "Orden");
+                    this.dataGridView1.Columns.Add("idProducto", "Id");
+                    this.dataGridView1.Columns.Add("producto", "Producto");
+                    this.dataGridView1.Columns.Add("precio", "Precio");
+                    this.dataGridView1.Columns.Add("cantidad", "Cantidad");
+                    this.dataGridView1.Columns.Add("total", "Total");
+
                     int index = dataGridView1.Rows.Add();
                     this.dataGridView1.Rows[index].Cells["orden"].Value = index + 1;
                     this.dataGridView1.Rows[index].Cells["idProducto"].Value = producto.Rows[0]["Id"];
@@ -201,6 +208,37 @@ namespace AgenciaCars.formularios
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            _BD.iniciar_transaccion();
+
+            //Anulo la factura
+            if (this.IdFactura.Text != null)
+            {
+                string sqlAnular = @"UPDATE facturas 
+                                     SET idEstado = 9
+                                     WHERE idFactura = " + this.IdFactura.Text;
+                _BD.insert_update_delete(sqlAnular);
+
+                //Actualizo Stock
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    string sqlStock = @"UPDATE STOCK
+                                        SET cantidad = cantidad +1
+                                        WHERE idProducto = " + dataGridView1.Rows[i].Cells["idProducto"].Value;
+                    _BD.insert_update_delete(sqlStock);
+                }
+
+                _BD.cerrar_transaccion();
+                blanquear_objetos();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo anular la factura. Primero grabe los cambios.");
+                _BD.cerrar_transaccion();
             }
         }
 
