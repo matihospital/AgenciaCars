@@ -440,33 +440,33 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_apellido;
-        private System.Windows.Forms.TextBox txt_idVendedor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmb_tipoDoc;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_calle;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cmb_localidad;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cmb_provincia;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cmb_pais;
-        private System.Windows.Forms.MaskedTextBox txt_nroDoc;
-        private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.MaskedTextBox txt_nro;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label13;
         private AgenciaCarsDataSet agenciaCarsDataSet1;
+        public System.Windows.Forms.TextBox txt_apellido;
+        public System.Windows.Forms.TextBox txt_idVendedor;
+        public System.Windows.Forms.ComboBox cmb_tipoDoc;
+        public System.Windows.Forms.TextBox txt_nombre;
+        public System.Windows.Forms.TextBox txt_calle;
+        public System.Windows.Forms.ComboBox cmb_localidad;
+        public System.Windows.Forms.ComboBox cmb_provincia;
+        public System.Windows.Forms.ComboBox cmb_pais;
+        public System.Windows.Forms.MaskedTextBox txt_nroDoc;
+        public System.Windows.Forms.TextBox txt_telefono;
+        public System.Windows.Forms.MaskedTextBox txt_nro;
+        public System.Windows.Forms.TextBox txt_email;
     }
 }
