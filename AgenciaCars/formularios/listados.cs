@@ -84,15 +84,16 @@ namespace AgenciaCars.formularios
             DataTable tabla = new DataTable();
             string sql = "";
 
-            sql = @"SELECT pro.idProducto as idProducto
-                    , (mar.descripcion + ' ' + mod.descripcion) as producto 
-                    ,pro.anio as anio
-                    ,pro.color as color
-                    ,FORMAT(pro.precio, 'C', 'en') as precio
-                    FROM PRODUCTOS as pro, MODELOS as mod, MARCAS as mar
-                    WHERE pro.idModelo = mod.idModelo
-                    AND mod.idMarca = mar.idMarca
-                    AND 1=1";
+            sql = @"SELECT  
+                    pro.idProducto as idProducto,
+                    pro.precio as Precio,
+                    (MAR.descripcion + ' ' +  mod.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) as Producto,
+                    pro.color as Color,
+                    sto.cantidad as Disponible 
+                    FROM STOCK as sto, PRODUCTOS as pro, MODELOS as mod, MARCAS as MAR 
+                    WHERE sto.idProducto = pro.idProducto
+                    AND pro.idModelo = mod.idModelo 
+                    AND mod.idMarca = mar.idMarca";
             if (!string.IsNullOrEmpty(txtPatron.Text))
             {
                 int i;
