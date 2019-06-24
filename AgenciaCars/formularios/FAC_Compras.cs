@@ -139,8 +139,8 @@ namespace AgenciaCars.formularios
                             if (existeStock.Rows[0]["existe"].ToString() == "1")
                             {
                                 string sqlStock = @"UPDATE STOCK
-                                                SET cantidad = cantidad +1
-                                                WHERE idProducto = " + dataGridView1.Rows[i].Cells["idProducto"].Value;
+                                                SET cantidad = cantidad + " + dataGridView1.Rows[i].Cells["cantidad"].Value +
+                                                " WHERE idProducto = " + dataGridView1.Rows[i].Cells["idProducto"].Value;
                                 _BD.insert_update_delete(sqlStock);
                             }
                             else
@@ -152,7 +152,7 @@ namespace AgenciaCars.formularios
                                                     VALUES( "
                                                     + idStock + ", "
                                                     + dataGridView1.Rows[i].Cells["idProducto"].Value + ", "
-                                                    + 1 + ")" ;    
+                                                    + dataGridView1.Rows[i].Cells["cantidad"].Value + ")";    
                                 _BD.insert_update_delete(sqlStock);
                             };
 
@@ -181,13 +181,15 @@ namespace AgenciaCars.formularios
             DataTable producto = new DataTable();
             producto = obj_productos.buscar_por_id(this.cmbProducto.SelectedValue.ToString());
 
-            this.dataGridView1.Columns.Add("orden", "Orden");
-            this.dataGridView1.Columns.Add("idProducto", "Id");
-            this.dataGridView1.Columns.Add("producto", "Producto");
-            this.dataGridView1.Columns.Add("precio", "Precio");
-            this.dataGridView1.Columns.Add("cantidad", "Cantidad");
-            this.dataGridView1.Columns.Add("total", "Total");
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            if (dataGridView1.Rows.Count == 0) { 
+                this.dataGridView1.Columns.Add("orden", "Orden");
+                this.dataGridView1.Columns.Add("idProducto", "Id");
+                this.dataGridView1.Columns.Add("producto", "Producto");
+                this.dataGridView1.Columns.Add("precio", "Precio");
+                this.dataGridView1.Columns.Add("cantidad", "Cantidad");
+                this.dataGridView1.Columns.Add("total", "Total");
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
 
             int index = dataGridView1.Rows.Add();
             this.dataGridView1.Rows[index].Cells["orden"].Value = index+1;
@@ -215,8 +217,8 @@ namespace AgenciaCars.formularios
                 //Actualizo Stock
                 for (int i = 0; i < dataGridView1.Rows.Count; i++) {
                     string sqlStock = @"UPDATE STOCK
-                                        SET cantidad = cantidad -1
-                                        WHERE idProducto = " + dataGridView1.Rows[i].Cells["idProducto"].Value;
+                                        SET cantidad = cantidad - " + dataGridView1.Rows[i].Cells["cantidad"].Value +
+                                        " WHERE idProducto = " + dataGridView1.Rows[i].Cells["idProducto"].Value;
                     _BD.insert_update_delete(sqlStock);
                 }
 

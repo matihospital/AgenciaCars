@@ -118,8 +118,18 @@ namespace AgenciaCars.formularios
                 obj_vendedores.telefono = this.txt_telefono.Text;
                 obj_vendedores.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
-                this.obj_vendedores.grabarVendedor();
-                MessageBox.Show("Vendedor guardado correctamente.");
+                //Si no tiene ID lo inserto, si ya tiene ID es porque es consulta
+                if (this.txt_idVendedor.Text == null)
+                {
+                    this.obj_vendedores.grabarVendedor();
+                    MessageBox.Show("Cliente guardado correctamente.");
+                }
+                else
+                {
+                    this.obj_vendedores.modificarVendedor(this.txt_idVendedor.Text);
+                    MessageBox.Show("Cliente modificado correctamente.");
+                }
+
 
                 blanquear_objetos();
             }

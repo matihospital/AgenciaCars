@@ -124,9 +124,11 @@ namespace AgenciaCars.formularios
             cliente.cmb_provincia.SelectedValue = int.Parse(cli.Rows[0]["idProvincia"].ToString());
             cliente.cmb_localidad.SelectedValue = int.Parse(cli.Rows[0]["idLocalidad"].ToString());
             //cliente.cmb_tipoDoc.SelectedValue = cli.Rows[0]["idTipoDoc"];
+
             
             //Abro la pantalla
             cliente.ShowDialog();
+            cliente.cmb_tipoDoc.SelectedItem = cli.Rows[0]["idTipoDoc"];
             
         }
     }
