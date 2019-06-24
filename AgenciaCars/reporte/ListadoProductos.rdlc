@@ -402,14 +402,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Cantidad">
+                    <Textbox Name="Disponible">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Cantidad.Value</Value>
+                              <Value>=Fields!Disponible.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -418,7 +418,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Cantidad</rd:DefaultName>
+                      <rd:DefaultName>Disponible</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -449,6 +449,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -718,14 +719,14 @@
           <DataField>Precio</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
+        <Field Name="Disponible">
+          <DataField>Disponible</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>datosListasEstadisticas</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Rossi\Documents\AgenciaCars\AgenciaCars\datos\datosListasEstadisticas.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\PC01\Documents\GitHub\AgenciaCars\AgenciaCars\datos\datosListasEstadisticas.xsd</rd:SchemaPath>
         <rd:TableName>ListadoProductos</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

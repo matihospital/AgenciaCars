@@ -1091,7 +1091,7 @@ namespace AgenciaCars.datos {
             
             private global::System.Data.DataColumn columnPrecio;
             
-            private global::System.Data.DataColumn columnCantidad;
+            private global::System.Data.DataColumn columnDisponible;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1168,9 +1168,9 @@ namespace AgenciaCars.datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
+            public global::System.Data.DataColumn DisponibleColumn {
                 get {
-                    return this.columnCantidad;
+                    return this.columnDisponible;
                 }
             }
             
@@ -1211,7 +1211,7 @@ namespace AgenciaCars.datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListadoProductosRow AddListadoProductosRow(int idProducto, string Producto, int anio, string Color, double Precio, string Cantidad) {
+            public ListadoProductosRow AddListadoProductosRow(int idProducto, string Producto, int anio, string Color, double Precio, string Disponible) {
                 ListadoProductosRow rowListadoProductosRow = ((ListadoProductosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idProducto,
@@ -1219,7 +1219,7 @@ namespace AgenciaCars.datos {
                         anio,
                         Color,
                         Precio,
-                        Cantidad};
+                        Disponible};
                 rowListadoProductosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListadoProductosRow);
                 return rowListadoProductosRow;
@@ -1247,7 +1247,7 @@ namespace AgenciaCars.datos {
                 this.columnanio = base.Columns["anio"];
                 this.columnColor = base.Columns["Color"];
                 this.columnPrecio = base.Columns["Precio"];
-                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnDisponible = base.Columns["Disponible"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1263,8 +1263,8 @@ namespace AgenciaCars.datos {
                 base.Columns.Add(this.columnColor);
                 this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrecio);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
+                this.columnDisponible = new global::System.Data.DataColumn("Disponible", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDisponible);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3110,17 +3110,17 @@ namespace AgenciaCars.datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Cantidad {
+            public string Disponible {
                 get {
                     try {
-                        return ((string)(this[this.tableListadoProductos.CantidadColumn]));
+                        return ((string)(this[this.tableListadoProductos.DisponibleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cantidad\' in table \'ListadoProductos\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Disponible\' in table \'ListadoProductos\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableListadoProductos.CantidadColumn] = value;
+                    this[this.tableListadoProductos.DisponibleColumn] = value;
                 }
             }
             
@@ -3186,14 +3186,14 @@ namespace AgenciaCars.datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tableListadoProductos.CantidadColumn);
+            public bool IsDisponibleNull() {
+                return this.IsNull(this.tableListadoProductos.DisponibleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tableListadoProductos.CantidadColumn] = global::System.Convert.DBNull;
+            public void SetDisponibleNull() {
+                this[this.tableListadoProductos.DisponibleColumn] = global::System.Convert.DBNull;
             }
         }
         
