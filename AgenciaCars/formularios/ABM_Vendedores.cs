@@ -21,10 +21,10 @@ namespace AgenciaCars.formularios
         vendedores obj_vendedores = new vendedores();
 
         //Para cuando consulto
-        public string tipoDocParam;
-        public string paisParam;
-        public string provinciaParam;
-        public string localidadParam;
+        public string tipoDocParam = "";
+        public string paisParam = "";
+        public string provinciaParam = "";
+        public string localidadParam = "";
 
         public ABM_Vendedores()
         {
@@ -38,6 +38,7 @@ namespace AgenciaCars.formularios
             paisParam = pais;
             provinciaParam = provincia;
             localidadParam = localidad;
+            this.Text = "Modificar Vendedor";
         }
 
         private void ABM_Vendedores_Load(object sender, EventArgs e)

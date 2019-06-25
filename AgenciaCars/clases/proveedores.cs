@@ -115,12 +115,36 @@ namespace AgenciaCars.clases
 
         public DataTable buscarPorParametro(string campo, string valor)
         {
-            return this._BD.consulta("SELECT * FROM proveedores WHERE " + campo +" =" + valor);
+            return _BD.consulta(@"SELECT prv.idProveedor as Id,
+                                              (prv.apellido + ' '+ prv.nombre) as Proveedor,   
+                                              tpd.descripcion as TipoDoc,
+                                              prv.nroDoc as NroDoc,
+                                              prv.calle as Calle,
+                                              prv.nro as Numero,
+                                              prv.telefono as Telefono,
+                                              prv.email as Email,
+                                              loc.descripcion as Localidad     
+                                       FROM proveedores as prv, tipos_documentos as tpd, localidades as loc
+                                       WHERE prv.idTipoDoc = tpd.idTipoDoc
+                                       AND prv.idLocalidad = loc.idLocalidad
+                                       AND " + campo + " = " + valor + "%'");
         }
 
         public DataTable buscarSiContiene(string campo, string valor)
         {
-            return this._BD.consulta("SELECT * FROM proveedores WHERE " + campo + " LIKE '%" + valor + "%'");
+            return _BD.consulta(@"SELECT prv.idProveedor as Id,
+                                              (prv.apellido + ' '+ prv.nombre) as Proveedor,   
+                                              tpd.descripcion as TipoDoc,
+                                              prv.nroDoc as NroDoc,
+                                              prv.calle as Calle,
+                                              prv.nro as Numero,
+                                              prv.telefono as Telefono,
+                                              prv.email as Email,
+                                              loc.descripcion as Localidad     
+                                       FROM proveedores as prv, tipos_documentos as tpd, localidades as loc
+                                       WHERE prv.idTipoDoc = tpd.idTipoDoc
+                                       AND prv.idLocalidad = loc.idLocalidad
+                                       AND " + campo + " LIKE '%" + valor + "%'" );
         }
 
         public void grabarProveedor()

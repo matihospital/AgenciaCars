@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABM_Proveedores));
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_idProveedor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,16 +59,16 @@
             this.label_15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // txtTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(88, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nuevo Proveedor";
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtTitulo.Location = new System.Drawing.Point(12, 29);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(325, 42);
+            this.txtTitulo.TabIndex = 1;
+            this.txtTitulo.Text = "Nuevo Proveedor";
             // 
             // txt_apellido
             // 
@@ -416,7 +416,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ABM_Proveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -429,7 +429,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -457,5 +456,6 @@
         public System.Windows.Forms.MaskedTextBox txt_nroDoc;
         public System.Windows.Forms.TextBox txt_telefono;
         public System.Windows.Forms.Button btn_cancelar;
+        public System.Windows.Forms.Label txtTitulo;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABM_Productos));
-            this.lbl_titulo = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -60,16 +60,16 @@
             this.cmb_marca = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // lbl_titulo
+            // txtTitulo
             // 
-            this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo.ForeColor = System.Drawing.SystemColors.Window;
-            this.lbl_titulo.Location = new System.Drawing.Point(157, 18);
-            this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(196, 42);
-            this.lbl_titulo.TabIndex = 0;
-            this.lbl_titulo.Text = "Productos";
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtTitulo.Location = new System.Drawing.Point(18, 19);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(301, 42);
+            this.txtTitulo.TabIndex = 0;
+            this.txtTitulo.Text = "Nuevo Producto";
             // 
             // lbl_id
             // 
@@ -403,7 +403,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.lbl_id);
-            this.Controls.Add(this.lbl_titulo);
+            this.Controls.Add(this.txtTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ABM_Productos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -416,7 +416,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbl_descripcion;
@@ -445,5 +444,6 @@
         public System.Windows.Forms.ComboBox cmb_proveedor;
         public System.Windows.Forms.MaskedTextBox txt_precio;
         public System.Windows.Forms.ComboBox cmb_marca;
+        public System.Windows.Forms.Label txtTitulo;
     }
 }

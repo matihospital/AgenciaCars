@@ -63,6 +63,8 @@
             this.txtCantidad = new AgenciaCars.clases.TextBox01();
             this.txtTotal = new AgenciaCars.clases.TextBox01();
             this.IdFactura = new AgenciaCars.clases.TextBox01();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lOCALIDADESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -101,7 +103,7 @@
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(100, 29);
             this.btn_nuevo.TabIndex = 11;
-            this.btn_nuevo.Text = "Nuevo";
+            this.btn_nuevo.Text = "Aceptar";
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
@@ -306,7 +308,7 @@
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtDescripcion.Location = new System.Drawing.Point(225, 145);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(206, 26);
+            this.txtDescripcion.Size = new System.Drawing.Size(159, 26);
             this.txtDescripcion.TabIndex = 6;
             // 
             // label7
@@ -326,7 +328,7 @@
             this.cmbVendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Location = new System.Drawing.Point(437, 143);
+            this.cmbVendedor.Location = new System.Drawing.Point(390, 143);
             this.cmbVendedor.Name = "cmbVendedor";
             this.cmbVendedor.Size = new System.Drawing.Size(187, 28);
             this.cmbVendedor.TabIndex = 7;
@@ -407,6 +409,29 @@
             this.IdFactura.Size = new System.Drawing.Size(54, 26);
             this.IdFactura.TabIndex = 0;
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Enabled = false;
+            this.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(583, 143);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(171, 28);
+            this.cmbEstado.TabIndex = 40;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(580, 127);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Estado";
+            // 
             // FAC_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,6 +439,8 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnProducto);
             this.Controls.Add(this.txtDescripcion);
@@ -493,5 +520,7 @@
         public System.Windows.Forms.ComboBox cmbVendedor;
         public System.Windows.Forms.Button btnProducto;
         public clases.TextBox01 txtCantidad;
+        public System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Label label12;
     }
 }

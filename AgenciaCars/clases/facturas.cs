@@ -70,5 +70,61 @@ namespace AgenciaCars.clases
                                         AND mod.idMarca = mar.idMarca
                                         AND fad.idFactura = " + id);
         }
+
+        public DataTable buscarPorParametro(string campo, string valor)
+        {
+            return this._BD.consulta(@"SELECT fac.idFactura Id, 
+                                              FORMAT(fac.ptoVenta, '0000') PV, 
+                                              FORMAT(fac.nroFactura, '00000000') Numero, 
+                                              (cli.apellido + ' ' + cli.nombre) Cliente, 
+                                              fac.fecha as Fecha, 
+                                              (ven.apellido + ' ' + ven.nombre) Vendedor,
+                                              FORMAT(fac.total, 'C', 'en') Total
+                                        FROM facturas as fac, clientes as cli, vendedores as ven
+                                        WHERE fac.idCliente = cli.idCliente
+                                        AND fac.idVendedor = ven.idVendedor
+                                        AND " + campo + " =" + valor);
+        }
+
+        public DataTable buscarSiContiene(string campo, string valor)
+        {
+            return this._BD.consulta(@"SELECT fac.idFactura Id, 
+                                              FORMAT(fac.ptoVenta, '0000') PV, 
+                                              FORMAT(fac.nroFactura, '00000000') Numero, 
+                                              (cli.apellido + ' ' + cli.nombre) Cliente, 
+                                              fac.fecha as Fecha, 
+                                              (ven.apellido + ' ' + ven.nombre) Vendedor,
+                                              FORMAT(fac.total, 'C', 'en') Total
+                                        FROM facturas as fac, clientes as cli, vendedores as ven
+                                        WHERE fac.idCliente = cli.idCliente
+                                        AND fac.idVendedor = ven.idVendedor
+                                        AND " + campo + " LIKE '%" + valor + "%'");
+        }
+
+        public DataTable buscarPorParametroCompras(string campo, string valor)
+        {
+            return this._BD.consulta(@"SELECT fac.idFactura Id, 
+                                              FORMAT(fac.ptoVenta, '0000') PV, 
+                                              FORMAT(fac.nroFactura, '00000000') Numero,  
+                                              fac.fecha as Fecha, 
+                                              (prv.apellido + ' ' + prv.nombre) Proveedor,
+                                              FORMAT(fac.total, 'C', 'en') Total
+                                        FROM facturas as fac, proveedores as prv
+                                        WHERE fac.idProveedor = prv.idProveedor
+                                        AND " + campo + " =" + valor);
+        }
+
+        public DataTable buscarSiContieneCompras(string campo, string valor)
+        {
+            return this._BD.consulta(@"SELECT fac.idFactura Id, 
+                                              FORMAT(fac.ptoVenta, '0000') PV, 
+                                              FORMAT(fac.nroFactura, '00000000') Numero, 
+                                              fac.fecha as Fecha, 
+                                              (prv.apellido + ' ' + prv.nombre) Proveedor,
+                                              FORMAT(fac.total, 'C', 'en') Total
+                                        FROM facturas as fac, proveedores as prv
+                                        WHERE fac.idProveedor = prv.idProveedor
+                                        AND " + campo + " LIKE '%" + valor + "%'");
+        }
     }
 }

@@ -117,6 +117,7 @@ namespace AgenciaCars.formularios
             producto.txt_anio.Text = pro.Rows[0]["Año"].ToString();
             producto.txt_color.Text = pro.Rows[0]["Color"].ToString();
             producto.txt_precio.Text = pro.Rows[0]["Precio"].ToString();
+            producto.txtTitulo.Text = "Modificar Producto";
             
 
             //Abro la pantalla

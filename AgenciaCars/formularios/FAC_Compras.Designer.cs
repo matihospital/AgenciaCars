@@ -101,7 +101,7 @@
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(100, 29);
             this.btn_nuevo.TabIndex = 10;
-            this.btn_nuevo.Text = "Nuevo";
+            this.btn_nuevo.Text = "Aceptar";
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 

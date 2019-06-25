@@ -132,6 +132,7 @@ namespace AgenciaCars.formularios
             cliente.cmb_tipoDoc.Enabled = false;
             cliente.txt_nroDoc.Enabled = false;
             cliente.btn_cancelar.Enabled = false;
+            cliente.txtTitulo.Text = "Modificar Cliente";
 
             //Abro la pantalla
             cliente.ShowDialog();

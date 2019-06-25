@@ -124,12 +124,36 @@ namespace AgenciaCars.clases
 
         public DataTable buscarPorParametro(string campo, string valor)
         {
-            return this._BD.consulta("SELECT * FROM clientes WHERE " + campo + " =" + valor);
+            return this._BD.consulta(@"SELECT cli.idCliente as Id,
+                                              (cli.apellido + ' '+ cli.nombre) as Cliente,   
+                                              tpd.descripcion as TipoDoc,
+                                              cli.nroDoc as NroDoc,
+                                              cli.calle as Calle,
+                                              cli.nro as Numero,
+                                              cli.telefono as Telefono,
+                                              cli.email as Email,
+                                              loc.descripcion as Localidad     
+                                       FROM clientes as cli, tipos_documentos as tpd, localidades as loc
+                                       WHERE cli.idTipoDoc = tpd.idTipoDoc
+                                       AND cli.idLocalidad = loc.idLocalidad
+                                       AND " + campo + " =" + valor );
         }
 
         public DataTable buscarSiContiene(string campo, string valor)
         {
-            return this._BD.consulta("SELECT * FROM clientes WHERE " + campo + " LIKE '%" + valor + "%'");
+            return this._BD.consulta(@"SELECT cli.idCliente as Id,
+                                              (cli.apellido + ' '+ cli.nombre) as Cliente,   
+                                              tpd.descripcion as TipoDoc,
+                                              cli.nroDoc as NroDoc,
+                                              cli.calle as Calle,
+                                              cli.nro as Numero,
+                                              cli.telefono as Telefono,
+                                              cli.email as Email,
+                                              loc.descripcion as Localidad     
+                                       FROM clientes as cli, tipos_documentos as tpd, localidades as loc
+                                       WHERE cli.idTipoDoc = tpd.idTipoDoc
+                                       AND cli.idLocalidad = loc.idLocalidad
+                                       AND " + campo + " LIKE '%" + valor + "%'");
         }
 
         //métod para garbar un nuevo registro en la base de datos en la tabla users

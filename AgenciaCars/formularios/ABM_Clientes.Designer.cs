@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABM_Clientes));
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_idCliente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,16 +61,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // txtTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(123, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nuevo Cliente";
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtTitulo.Location = new System.Drawing.Point(12, 19);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(266, 42);
+            this.txtTitulo.TabIndex = 1;
+            this.txtTitulo.Text = "Nuevo Cliente";
             // 
             // txt_apellido
             // 
@@ -423,7 +423,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -439,7 +439,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txt_apellido;
         public System.Windows.Forms.TextBox txt_idCliente;
         private System.Windows.Forms.Label label5;
@@ -468,5 +467,6 @@
         private System.Windows.Forms.Label label13;
         private AgenciaCarsDataSet agenciaCarsDataSet1;
         public System.Windows.Forms.Button btn_cancelar;
+        public System.Windows.Forms.Label txtTitulo;
     }
 }

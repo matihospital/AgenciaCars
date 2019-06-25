@@ -127,6 +127,7 @@ namespace AgenciaCars.formularios
             proveedor.cmb_tipoDoc.Enabled = false;
             proveedor.txt_nroDoc.Enabled = false;
             proveedor.btn_cancelar.Enabled = false;
+            proveedor.txtTitulo.Text = "Modificar Proveedor";
 
             //Abro la pantalla
             proveedor.ShowDialog();

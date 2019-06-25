@@ -20,11 +20,11 @@ namespace AgenciaCars.formularios
         productos obj_productos = new productos();
         paises obj_paises = new paises();
         proveedores obj_proveedores = new proveedores();
-        public string estadoParam;
-        public string marcaParam;
-        public string modeloParam;
-        public string paisParam; 
-        public string proveedorParam;
+        public string estadoParam = "";
+        public string marcaParam = "";
+        public string modeloParam = "";
+        public string paisParam = "";
+        public string proveedorParam = "";
 
         public ABM_Productos()
         {
@@ -39,6 +39,7 @@ namespace AgenciaCars.formularios
             modeloParam = modelo;
             paisParam = pais;
             proveedorParam = proveedor;
+            this.Text = "Modificar Producto";
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)

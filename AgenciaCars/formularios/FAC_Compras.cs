@@ -18,8 +18,8 @@ namespace AgenciaCars.formularios
         proveedores obj_proveedores = new proveedores();
         productos obj_productos = new productos();
         estados obj_estados = new estados();
-        public string proveedorParam;
-        public string estadoParam;
+        public string proveedorParam = "";
+        public string estadoParam = "";
 
         public FAC_Compras()
         {
@@ -69,7 +69,11 @@ namespace AgenciaCars.formularios
             this.cmbProducto.ValueMember = "Id";
 
             this.txtCantidad.Text = "0";
-            this.txtTotal.Text = "0";
+
+            if (this.IdFactura.Text != "")
+            {
+                this.txtTotal.Text = "0";
+            };
 
         }
 

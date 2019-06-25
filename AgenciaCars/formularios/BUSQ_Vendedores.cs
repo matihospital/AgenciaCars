@@ -127,6 +127,7 @@ namespace AgenciaCars.formularios
             vendedor.cmb_tipoDoc.Enabled = false;
             vendedor.txt_nroDoc.Enabled = false;
             vendedor.btn_cancelar.Enabled = false;
+            vendedor.txtTitulo.Text = "Modificar Vendedor";
 
             //Abro la pantalla
             vendedor.ShowDialog();
