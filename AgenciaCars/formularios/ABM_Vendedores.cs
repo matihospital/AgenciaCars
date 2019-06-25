@@ -13,7 +13,7 @@ namespace AgenciaCars.formularios
 {
     public partial class ABM_Vendedores : Form
     {
-
+        acceso_BD _BD = new acceso_BD();
         tiposDoc obj_tiposDoc = new tiposDoc();
         paises obj_paises = new paises();
         provincias obj_provincias = new provincias();
@@ -101,48 +101,45 @@ namespace AgenciaCars.formularios
                 MessageBox.Show("El campo NRO no puede estar vacío");
                 this.txt_nro.Focus();
             }
-            else{
+            else
+            {
                 DataTable existe = _BD.consulta(@"SELECT ISNULL( 
                                                      (SELECT 1 
-                                                      from clientes 
-                                                      where idTipoDoc = " + int.Parse(this.cmb_tipoDoc.SelectedValue.ToString()) + 
+                                                      from vendedores 
+                                                      where idTipoDoc = " + int.Parse(this.cmb_tipoDoc.SelectedValue.ToString()) +
                                                     " and nroDoc = " + int.Parse(this.txt_nroDoc.Text) + "),0) as existe ");
                 if (existe.Rows[0]["existe"].ToString() == "1")
                 {
-                    MessageBox.Show("Ya existe un cliente con ese tipo y numero de documento");
-                }
-                else{
-                 //validar que no exista el cliente por tipo y nro de doc
-
-                //se transfieren los cotenidos de los objetos a las propiedades del 
-                //objeto negocio "obj_usuario" para que esté enterado de los datos
-                //que se utilizarán en las siguientes acciones
-                obj_vendedores.idTipoDoc = int.Parse(this.cmb_tipoDoc.SelectedValue.ToString());
-                obj_vendedores.nroDoc = int.Parse(this.txt_nroDoc.Text);
-                obj_vendedores.apellido = this.txt_apellido.Text;
-                obj_vendedores.nombre = this.txt_nombre.Text;
-                obj_vendedores.calle = this.txt_calle.Text;
-                obj_vendedores.nro = int.Parse(this.txt_nro.Text);
-                obj_vendedores.email = this.txt_email.Text;
-                obj_vendedores.telefono = this.txt_telefono.Text;
-                obj_vendedores.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
-
-                //Si no tiene ID lo inserto, si ya tiene ID es porque es consulta
-                if (this.txt_idVendedor.Text == null)
-                {
-                    this.obj_vendedores.grabarVendedor();
-                    MessageBox.Show("Cliente guardado correctamente.");
+                    MessageBox.Show("Ya existe un vendedor con ese tipo y numero de documento");
                 }
                 else
                 {
-                    this.obj_vendedores.modificarVendedor(this.txt_idVendedor.Text);
-                    MessageBox.Show("Cliente modificado correctamente.");
+                    obj_vendedores.idTipoDoc = int.Parse(this.cmb_tipoDoc.SelectedValue.ToString());
+                    obj_vendedores.nroDoc = int.Parse(this.txt_nroDoc.Text);
+                    obj_vendedores.apellido = this.txt_apellido.Text;
+                    obj_vendedores.nombre = this.txt_nombre.Text;
+                    obj_vendedores.calle = this.txt_calle.Text;
+                    obj_vendedores.nro = int.Parse(this.txt_nro.Text);
+                    obj_vendedores.email = this.txt_email.Text;
+                    obj_vendedores.telefono = this.txt_telefono.Text;
+                    obj_vendedores.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
+                    
+                    //Si no tiene ID lo inserto, si ya tiene ID es porque es consulta
+                    if (this.txt_idVendedor.Text == "")
+                    {
+                        this.obj_vendedores.grabarVendedor();
+                        MessageBox.Show("Vendedor guardado correctamente.");
+                    }
+                    else
+                    {
+                        this.obj_vendedores.modificarVendedor(this.txt_idVendedor.Text);
+                        MessageBox.Show("Vendedor modificado correctamente.");
+                    }
+
+
+                    blanquear_objetos();
                 }
-
-
-                blanquear_objetos();
             }
-
             
         }
 
@@ -175,8 +172,8 @@ namespace AgenciaCars.formularios
             if (this.cmb_provincia.SelectedIndex != 0)  {
                 cmb_localidad.DataSource = null;
                 this.cmb_localidad.DataSource = this.obj_localidades.ConsultarLocalidadesProvincia(this.cmb_provincia.SelectedValue.ToString());
-                this.cmb_localidad.DisplayMember = "descripcion";
-                this.cmb_localidad.ValueMember = "idLocalidad";
+                this.cmb_localidad.DisplayMember = "Localidad";
+                this.cmb_localidad.ValueMember = "Id";
             }
         }
 
@@ -187,8 +184,8 @@ namespace AgenciaCars.formularios
             {
                 cmb_provincia.DataSource = null;
                 this.cmb_provincia.DataSource = this.obj_provincias.ConsultarProvinciasPais(this.cmb_pais.SelectedValue.ToString());
-                this.cmb_provincia.DisplayMember = "descripcion";
-                this.cmb_provincia.ValueMember = "idProvincia";
+                this.cmb_provincia.DisplayMember = "Provincia";
+                this.cmb_provincia.ValueMember = "Id";
 
             }
         }

@@ -219,7 +219,7 @@ namespace AgenciaCars.formularios
             _BD.iniciar_transaccion();
 
             //Anulo la factura
-            if (this.IdFactura.Text != null)
+            if (this.IdFactura.Text != "")
             {
                 string sqlAnular = @"UPDATE facturas 
                                      SET idEstado = 9

@@ -122,10 +122,21 @@ namespace AgenciaCars.formularios
             obj_provedores.email = this.txt_email.Text;
             obj_provedores.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
-            this.obj_provedores.grabarProveedor();
-            MessageBox.Show("Proveedor guardado correctamente.");
 
-            blanquear_objetos();
+            //Si no tiene ID lo inserto, si ya tiene ID es porque es consulta
+            if (this.txt_idProveedor.Text == "")
+            {
+                this.obj_provedores.grabarProveedor();
+                MessageBox.Show("Proveedor guardado correctamente.");
+
+                blanquear_objetos();
+            }
+            else
+            {
+                this.obj_provedores.modificarProveedor(this.txt_idProveedor.Text);
+                MessageBox.Show("Proveedor modificado correctamente.");
+            }
+            
         }
 
         private void blanquear_objetos()

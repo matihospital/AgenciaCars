@@ -101,8 +101,6 @@ namespace AgenciaCars.clases
                                           AND loc.idProvincia = pro.idProvincia
                                           AND pro.idPais = pai.idPais"
                                        );
-
-            return this._BD.consulta("SELECT * FROM vendedores WHERE idVendedor=" + id);
         }
 
         public DataTable buscarVendedores()
