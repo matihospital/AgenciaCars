@@ -125,7 +125,7 @@ namespace AgenciaCars.formularios
             } 
 
             this.txtCantidad.Text = "1";
-            if (this.IdFactura.Text != "")
+            if (this.IdFactura.Text == "")
             {
                 this.txtTotal.Text = "0";
             };
