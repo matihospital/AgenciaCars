@@ -35,7 +35,7 @@ namespace AgenciaCars.formularios
         private void BUSQ_Proveedores_Load(object sender, EventArgs e)
         {
             actualizarGrilla();
-
+            this.txt_busqueda.Text = "";
         }
 
         private void actualizarGrilla()
@@ -99,13 +99,17 @@ namespace AgenciaCars.formularios
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ABM_Proveedores proveedor = new formularios.ABM_Proveedores();
+            
 
             //Busco los datos del proveedor
             DataTable prv = new DataTable();
             prv = this.obj_proveedores.buscar_por_id(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
 
-            //Cargo los datos del proveedor
+            ABM_Proveedores proveedor = new formularios.ABM_Proveedores(prv.Rows[0]["idTipoDoc"].ToString(),
+                                                                        prv.Rows[0]["idPais"].ToString(),
+                                                                        prv.Rows[0]["idProvincia"].ToString(),
+                                                                        prv.Rows[0]["idLocalidad"].ToString());
+          //Cargo los datos del proveedor
             proveedor.txt_idProveedor.Text = prv.Rows[0]["idProveedor"].ToString();
             proveedor.cmb_tipoDoc.SelectedValue = int.Parse(prv.Rows[0]["idTipoDoc"].ToString());
             proveedor.txt_nroDoc.Text = prv.Rows[0]["nroDoc"].ToString();

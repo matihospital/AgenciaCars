@@ -104,12 +104,15 @@ namespace AgenciaCars.formularios
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ABM_Vendedores vendedor = new formularios.ABM_Vendedores();
+            
 
             //Busco los datos del cliente
             DataTable ven = new DataTable();
             ven = this.obj_vendedores.buscar_por_id(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
-
+            ABM_Vendedores vendedor = new formularios.ABM_Vendedores(ven.Rows[0]["idTipoDoc"].ToString(),
+                                                                ven.Rows[0]["idPais"].ToString(),
+                                                                ven.Rows[0]["idProvincia"].ToString(),
+                                                                ven.Rows[0]["idLocalidad"].ToString());
             //Cargo los datos del cliente
             vendedor.txt_idVendedor.Text = ven.Rows[0]["idVendedor"].ToString();
             //vendedor.cmb_tipoDoc.SelectedItem = ven.Rows[0]["idTipoDoc"];
