@@ -24,10 +24,16 @@ namespace AgenciaCars.clases
          //4733dbe18e5758d85d3ec970d2afe9f4fcdc0431
 //=======
 
+<<<<<<< HEAD
         //string cadena_conexion = "Provider=SQLNCLI11;Data Source=MATI\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=AgenciaCars;";
 //>>>>>>> 01249935ad388ba5da2c81faa7a86a7eb2eb60c0
         //string cadena_conexion = "Provider=SQLNCLI11;Data Source=NBDELLPABLO;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
         string cadena_conexion = @"Provider=SQLNCLI11;Data Source=Rossi-Pc\sqlenzo;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
+=======
+        string cadena_conexion = "Provider=SQLNCLI11;Data Source=MATI\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=AgenciaCars;";
+        //string cadena_conexion = "Provider=SQLNCLI11;Data Source=NBDELLPABLO;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
+        //string cadena_conexion = @"Provider=SQLNCLI11;Data Source=LAPTOP-L2T9FM0J;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
+>>>>>>> c5bb689cf796405f95166e3320298c269f6b5be7
         //string cadena_conexion = @"Provider=SQLNCLI11;Data Source=Rossi-Pc\sqlenzo;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
 
         public enum resultado_acceso { error, correcto }

@@ -101,8 +101,6 @@ namespace AgenciaCars.clases
                                           AND loc.idProvincia = pro.idProvincia
                                           AND pro.idPais = pai.idPais"
                                        );
-
-            return this._BD.consulta("SELECT * FROM vendedores WHERE idVendedor=" + id);
         }
 
         public DataTable buscarVendedores()
@@ -166,7 +164,7 @@ namespace AgenciaCars.clases
         public void modificarVendedor(string _id)
         {
             string sqlupdate = "";
-            sqlupdate = @"UPDATE idVendedor 
+            sqlupdate = @"UPDATE vendedores 
                          SET idTipoDoc ='" + this._idTipoDoc + "'"
                          + ", nroDoc = '" + this._nroDoc + "'"
                          + ", apellido = '" + this._apellido.ToString() + "'"

@@ -123,7 +123,7 @@ namespace AgenciaCars.formularios
                     obj_clientes.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
 
                     //Si no tiene ID lo inserto, si ya tiene ID es porque es consulta
-                    if (this.txt_idCliente.Text == null)
+                    if (this.txt_idCliente.Text == "")
                     {
                         this.obj_clientes.grabarCliente();
                         MessageBox.Show("Cliente guardado correctamente.");
