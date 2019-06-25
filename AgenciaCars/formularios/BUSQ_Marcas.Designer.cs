@@ -35,9 +35,9 @@
             this.mARCASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.agenciaCarsDataSet = new AgenciaCars.AgenciaCarsDataSet();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_salir = new System.Windows.Forms.Button();
             this.mARCASTableAdapter = new AgenciaCars.AgenciaCarsDataSetTableAdapters.MARCASTableAdapter();
             this.btn_actualizar = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARCASBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agenciaCarsDataSet)).BeginInit();
@@ -89,21 +89,6 @@
             this.btn_nuevo.Text = "Nuevo";
             this.btn_nuevo.UseVisualStyleBackColor = false;
             // 
-            // btn_salir
-            // 
-            this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_salir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn_salir.FlatAppearance.BorderSize = 2;
-            this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_salir.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_salir.Location = new System.Drawing.Point(118, 383);
-            this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(100, 29);
-            this.btn_salir.TabIndex = 20;
-            this.btn_salir.Text = "Salir";
-            this.btn_salir.UseVisualStyleBackColor = false;
-            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
-            // 
             // mARCASTableAdapter
             // 
             this.mARCASTableAdapter.ClearBeforeFill = true;
@@ -122,6 +107,21 @@
             this.btn_actualizar.Text = "Actualizar";
             this.btn_actualizar.UseVisualStyleBackColor = false;
             this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
+            // 
+            // btn_salir
+            // 
+            this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_salir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_salir.FlatAppearance.BorderSize = 2;
+            this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_salir.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_salir.Location = new System.Drawing.Point(118, 383);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(100, 29);
+            this.btn_salir.TabIndex = 20;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // BUSQ_Marcas
             // 
@@ -155,10 +155,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button btn_salir;
         private AgenciaCarsDataSet agenciaCarsDataSet;
         private System.Windows.Forms.BindingSource mARCASBindingSource;
         private AgenciaCarsDataSetTableAdapters.MARCASTableAdapter mARCASTableAdapter;
         private System.Windows.Forms.Button btn_actualizar;
+        private System.Windows.Forms.Button btn_salir;
     }
 }

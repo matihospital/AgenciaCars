@@ -20,30 +20,69 @@ namespace AgenciaCars.formularios
         localidades obj_localidades = new localidades();
         clientes obj_clientes = new clientes();
 
+        //Para cuando consulto
+        public string tipoDocParam;
+        public string paisParam;
+        public string provinciaParam;
+        public string localidadParam;
+
         public ABM_Clientes()
         {
             InitializeComponent();
         }
 
+        public ABM_Clientes(string tipoDoc, string pais, string provincia, string localidad)
+        {
+            InitializeComponent();
+            tipoDocParam = tipoDoc;
+            paisParam = pais;
+            provinciaParam = provincia;
+            localidadParam = localidad;
+        }
+
         private void ABM_Clientes_Load(object sender, EventArgs e)
         {
+           
                 //Tipos Documentos
                 this.cmb_tipoDoc.DataSource = this.obj_tiposDoc.Consultar_tiposDoc();
                 this.cmb_tipoDoc.DisplayMember = "descripcion";
                 this.cmb_tipoDoc.ValueMember = "idTipoDoc";
-            
+                
+                if (this.tipoDocParam != "")
+                {
+                    this.cmb_tipoDoc.SelectedValue = this.tipoDocParam;
+                }  
+          
                 //Paises
                 this.cmb_pais.DataSource = this.obj_paises.Consultar_paises();
                 this.cmb_pais.DisplayMember = "Pais";
                 this.cmb_pais.ValueMember = "Id";
+                
+                if (this.paisParam != "")
+                {
+                    this.cmb_pais.SelectedValue = this.paisParam;
+                } 
+
                 //Provincias
                 this.cmb_provincia.DataSource = this.obj_provincias.ConsultarProvinciasPais(this.cmb_pais.SelectedValue.ToString());
                 this.cmb_provincia.DisplayMember = "Provincia";
                 this.cmb_provincia.ValueMember = "Id";
+
+                if (this.provinciaParam != "")
+                {
+                    this.cmb_provincia.SelectedValue = this.provinciaParam;
+                } 
+
                 //Localidades
                 this.cmb_localidad.DataSource = this.obj_localidades.ConsultarLocalidadesProvincia(this.cmb_provincia.SelectedValue.ToString());
                 this.cmb_localidad.DisplayMember = "Localidad";
                 this.cmb_localidad.ValueMember = "Id";
+
+                if (this.localidadParam != "") 
+                {
+                    this.cmb_localidad.SelectedValue = this.localidadParam;
+                } 
+
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
