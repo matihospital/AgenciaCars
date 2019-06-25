@@ -79,13 +79,18 @@ namespace AgenciaCars.clases
 
         public DataTable buscar_por_id(string id)
         {
-            return this._BD.consulta(@"SELECT PRO.idProducto as Id,
+            return this._BD.consulta(@"SELECT PRO.idProducto as Id, 
+                                              mar.idMarca as idMarca,
                                               mar.descripcion as Marca,
+                                              mod.idModelo as idModelo,
                                               mod.descripcion as Modelo,
                                               pro.anio as Año,
                                               pro.color as Color,
                                               pro.precio as Precio,
                                               pro.descripcion as Observaciones,
+                                              pro.idPais as idPais,
+                                              pro.idEstado as idEstado,
+                                              pro.idProveedor as idProveedor, 
                                               (MAR.descripcion + ' ' +  mod.descripcion + ' ' + CONVERT(varchar(10),PRO.anio)) as Producto 
                                        FROM PRODUCTOS as PRO, MODELOS as mod, MARCAS as MAR 
                                        WHERE PRO.idModelo = mod.idModelo 
@@ -178,19 +183,19 @@ namespace AgenciaCars.clases
             this._BD.grabar_modificar(SqlInsert);
         }
 
-        public void modificarCliente(string _id)
+        public void modificarProducto(string _id)
         {
             string sqlupdate = "";
             sqlupdate = @"UPDATE productos 
-                         SET descripcion = '" + this._descripcion + "'"
-                         + ", anio = '" + this._anio.ToString() + "'"
-                         + ", idModelo = '" + this._idModelo.ToString() + "'"
+                         SET descripcion = '" + this._descripcion.ToString() + "'"
+                         + ", anio = " + this._anio
+                         + ", idModelo = " + this._idModelo 
                          + ", color = '" + this._color.ToString() + "'"
-                         + ", precio = " + this._precio.ToString()
-                         + ", idProveedor = '" + this._idProveedor.ToString() + "'"
-                         + ", idPais = " + this._idPais.ToString() + "'"
-                         + ", idEstado = " + this._idEstado.ToString()
-                         + " WHERE idProducto = " + _idProducto;
+                         + ", precio = " + this._precio
+                         + ", idProveedor = " + this._idProveedor
+                         + ", idPais = " + this._idPais 
+                         + ", idEstado = " + this._idEstado
+                         + " WHERE idProducto = " + _id;
             this._BD.grabar_modificar(sqlupdate);
         }
 

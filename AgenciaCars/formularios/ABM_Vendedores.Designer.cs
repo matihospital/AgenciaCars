@@ -452,7 +452,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_aceptar;
-        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Label label13;
         private AgenciaCarsDataSet agenciaCarsDataSet1;
@@ -468,5 +467,6 @@
         public System.Windows.Forms.TextBox txt_telefono;
         public System.Windows.Forms.MaskedTextBox txt_nro;
         public System.Windows.Forms.TextBox txt_email;
+        public System.Windows.Forms.Button btn_cancelar;
     }
 }

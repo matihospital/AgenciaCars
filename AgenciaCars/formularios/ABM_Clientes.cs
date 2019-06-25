@@ -145,7 +145,7 @@ namespace AgenciaCars.formularios
                                                       from clientes 
                                                       where idTipoDoc = " + int.Parse(this.cmb_tipoDoc.SelectedValue.ToString()) + 
                                                     " and nroDoc = " + int.Parse(this.txt_nroDoc.Text) + "),0) as existe ");
-                if (existe.Rows[0]["existe"].ToString() == "1")
+                if (existe.Rows[0]["existe"].ToString() == "1" & (this.txt_idCliente.Text == ""))
                 {
                     MessageBox.Show("Ya existe un cliente con ese tipo y numero de documento");
                 }
@@ -166,12 +166,14 @@ namespace AgenciaCars.formularios
                     {
                         this.obj_clientes.grabarCliente();
                         MessageBox.Show("Cliente guardado correctamente.");
+                        blanquear_objetos();
+
                     } else{
                         this.obj_clientes.modificarCliente(this.txt_idCliente.Text);
                         MessageBox.Show("Cliente modificado correctamente.");
+                        this.Close();
                     }
 
-                    blanquear_objetos();
                 }
             }
 

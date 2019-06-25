@@ -13,6 +13,7 @@ namespace AgenciaCars.formularios
 {
     public partial class ABM_Proveedores : Form
     {
+        acceso_BD _BD = new acceso_BD();
         tiposDoc obj_tiposDoc = new tiposDoc();
         paises obj_paises = new paises();
         provincias obj_provincias = new provincias();
@@ -84,15 +85,6 @@ namespace AgenciaCars.formularios
         {
             //Validar que no haya campos vacios
             ABM_Proveedores proveedores = new ABM_Proveedores();
-            /*foreach (Control c in proveedores.Controls)
-            {
-                if (c is TextBox && c.Text == string.Empty)
-                {
-                    MessageBox.Show("El campo " + c.Name + " no puede estar vacío");
-                    c.Focus();
-                    return;
-                }
-            }*/
 
             if (this.txt_nroDoc.Text == "")
             {
@@ -135,38 +127,46 @@ namespace AgenciaCars.formularios
                 MessageBox.Show("El campo NRO no puede estar vacío");
                 this.txt_nro.Focus();
             }
-
-
-            //validar que no exista el cliente por tipo y nro de doc
-
-            //se transfieren los cotenidos de los objetos a las propiedades del 
-            //objeto negocio "obj_usuario" para que esté enterado de los datos
-            //que se utilizarán en las siguientes acciones
-            obj_provedores.idTipoDoc = int.Parse(this.cmb_tipoDoc.SelectedValue.ToString());
-            obj_provedores.nroDoc = int.Parse(this.txt_nroDoc.Text);
-            obj_provedores.apellido = this.txt_apellido.Text;
-            obj_provedores.nombre = this.txt_nombre.Text;
-            obj_provedores.calle = this.txt_calle.Text;
-            obj_provedores.nro = int.Parse(this.txt_nro.Text);
-            obj_provedores.telefono = this.txt_telefono.Text;
-            obj_provedores.email = this.txt_email.Text;
-            obj_provedores.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
-
-
-            //Si no tiene ID lo inserto, si ya tiene ID es porque es consulta
-            if (this.txt_idProveedor.Text == "")
-            {
-                this.obj_provedores.grabarProveedor();
-                MessageBox.Show("Proveedor guardado correctamente.");
-
-                blanquear_objetos();
-            }
             else
             {
-                this.obj_provedores.modificarProveedor(this.txt_idProveedor.Text);
-                MessageBox.Show("Proveedor modificado correctamente.");
+                DataTable existe = _BD.consulta(@"SELECT ISNULL( 
+                                                         (SELECT 1 
+                                                          from proveedores 
+                                                          where idTipoDoc = " + int.Parse(this.cmb_tipoDoc.SelectedValue.ToString()) +
+                                                        " and nroDoc = " + int.Parse(this.txt_nroDoc.Text) + "),0) as existe ");
+                if (existe.Rows[0]["existe"].ToString() == "1" & (this.txt_idProveedor.Text == ""))
+                {
+                    MessageBox.Show("Ya existe un proveedor con ese tipo y numero de documento");
+                }
+                else
+                {
+
+                    obj_provedores.idTipoDoc = int.Parse(this.cmb_tipoDoc.SelectedValue.ToString());
+                    obj_provedores.nroDoc = int.Parse(this.txt_nroDoc.Text);
+                    obj_provedores.apellido = this.txt_apellido.Text;
+                    obj_provedores.nombre = this.txt_nombre.Text;
+                    obj_provedores.calle = this.txt_calle.Text;
+                    obj_provedores.nro = int.Parse(this.txt_nro.Text);
+                    obj_provedores.telefono = this.txt_telefono.Text;
+                    obj_provedores.email = this.txt_email.Text;
+                    obj_provedores.idLocalidad = int.Parse(this.cmb_localidad.SelectedValue.ToString());
+
+
+                    //Si no tiene ID lo inserto, si ya tiene ID es porque es consulta
+                    if (this.txt_idProveedor.Text == "")
+                    {
+                        this.obj_provedores.grabarProveedor();
+                        MessageBox.Show("Proveedor guardado correctamente.");
+
+                        blanquear_objetos();
+                    }
+                    else
+                    {
+                        this.obj_provedores.modificarProveedor(this.txt_idProveedor.Text);
+                        MessageBox.Show("Proveedor modificado correctamente.");
+                    }
+                }
             }
-            
         }
 
         private void blanquear_objetos()

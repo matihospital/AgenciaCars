@@ -18,10 +18,19 @@ namespace AgenciaCars.formularios
         proveedores obj_proveedores = new proveedores();
         productos obj_productos = new productos();
         estados obj_estados = new estados();
+        public string proveedorParam;
+        public string estadoParam;
 
         public FAC_Compras()
         {
             InitializeComponent();
+        }
+
+        public FAC_Compras(string proveedor, string estado)
+        {
+            InitializeComponent();
+            proveedorParam = proveedor;
+            estadoParam = estado;
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
@@ -39,10 +48,20 @@ namespace AgenciaCars.formularios
             this.cmbProveedor.DisplayMember = "Proveedor";
             this.cmbProveedor.ValueMember = "Id";
 
+            if (this.proveedorParam != "")
+            {
+                this.cmbProveedor.SelectedValue = this.proveedorParam;
+            } 
+
             //Estado
             this.cmbEstado.DataSource = this.obj_estados.Consultar_estados();
             this.cmbEstado.DisplayMember = "descripcion";
             this.cmbEstado.ValueMember = "idEstado";
+
+            if (this.estadoParam != "")
+            {
+                this.cmbEstado.SelectedValue = this.estadoParam;
+            } 
 
             //Productos
             this.cmbProducto.DataSource = this.obj_productos.buscarNombreProductos();

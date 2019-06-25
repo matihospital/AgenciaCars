@@ -35,20 +35,19 @@ namespace AgenciaCars.formularios
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FAC_Compras factura = new formularios.FAC_Compras();
-
             //Busco los datos de la factura
             DataTable fac = new DataTable();
             fac = this.obj_facturas.buscarPorId(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            FAC_Compras factura = new formularios.FAC_Compras(fac.Rows[0]["Proveedor"].ToString(),
+                                                              fac.Rows[0]["Estado"].ToString());
 
             //Cargo los datos de la factura
             factura.IdFactura.Text = fac.Rows[0]["Id"].ToString();
             factura.txtPuntoVenta.Text = fac.Rows[0]["PV"].ToString();
             factura.txtNumero.Text = fac.Rows[0]["Numero"].ToString();
             factura.txtFecha.Text = fac.Rows[0]["Fecha"].ToString();
-            //PROVEEDOR
             factura.txtDescripcion.Text = fac.Rows[0]["Observaciones"].ToString();
-            //ESTADO
             factura.txtTotal.Text = fac.Rows[0]["Total"].ToString();
 
             factura.dataGridView1.DataSource = this.obj_facturas.buscarDetallePorId(fac.Rows[0]["Id"].ToString());

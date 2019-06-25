@@ -38,7 +38,7 @@ namespace AgenciaCars.formularios
            this.txt_busqueda.Text = "";
         }
 
-        private void actualizarGrilla()
+        public void actualizarGrilla()
         {
             // TODO: This line of code loads data into the 'agenciaCarsDataSet.CLIENTES' table. You can move, or remove it, as needed.
             //this.cLIENTESTableAdapter.Fill(this.agenciaCarsDataSet.CLIENTES);
@@ -127,7 +127,11 @@ namespace AgenciaCars.formularios
             cliente.cmb_pais.SelectedValue = cli.Rows[0]["idPais"].ToString();
             cliente.cmb_provincia.SelectedValue = cli.Rows[0]["idProvincia"].ToString();
             cliente.cmb_localidad.SelectedValue = cli.Rows[0]["idLocalidad"].ToString();
-                        
+            
+            //Deshabilito campos que no puede usar
+            cliente.cmb_tipoDoc.Enabled = false;
+            cliente.txt_nroDoc.Enabled = false;
+            cliente.btn_cancelar.Enabled = false;
 
             //Abro la pantalla
             cliente.ShowDialog();

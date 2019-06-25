@@ -115,7 +115,6 @@ namespace AgenciaCars.formularios
                                                                 ven.Rows[0]["idLocalidad"].ToString());
             //Cargo los datos del cliente
             vendedor.txt_idVendedor.Text = ven.Rows[0]["idVendedor"].ToString();
-            //vendedor.cmb_tipoDoc.SelectedItem = ven.Rows[0]["idTipoDoc"];
             vendedor.txt_nroDoc.Text = ven.Rows[0]["nroDoc"].ToString();
             vendedor.txt_apellido.Text = ven.Rows[0]["apellido"].ToString();
             vendedor.txt_nombre.Text = ven.Rows[0]["nombre"].ToString();
@@ -123,12 +122,11 @@ namespace AgenciaCars.formularios
             vendedor.txt_email.Text = ven.Rows[0]["email"].ToString();
             vendedor.txt_calle.Text = ven.Rows[0]["calle"].ToString();
             vendedor.txt_nro.Text = ven.Rows[0]["nro"].ToString();
-            vendedor.cmb_pais.SelectedValue = int.Parse(ven.Rows[0]["idPais"].ToString());
-            vendedor.cmb_provincia.SelectedValue = int.Parse(ven.Rows[0]["idProvincia"].ToString());
-            vendedor.cmb_localidad.SelectedValue = int.Parse(ven.Rows[0]["idLocalidad"].ToString());
-            //cliente.cmb_tipoDoc.SelectedValue = cli.Rows[0]["idTipoDoc"];
 
-            vendedor.cmb_tipoDoc.Items.Add(ven.Rows[0]["idTipoDoc"].ToString());
+            //Deshabilito campos que no puede usar
+            vendedor.cmb_tipoDoc.Enabled = false;
+            vendedor.txt_nroDoc.Enabled = false;
+            vendedor.btn_cancelar.Enabled = false;
 
             //Abro la pantalla
             vendedor.ShowDialog();

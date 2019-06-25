@@ -18,10 +18,19 @@ namespace AgenciaCars.formularios
         clientes obj_clientes = new clientes();
         vendedores obj_vendedores = new vendedores();
         productos obj_productos = new productos();
+        public string clienteParam;
+        public string vendedorParam;
 
         public FAC_Ventas()
         {
             InitializeComponent();
+        }
+
+        public FAC_Ventas(string cliente, string vendedor)
+        {
+            InitializeComponent();
+            clienteParam = cliente;
+            vendedorParam = vendedor;
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
@@ -81,10 +90,20 @@ namespace AgenciaCars.formularios
             this.cmbCliente.DisplayMember = "Cliente";
             this.cmbCliente.ValueMember = "Id";
 
+            if (this.clienteParam != "")
+            {
+                this.cmbCliente.SelectedValue = this.clienteParam;
+            }  
+
             //Vendedores
             this.cmbVendedor.DataSource = this.obj_vendedores.buscarVendedores();
             this.cmbVendedor.DisplayMember = "Vendedor";
             this.cmbVendedor.ValueMember = "Id";
+
+            if (this.vendedorParam != "")
+            {
+                this.cmbVendedor.SelectedValue = this.vendedorParam;
+            }  
 
             //Productos
             this.cmbProducto.DataSource = this.obj_productos.buscarNombreProductosStock();

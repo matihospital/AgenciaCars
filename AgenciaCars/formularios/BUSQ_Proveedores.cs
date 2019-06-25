@@ -123,6 +123,11 @@ namespace AgenciaCars.formularios
             proveedor.cmb_provincia.SelectedValue = int.Parse(prv.Rows[0]["idProvincia"].ToString());
             proveedor.cmb_localidad.SelectedValue = int.Parse(prv.Rows[0]["idLocalidad"].ToString());
 
+            //Deshabilito campos que no puede usar
+            proveedor.cmb_tipoDoc.Enabled = false;
+            proveedor.txt_nroDoc.Enabled = false;
+            proveedor.btn_cancelar.Enabled = false;
+
             //Abro la pantalla
             proveedor.ShowDialog();
         }

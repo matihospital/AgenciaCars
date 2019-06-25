@@ -20,10 +20,25 @@ namespace AgenciaCars.formularios
         productos obj_productos = new productos();
         paises obj_paises = new paises();
         proveedores obj_proveedores = new proveedores();
+        public string estadoParam;
+        public string marcaParam;
+        public string modeloParam;
+        public string paisParam; 
+        public string proveedorParam;
 
         public ABM_Productos()
         {
             InitializeComponent();
+        }
+
+        public ABM_Productos(string estado, string marca, string modelo, string pais, string proveedor)
+        {
+            InitializeComponent();
+            estadoParam = estado;
+            marcaParam = marca;
+            modeloParam = modelo;
+            paisParam = pais;
+            proveedorParam = proveedor;
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)
@@ -38,29 +53,48 @@ namespace AgenciaCars.formularios
             this.cmb_estado.DataSource = this.obj_estados.Consultar_estados();
             this.cmb_estado.DisplayMember = "descripcion";
             this.cmb_estado.ValueMember = "idEstado";
+            if (this.estadoParam != "")
+            {
+                this.cmb_estado.SelectedValue = this.estadoParam;
+            }
 
             //Marcas
             this.cmb_marca.DataSource = this.obj_marcas.buscarMarcas();
             this.cmb_marca.DisplayMember = "Marca";
             this.cmb_marca.ValueMember = "Id";
-            
+            if (this.marcaParam != "")
+            {
+                this.cmb_marca.SelectedValue = this.marcaParam;
+            }
+
             //Modelos
             this.cmb_modelo.DataSource = this.obj_modelos.ConsultarModelosMarca(this.cmb_marca.SelectedValue.ToString());
             this.cmb_modelo.DisplayMember = "Modelo";
             this.cmb_modelo.ValueMember = "Id";
+            if (this.modeloParam != "")
+            {
+                this.cmb_modelo.SelectedValue = this.modeloParam;
+            }
 
             //Paises
             this.cmb_pais.DataSource = this.obj_paises.Consultar_paises();
             this.cmb_pais.DisplayMember = "Pais";
             this.cmb_pais.ValueMember = "Id";
+            if (this.paisParam != "")
+            {
+                this.cmb_pais.SelectedValue = this.paisParam;
+            }
 
             //Proveedores
             this.cmb_proveedor.DataSource = this.obj_proveedores.buscarProveedores();
             this.cmb_proveedor.DisplayMember = "Proveedor";
             this.cmb_proveedor.ValueMember = "Id";
+            if (this.proveedorParam != "")
+            {
+                this.cmb_proveedor.SelectedValue = this.proveedorParam;
+            }
 
             this.ActiveControl = this.txt_descripcion;
-            this.cmb_proveedor.SelectedIndex = -1;
         }
 
         private void blanquear_objetos()
@@ -129,10 +163,19 @@ namespace AgenciaCars.formularios
             obj_productos.idPais = int.Parse(this.cmb_pais.SelectedValue.ToString());
             obj_productos.idEstado = int.Parse(this.cmb_estado.SelectedValue.ToString());
 
-            this.obj_productos.grabarProducto();
-            MessageBox.Show("El producto ha sido guardado.");
-
-            blanquear_objetos();
+            //Si no tiene ID lo inserto, si ya tiene ID es porque es consulta
+            if (this.txt_id.Text == "")
+            {
+                this.obj_productos.grabarProducto();
+                MessageBox.Show("El producto ha sido guardado.");
+                blanquear_objetos();
+            }
+            else
+            {
+                this.obj_productos.modificarProducto(this.txt_id.Text);
+                MessageBox.Show("El producto ha sido modificado correctamente.");
+            }
+                        
         }
 
         private void cmb_marca_SelectedIndexChanged(object sender, EventArgs e)

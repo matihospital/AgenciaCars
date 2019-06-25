@@ -301,7 +301,7 @@
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(140, 44);
             this.btn_cancelar.TabIndex = 13;
-            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.Text = "Limpiar Campos";
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
@@ -441,7 +441,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btn_aceptar;
-        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Label label_15;
@@ -457,5 +456,6 @@
         public System.Windows.Forms.MaskedTextBox txt_nro;
         public System.Windows.Forms.MaskedTextBox txt_nroDoc;
         public System.Windows.Forms.TextBox txt_telefono;
+        public System.Windows.Forms.Button btn_cancelar;
     }
 }

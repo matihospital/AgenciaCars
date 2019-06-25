@@ -131,18 +131,18 @@ namespace AgenciaCars.formularios
                 MessageBox.Show("El campo NRO no puede estar vacío");
                 this.txt_nro.Focus();
             }
-                else
+            else
                 {
                 DataTable existe = _BD.consulta(@"SELECT ISNULL( 
                                                      (SELECT 1 
                                                       from vendedores 
                                                       where idTipoDoc = " + int.Parse(this.cmb_tipoDoc.SelectedValue.ToString()) +
                                                     " and nroDoc = " + int.Parse(this.txt_nroDoc.Text) + "),0) as existe ");
-                if (existe.Rows[0]["existe"].ToString() == "1")
+                if (existe.Rows[0]["existe"].ToString() == "1" & (this.txt_idVendedor.Text == ""))
                 {
                     MessageBox.Show("Ya existe un vendedor con ese tipo y numero de documento");
                 }
-            else{
+                else{
 
                  
                 obj_vendedores.idTipoDoc = int.Parse(this.cmb_tipoDoc.SelectedValue.ToString());

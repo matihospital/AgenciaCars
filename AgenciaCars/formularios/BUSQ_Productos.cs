@@ -34,9 +34,6 @@ namespace AgenciaCars.formularios
 
         private void BUSQ_Productos_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'agenciaCarsDataSet.PRODUCTOS' table. You can move, or remove it, as needed.
-            // this.pRODUCTOSTableAdapter.Fill(this.agenciaCarsDataSet.PRODUCTOS);
-
             DataTable tabla = new DataTable();
             tabla = this.obj_productos.buscarProductos();
 
@@ -48,9 +45,6 @@ namespace AgenciaCars.formularios
 
         private void actualizarGrilla()
         {
-            // TODO: This line of code loads data into the 'agenciaCarsDataSet.CLIENTES' table. You can move, or remove it, as needed.
-            //this.cLIENTESTableAdapter.Fill(this.agenciaCarsDataSet.CLIENTES);
-
             DataTable tabla = new DataTable();
             tabla = this.obj_productos.buscarProductos();
             dataGridView1.DataSource = tabla;
@@ -67,9 +61,6 @@ namespace AgenciaCars.formularios
             }
             else
             {
-                //inicia la busqueda de un usuario a travéz de una funcionalidad en la zona
-                //de negocio llamada "buscar_por_id"
-                //crea una tabla para recibir los resultados de la busqueda
                 DataTable tabla = new DataTable();
 
                 //Busco segun lo seleccionado
@@ -91,10 +82,6 @@ namespace AgenciaCars.formularios
                 }
                 else { return; }
 
-                //analiza el contenido de la tabla, cuenta cantidad de filas devueltas, si
-                //el valor es cero (0), no hay filas, quiere decir que no econtro ese "Id"
-                //en la tabla
-                //envia mensaje por tabla.Rows.Count ==0
                 if (tabla.Rows.Count == 0)
                 {
                     MessageBox.Show("No se encontraron datos");
@@ -114,11 +101,15 @@ namespace AgenciaCars.formularios
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ABM_Productos producto = new formularios.ABM_Productos();
-
             //Busco los datos del producto
             DataTable pro = new DataTable();
             pro = this.obj_productos.buscar_por_id(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            ABM_Productos producto = new formularios.ABM_Productos(pro.Rows[0]["idEstado"].ToString(),
+                                                                   pro.Rows[0]["idMarca"].ToString(),
+                                                                   pro.Rows[0]["idModelo"].ToString(),
+                                                                   pro.Rows[0]["idPais"].ToString(),
+                                                                   pro.Rows[0]["idProveedor"].ToString());
 
             //Cargo los datos del producto
             producto.txt_id.Text = pro.Rows[0]["Id"].ToString();

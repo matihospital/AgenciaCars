@@ -155,15 +155,15 @@ namespace AgenciaCars.clases
         {
             string sqlupdate = "";
             sqlupdate = @"UPDATE proveedores 
-                         SET nroDoc = '" + this._nroDoc + "'"
+                         SET nroDoc = " + this._nroDoc
                          + ", apellido = '" + this._apellido.ToString() + "'"
                          + ", nombre = '" + this._nombre.ToString() + "'"
-                         + ", calle = '" + this._calle.ToString()
+                         + ", calle = '" + this._calle.ToString() + "'"
                          + ", nro = " + this._nro
                          + ", telefono = '" + this._telefono.ToString() + "'"
-                         + ", email = '" + this._email.ToString() 
+                         + ", email = '" + this._email.ToString() + "'"
                          + ", idLocalidad = " + this._idLocalidad
-                         + " WHERE idProveedor = " + _idProveedor;
+                         + " WHERE idProveedor = " + _id;
             this._BD.insert_update_delete(sqlupdate);
         }
     }
