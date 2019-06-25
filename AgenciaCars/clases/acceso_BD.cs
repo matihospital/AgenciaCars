@@ -16,10 +16,24 @@ namespace AgenciaCars.clases
 
         OleDbConnection conexion = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
+//<<<<<<< HEAD
+ 
+        //string cadena_conexion = @"Provider=SQLNCLI11;Data Source=Rossi-Pc\sqlenzo;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
 
-        string cadena_conexion = "Provider=SQLNCLI11;Data Source=MATI\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=AgenciaCars;";
+        //string cadena_conexion = "Provider=SQLNCLI11;Data Source=MATI\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=AgenciaCars;";
+         //4733dbe18e5758d85d3ec970d2afe9f4fcdc0431
+//=======
+
+
+        //string cadena_conexion = "Provider=SQLNCLI11;Data Source=MATI\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=AgenciaCars;";
+//>>>>>>> 01249935ad388ba5da2c81faa7a86a7eb2eb60c0
+        //string cadena_conexion = "Provider=SQLNCLI11;Data Source=NBDELLPABLO;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
+        string cadena_conexion = @"Provider=SQLNCLI11;Data Source=Rossi-Pc\sqlenzo;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
+
+        //string cadena_conexion = @"Provider=SQLNCLI11;Data Source=Rossi-Pc\sqlenzo;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
         //string cadena_conexion = "Provider=SQLNCLI11;Data Source=NBDELLPABLO;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
         //string cadena_conexion = @"Provider=SQLNCLI11;Data Source=LAPTOP-L2T9FM0J;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
+
         //string cadena_conexion = @"Provider=SQLNCLI11;Data Source=Rossi-Pc\sqlenzo;Integrated Security=SSPI;Initial Catalog=AgenciaCars";
 
         public enum resultado_acceso { error, correcto }
