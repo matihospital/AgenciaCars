@@ -102,7 +102,16 @@ namespace AgenciaCars.formularios
                 this.txt_nro.Focus();
             }
             else{
-
+                DataTable existe = _BD.consulta(@"SELECT ISNULL( 
+                                                     (SELECT 1 
+                                                      from clientes 
+                                                      where idTipoDoc = " + int.Parse(this.cmb_tipoDoc.SelectedValue.ToString()) + 
+                                                    " and nroDoc = " + int.Parse(this.txt_nroDoc.Text) + "),0) as existe ");
+                if (existe.Rows[0]["existe"].ToString() == "1")
+                {
+                    MessageBox.Show("Ya existe un cliente con ese tipo y numero de documento");
+                }
+                else{
                  //validar que no exista el cliente por tipo y nro de doc
 
                 //se transfieren los cotenidos de los objetos a las propiedades del 

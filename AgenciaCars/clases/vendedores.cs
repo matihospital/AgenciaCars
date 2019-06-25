@@ -166,7 +166,7 @@ namespace AgenciaCars.clases
         public void modificarVendedor(string _id)
         {
             string sqlupdate = "";
-            sqlupdate = @"UPDATE idVendedor 
+            sqlupdate = @"UPDATE vendedores 
                          SET idTipoDoc ='" + this._idTipoDoc + "'"
                          + ", nroDoc = '" + this._nroDoc + "'"
                          + ", apellido = '" + this._apellido.ToString() + "'"
